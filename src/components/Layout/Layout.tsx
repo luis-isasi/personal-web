@@ -4,7 +4,7 @@ import Wave from '@Components/Wave'
 
 const Layout: React.FC = ({ children }) => {
   return (
-    <div className="w-full h-auto">
+    <div className="w-full h-auto font-sans">
       <Header />
       {children}
       <Footer />
