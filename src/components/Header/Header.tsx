@@ -2,7 +2,7 @@ import Link from '@Components/Links/Link'
 
 const Header = () => {
   return (
-    <header className="h-14 w-full bg-gray-400 flex justify-between items-center lg:mx-auto lg:max-w-6xl">
+    <header className="h-14 w-full flex justify-between items-center lg:mx-auto lg:max-w-6xl">
       <h1>Luis Isasi</h1>
       <div className="flex items-center">
         <nav className="bg-blue-400">

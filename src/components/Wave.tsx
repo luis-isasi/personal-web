@@ -1,4 +1,4 @@
-const Wave: React.FC<{ className: string }> = ({ className }) => {
+const Wave: React.FC<{ className?: string }> = ({ className }) => {
   return (
     <svg
       className={className}
