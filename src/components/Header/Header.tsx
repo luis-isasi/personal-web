@@ -1,9 +1,10 @@
 import Link from '@Components/Links/Link'
+import useResponsive from '@Hooks/useResponsive'
 
 const Header = () => {
   return (
     <header className="h-14 w-full flex justify-between items-center lg:mx-auto lg:max-w-6xl">
-      <h1>Luis Isasi</h1>
+      <h1 className="font-bold">Luis Isasi</h1>
       <div className="flex items-center">
         <nav className="bg-blue-400">
           <Link href="/blog" className="mr-8">

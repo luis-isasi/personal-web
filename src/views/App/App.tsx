@@ -1,14 +1,7 @@
 import Link from '@Components/Links/Link'
 import Wave from '@Components/Wave'
-import useResponsive from '@Hooks/useResponsive'
 
 const App = () => {
-  const isMovil = useResponsive({
-    maxMediaQuery: 600,
-  })
-
-  console.log({ isMovil })
-
   return (
     <div className="w-full h-auto bg-green-400">
       <div className=" relative h-auto p-5">
