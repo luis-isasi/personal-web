@@ -6,6 +6,7 @@ const App = () => {
     <div className="w-full h-auto bg-green-400">
       <div className=" relative h-auto p-5">
         <span className="text-lg font-bold">¡Hola! 😀</span>
+        <br />
         <span className="font-bold">
           Soy{' '}
           <Link href="/">
