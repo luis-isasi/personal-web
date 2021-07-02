@@ -1,7 +1,9 @@
 import Link from '@Components/Links/Link'
+
 import useResponsive from '@Hooks/useResponsive'
 import { MEDIAQUERY_LG } from '@Constants'
-import Menu from '@Components/Icons/Menu'
+import Menu from '@Components/Icons/IconMenu'
+import Nav from './components/Nav'
 
 const Header = () => {
   const isMovilAndTablet = useResponsive({
@@ -12,34 +14,20 @@ const Header = () => {
   })
 
   return (
-    <header className="h-14 w-full px-5 flex justify-between items-center lg:mx-auto lg:max-w-6xl">
-      <h1 className="font-bold">Luis Isasi</h1>
-      <div className="flex items-center">
-        {isMovilAndTablet && (
-          <button>
-            <Menu />
-          </button>
-        )}
-        {isLaptop && (
-          <nav className="bg-blue-400">
-            <Link href="/blog" className="mr-8">
-              Blog
-            </Link>
-            <Link href="/snippets" className="mr-8">
-              Snippets
-            </Link>
-            <Link href="/experimentos" className="mr-8">
-              Experimentos
-            </Link>
-            <Link href="/aboutme" className="mr-8">
-              Sobre mí
-            </Link>
-            <Link href="/contactame" className="mr-8">
-              Contáctame
-            </Link>
-          </nav>
-        )}
-        <button className=""></button>
+    <header className="bg-green-400 w-full h-auto">
+      <div className="h-14 w-full  px-5 flex justify-between items-center lg:mx-auto lg:max-w-6xl">
+        <Link href="/">
+          <h1 className="font-bold text-lg">Luis Isasi</h1>
+        </Link>
+        <div className="flex items-center">
+          {isMovilAndTablet && (
+            <button>
+              <Menu />
+            </button>
+          )}
+          {isLaptop && <Nav />}
+          <button className=""></button>
+        </div>
       </div>
     </header>
   )
