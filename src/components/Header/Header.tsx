@@ -14,7 +14,7 @@ const Header = () => {
   })
 
   return (
-    <header className="bg-green-400 w-full h-auto">
+    <header className="bg-green-400 dark:bg-black dark:text-white transition-all ease-in-out duration-500 w-full h-auto">
       <div className="h-14 w-full  px-5 flex justify-between items-center lg:mx-auto lg:max-w-6xl">
         <Link href="/">
           <h1 className="font-bold text-lg">Luis Isasi</h1>
