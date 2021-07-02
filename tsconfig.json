@@ -16,7 +16,8 @@
     "jsx": "preserve",
     "paths": {
       "@Components/*": ["./src/components/*"],
-      "@Views/*": ["./src/views/*"]
+      "@Views/*": ["./src/views/*"],
+      "@Hooks/*": ["./src/hooks/*"]
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
