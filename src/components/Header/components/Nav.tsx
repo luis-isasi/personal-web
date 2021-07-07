@@ -1,5 +1,5 @@
 import Link from '@Components/Links/Link'
-import BtnDark from '@Components/Buttons/BtnDark'
+import BtnDarkMode from '@Components/Buttons/BtnDarkMode'
 
 const Nav = () => {
   return (
@@ -19,7 +19,7 @@ const Nav = () => {
       <Link href="/contactame" className="p-2 mr-6">
         Contáctame
       </Link>
-      <BtnDark />
+      <BtnDarkMode />
     </nav>
   )
 }
