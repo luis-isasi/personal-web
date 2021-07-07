@@ -1,13 +1,12 @@
 import Link from '@Components/Links/Link'
-import Wave from '@Components/Wave'
 
-const App = () => {
+const PresentingMe = () => {
   return (
-    <div className="w-full h-auto bg-green-400">
-      <div className=" relative h-auto p-5">
-        <span className="text-lg font-bold">¡Hola! 😀</span>
+    <div className="h-auto w-full xl:min-w-2xl xl:max-w-2xl xl:pt-5">
+      <section className="text-lg md:text-2xl xl:text-3xl font-bold ">
+        <span className=" ">¡Hola! 😀</span>
         <br />
-        <span className="font-bold">
+        <span>
           Soy{' '}
           <Link href="/">
             <h1 className="min-w-min inline-block text-blue-600">Luis Isasi</h1>
@@ -15,22 +14,23 @@ const App = () => {
           , un Software Developer que convierte ideas en código usando
           principalmente Javascript y typescript.
         </span>
-        <br />
-        <br />
-        <p className="font-semibold">
+      </section>
+      <br />
+      <br />
+      <section className="font-semibold xl:font-bold md:text-xl xl:text-2xl">
+        <p>
           En lugar de tener un típico portafolio, este sitio almacenará todo lo
           que he ido (e iré) aprendido en forma de artículos, proyectos, links y
           demás.
         </p>
         <br />
-        <p className="font-semibold">
+        <p>
           La memoría es frágil, así que mi yo del futuro agradecerá el tener un
           espacio como este.
         </p>
-      </div>
-      <Wave />
+      </section>
     </div>
   )
 }
 
-export default App
+export default PresentingMe

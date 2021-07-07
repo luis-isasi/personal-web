@@ -15,7 +15,7 @@ const Header = () => {
 
   return (
     <header className="bg-green-400 dark:bg-black dark:text-white w-full h-auto">
-      <div className="h-14 w-full  px-5 flex justify-between items-center lg:mx-auto lg:max-w-6xl">
+      <div className="h-14 w-full  px-5 lg:px-0 flex justify-between items-center lg:mx-auto lg:max-w-5xl">
         <Link href="/">
           <h1 className="font-bold text-lg">Luis Isasi</h1>
         </Link>
