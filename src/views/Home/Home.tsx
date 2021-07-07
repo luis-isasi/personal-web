@@ -10,7 +10,7 @@ const Home = () => {
         <Technologies />
       </div>
       <Wave />
-      <div className="bg-white w-full h-9xl"></div>
+      {/* <div className="bg-white w-full h-xl"></div> */}
     </div>
   )
 }
