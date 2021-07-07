@@ -108,6 +108,10 @@ module.exports = {
         18: '18',
       },
     },
+    scale: {
+      80: '.8',
+      85: '.85',
+    },
     animation: {
       float: 'float 4s ease-in-out infinite',
     },

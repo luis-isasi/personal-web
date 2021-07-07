@@ -20,7 +20,10 @@ const BtnDarkMode = () => {
   }
 
   return (
-    <button onClick={onClick} className="flex justify-center items-center">
+    <button
+      onClick={onClick}
+      className="flex justify-center items-center outline-none transition-all ease-in-out duration-150 active:transform active:scale-80"
+    >
       {isLight && <IconLight className="w-6 h-6" />}
       {isDark && <IconDark className="w-6 h-6" />}
     </button>
