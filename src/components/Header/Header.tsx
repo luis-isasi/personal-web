@@ -14,10 +14,10 @@ const Header = () => {
   })
 
   return (
-    <header className="bg-green-400 dark:bg-black dark:text-white w-full h-auto">
+    <header className="w-full h-auto text-pink-600 dark:text-pink-500  bg-gradient-to-r from-gradient-start to-gradient-end dark:from-dark-secondary dark:to-dark-secondary">
       <div className="h-14 w-full  px-5 lg:px-0 flex justify-between items-center lg:mx-auto lg:max-w-5xl">
         <Link href="/">
-          <h1 className="font-bold text-lg">Luis Isasi</h1>
+          <h1 className="font-bold text-2xl">Luis Isasi</h1>
         </Link>
         <div className="flex items-center">
           {isMovilAndTablet && (

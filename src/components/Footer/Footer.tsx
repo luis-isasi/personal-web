@@ -2,7 +2,10 @@ import Link from '@Components/Links/Link'
 
 const Footer = () => {
   return (
-    <footer className="h-auto w-full  bg-green-400 px-5 py-7">
+    <footer
+      className="h-auto w-full  bg-green-400 px-5 py-7"
+      style={{ backgroundColor: 'rgba(135,222,243,1)' }}
+    >
       <div className="h-auto w-full lg:mx-auto lg:max-w-5xl flex flex-col lg:flex-row lg:justify-between lg:items-center">
         <div className="">
           <div className="flex flex-col lg:flex-row">

@@ -75,6 +75,34 @@ module.exports = {
       maxHeight: (theme) => ({
         ...theme('spacing'),
       }),
+      colors: {
+        gradient: {
+          start: '#a5c5ff',
+          end: '#e0faff',
+        },
+        dark: {
+          DEFAULT: '#070E27',
+          primary: '#181830',
+          secondary: '#212142',
+          light: '#2f3253',
+        },
+        base: {
+          main: {
+            DEFAULT: '#181B32',
+            80: 'rgba(24,27,50,0.8)',
+          },
+          light: {
+            DEFAULT: '#1D2559',
+            'dark-mode': '#2C2F48',
+          },
+          lighter: {
+            DEFAULT: '#878FB8',
+            'dark-mode': '#393C57',
+            16: 'rgba(135, 143, 184, 0.16)',
+            24: 'rgba(135,143,184,0.24)',
+          },
+        },
+      },
       borderRadius: {
         circle: '50%',
       },

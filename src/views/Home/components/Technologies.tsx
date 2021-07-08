@@ -2,8 +2,8 @@ import Image from 'next/image'
 
 const technologiesCol1 = [
   {
-    url: '/Images/react.png',
-    alt: 'react',
+    url: '/Images/Typescript.svg',
+    alt: 'typescript',
   },
   {
     url: '/Images/webpack.png',
@@ -21,8 +21,8 @@ const technologiesCol1 = [
 
 const technologiesCol2 = [
   {
-    url: '/Images/Typescript.svg',
-    alt: 'typescript',
+    url: '/Images/react.png',
+    alt: 'react',
   },
   {
     url: '/Images/styled-components.png',
