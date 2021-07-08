@@ -1,22 +1,17 @@
 import Link from '@Components/Links/Link'
-//#e5fbf7 base
-// #1F1F3A text
-// #55B4B3 text verde
 
 const PresentingMe = () => {
   return (
-    <div
-      className="h-auto w-full xl:min-w-2xl xl:max-w-2xl xl:pt-5 dark:text-white"
-      style={{ color: '#1F1F3A' }}
-    >
+    <div className="h-auto w-full xl:min-w-2xl xl:max-w-2xl xl:pt-5 dark:text-white">
       <section className="text-lg md:text-2xl xl:text-3xl font-bold dark:text-white ">
-        <span className=" ">¡Hola! 😀</span>
+        <span>¡Hola! 😀</span>
         <br />
         <span>
           Soy{' '}
           <Link href="/">
-            {/* style={{ color: '#05c793' }} */}
-            <h1 className="min-w-min inline-block text-pink-600">Luis Isasi</h1>
+            <h1 className="min-w-min inline-block text-purple-600">
+              Luis Isasi
+            </h1>
           </Link>
           , un Software Developer que convierte ideas en código usando
           principalmente Javascript y typescript.

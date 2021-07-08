@@ -77,8 +77,8 @@ module.exports = {
       }),
       colors: {
         gradient: {
-          start: '#a5c5ff',
-          end: '#e0faff',
+          start: '#7aaaff',
+          end: '#ffb8b8',
         },
         dark: {
           DEFAULT: '#070E27',

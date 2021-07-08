@@ -1,8 +1,11 @@
 const Categories = () => {
   const renderCategories = () => {
-    return Array.from({ length: 7 }).map(() => {
+    return Array.from({ length: 7 }).map((value, i) => {
       return (
-        <button className="bg-indigo-600 m-1 px-3 py-1 rounded-md text-white font-medium hover:bg-indigo-500 transition-all ease-in-out duration-150">
+        <button
+          key={i}
+          className="bg-indigo-600 m-1 px-3 py-1 rounded-md text-white font-medium hover:bg-indigo-500 transition-all ease-in-out duration-150"
+        >
           React
         </button>
       )

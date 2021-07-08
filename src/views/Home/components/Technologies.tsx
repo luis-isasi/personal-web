@@ -53,7 +53,7 @@ const Technologies = () => {
     ))
 
   return (
-    <div className="h-auto w-full ml-5 flex flex-row flex-wrap ">
+    <div className="h-auto w-full py-7 lg:pt-10 lg:pb-0 xl:py-0 xl:ml-5 flex flex-row flex-wrap">
       <div className="flex-grow flex flex-col items-center">
         {renderTechnologies(technologiesCol1)}
       </div>

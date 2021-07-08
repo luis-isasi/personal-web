@@ -1,8 +1,8 @@
 const RecentContent = () => {
   const renderArticle = () => {
-    return Array.from({ length: 3 }).map(() => {
+    return Array.from({ length: 3 }).map((value, i) => {
       return (
-        <article className="rounded-md py-8">
+        <article key={i} className="rounded-md py-8">
           <header className="font-bold text-xl dark:text-white">
             ¿Cómo leer y modificar archivos y carpetas en golang?
           </header>

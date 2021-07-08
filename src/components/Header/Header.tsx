@@ -26,7 +26,6 @@ const Header = () => {
             </button>
           )}
           {isLaptop && <Nav />}
-          <button className=""></button>
         </div>
       </div>
     </header>
