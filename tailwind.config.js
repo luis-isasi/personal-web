@@ -142,11 +142,20 @@ module.exports = {
     },
     animation: {
       float: 'float 4s ease-in-out infinite',
+      'appear-rotating': 'rotate 0.1s ease-in-out',
     },
     keyframes: {
       float: {
         '0%, 100%': { transform: 'translateY(0px)' },
         '50%': { transform: 'translateY(22px)' },
+      },
+      rotate: {
+        '0%': {
+          transform: 'rotate(90deg)',
+        },
+        '100%': {
+          transform: 'rotate(0deg)',
+        },
       },
     },
   },

@@ -17,7 +17,10 @@ const BtnMenu = () => {
 
   return (
     <>
-      <button onClick={onClick}>
+      <button
+        onClick={onClick}
+        className="transform active:scale-80 transition-all duration-150 ease-in-out"
+      >
         <Menu className="dark:text-white" />
       </button>
       {isModalMenu && <ModalMenu closeModal={closeModal} />}

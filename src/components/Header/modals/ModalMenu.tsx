@@ -13,7 +13,10 @@ const ModalMenu: React.FC<Props> = ({ closeModal }) => {
         <div className="mt-8">
           <Nav />
         </div>
-        <button onClick={closeModal} className="h-12 w-12">
+        <button
+          onClick={closeModal}
+          className="h-12 w-12 transform active:scale-80 transition-all duration-150 ease-in-out animate-appear-rotating"
+        >
           <IconClose className="w-10 h-10 text-white" />
         </button>
       </div>
