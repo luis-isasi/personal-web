@@ -28,7 +28,12 @@ const Header = () => {
         </Link>
         <div className="flex items-center">
           {isMovilAndTablet && <BtnMenu />}
-          {isLaptop && <Nav />}
+          {isLaptop && (
+            <>
+              <Nav />
+              <BtnDarkMode />
+            </>
+          )}
         </div>
       </div>
     </header>

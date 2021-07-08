@@ -9,6 +9,13 @@ const ModalBase: React.FC<{ className?: string }> = ({
   return ReactDOM.createPortal(
     <div className={`${className} w-screen h-screen fixed top-0 left-0 z-20`}>
       {children}
+      <style global jsx>
+        {`
+          body {
+            overflow-y: hidden;
+          }
+        `}
+      </style>
     </div>,
     Element as Element
   )
