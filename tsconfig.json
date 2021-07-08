@@ -19,7 +19,8 @@
       "@Views/*": ["./src/views/*"],
       "@Hooks/*": ["./src/hooks/*"],
       "@Constants": ["./src/constants.ts"],
-      "@Types": ["./src/types.ts"]
+      "@Types": ["./src/types.ts"],
+      "@Hoc/*": ["./src/hoc/*"]
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
