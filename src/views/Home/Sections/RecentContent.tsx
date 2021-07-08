@@ -1,6 +1,6 @@
 const RecentContent = () => {
   const renderArticle = () => {
-    return Array.from({ length: 7 }).map(() => {
+    return Array.from({ length: 3 }).map(() => {
       return (
         <article className="rounded-md py-8">
           <header className="font-bold text-xl dark:text-white">
