@@ -14,7 +14,7 @@ const Home = () => {
         </div>
         <Wave />
       </div>
-      <div className="h-auto w-full md:max-w-3xl lg:max-w-4xl xl:max-w-5xl p-5 md:pt-5 md:pb-0 lg:px-0 mx-auto xl:flex">
+      <div className="h-auto w-full flex flex-col lg:flex-row md:max-w-3xl lg:max-w-4xl xl:max-w-5xl p-5 md:pt-5 md:pb-0 lg:px-0 mx-auto ">
         <RecentContent />
         <Categories />
       </div>

@@ -13,7 +13,7 @@ const RecentContent = () => {
             cumplían con cierto requerimiento. Al inicio pensaba usar nodejs
             pero luego de revisar la documentación de cade lenguaje decidí usar
           </p>
-          <button className="rounded-md py-1 px-2 bg-blue-700 text-white font-bold">
+          <button className="rounded-md py-1 px-2 bg-blue-700 text-white font-bold hover:bg-blue-600  transition-all ease-in-out duration-150">
             Leer más
           </button>
         </article>
