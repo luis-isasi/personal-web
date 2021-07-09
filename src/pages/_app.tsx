@@ -5,7 +5,7 @@ import Layout from '@Components/Layout'
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
-    <Layout>
+    <Layout isConstruction={pageProps.isConstruction}>
       <Component {...pageProps} />
       <div id="modal"></div>
     </Layout>
