@@ -1,0 +1,70 @@
+#content {
+  color: white;
+  text-align: center;
+  margin-top: 30px;
+  font-size: 30px;
+}
+
+#svgElement {
+  width: 620px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/*-----coneCycle-----*/
+
+@keyframes coneCycle {
+  50% {
+    fill: white;
+  }
+
+  100% {
+    fill: #d62209;
+  }
+}
+
+.ConeLight {
+  fill: orange !important;
+  animation: coneCycle 0.6s infinite;
+}
+
+.CraneLight {
+  fill: white;
+  animation: coneCycle 0.6s infinite;
+}
+
+/*-----winchCycle-----*/
+
+@keyframes winchCycle {
+  0% {
+    transform: translateX(88px);
+  }
+
+  100% {
+    transform: translateX(4px);
+  }
+}
+
+.Winch {
+  transform: translateX(88px);
+  animation: winchCycle 4s linear infinite;
+  animation-direction: alternate-reverse;
+}
+
+/*-----PaintRoller-----*/
+
+@keyframes paintRoller {
+  0% {
+    transform: translateY(-7px);
+  }
+
+  100% {
+    transform: translateY(21px);
+  }
+}
+
+.PaintRoller {
+  animation: paintRoller 0.7s ease infinite;
+  transform: translateY(-1px);
+  animation-direction: alternate-reverse;
+}
