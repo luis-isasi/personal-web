@@ -13,22 +13,24 @@ const PresentingMe = () => {
               Luis Isasi
             </h1>
           </Link>
-          , un Software Developer que convierte ideas en código usando
-          principalmente Javascript y typescript.
+          , un Desarrollador front-end con metas de ser Full Stack,
+          conviertiendo ideas del mundo real a codigo usando principalmente
+          Javascript y typescript.
         </span>
       </section>
       <br />
       <br />
       <section className="font-semibold xl:font-bold md:text-xl xl:text-2xl dark:text-white">
         <p>
-          En lugar de tener un típico portafolio, este sitio almacenará todo lo
-          que he ido (e iré) aprendido en forma de artículos, proyectos, links y
-          demás.
+          Este lugar será mi portafolio, donde almacenaré todos mis
+          conocimientos a lo largo de mi carrera como front-end y aportar a
+          nuevos devs con artículos, proyectos, mis experiencias y demás, Espero
+          sea de tu agrado.
         </p>
         <br />
         <p>
-          La memoría es frágil, así que mi yo del futuro agradecerá el tener un
-          espacio como este.
+          Esta claro que no soy el mejor pero aspiro a hacerlo y este sitio es
+          uno de los pasos para lograrlo.
         </p>
       </section>
     </div>
