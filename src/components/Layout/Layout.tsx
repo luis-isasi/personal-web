@@ -12,8 +12,6 @@ const Layout: React.FC<Props> = ({
   isConstruction = false,
   pageNotFound = false,
 }) => {
-  console.log({ pageNotFound })
-
   if (isConstruction) {
     return (
       <div className="w-full h-auto font-sans">
