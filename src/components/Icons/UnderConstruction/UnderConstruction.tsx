@@ -1,11 +1,7 @@
-import * as React from 'react'
 import style from './style.module.css'
 
 const SvgComponent: React.FC<React.SVGAttributes<SVGElement>> = (props) => {
   return (
-    // <div id="prefix__wrapper">
-    //   <div id="prefix__content">
-    //     <div id="prefix__svgElement">
     <svg
       xmlns="http://www.w3.org/2000/svg"
       xmlnsXlink="http://www.w3.org/1999/xlink"
@@ -282,9 +278,6 @@ const SvgComponent: React.FC<React.SVGAttributes<SVGElement>> = (props) => {
         </g>
       </g>
     </svg>
-    //     </div>
-    //   </div>
-    // </div>
   )
 }
 

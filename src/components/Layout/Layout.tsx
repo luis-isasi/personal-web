@@ -4,10 +4,15 @@ import PageUnderConstruction from '@Components/PageUnderConstruction'
 
 interface Props {
   isConstruction?: boolean
+  pageNotFound?: boolean
 }
 
-const Layout: React.FC<Props> = ({ children, isConstruction = false }) => {
-  console.log(isConstruction)
+const Layout: React.FC<Props> = ({
+  children,
+  isConstruction = false,
+  pageNotFound = false,
+}) => {
+  console.log({ pageNotFound })
 
   if (isConstruction) {
     return (
@@ -17,6 +22,17 @@ const Layout: React.FC<Props> = ({ children, isConstruction = false }) => {
           <Footer />
         </div>
       </div>
+    )
+  }
+
+  if (pageNotFound) {
+    return (
+      <>
+        {children}
+        <div className="dark">
+          <Footer />
+        </div>
+      </>
     )
   }
 

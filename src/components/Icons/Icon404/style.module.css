@@ -1,0 +1,50 @@
+
+@keyframes sparkle {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.3;
+  }
+}
+
+.astronaut {
+  animation: spin 4.5s infinite linear;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotateZ(0deg);
+  }
+  100% {
+    transform: rotateZ(360deg);
+  }
+}
+
+.stars {
+  animation: sparkle 1.6s infinite ease-in-out alternate;
+}
+
+@keyframes sparkle {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.3;
+  }
+}
+
+.saturn,
+.saturn-2,
+.hover {
+  animation: hover 2s infinite ease-in-out alternate;
+}
+
+@keyframes hover {
+  0% {
+    transform: translateY(3px);
+  }
+  100% {
+    transform: translateY(-3px);
+  }
+}
