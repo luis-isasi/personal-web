@@ -16,7 +16,7 @@ const Nav = () => {
         Snippets
       </Link>
       <Link
-        href="/experimentos"
+        href="/experiments"
         className="p-2 mr-6 text-purple-400 lg:text-dark-light lg:hover:text-dark dark:text-pink-500 dark:hover:text-pink-600"
       >
         Experimentos
@@ -28,7 +28,7 @@ const Nav = () => {
         Sobre mí
       </Link>
       <Link
-        href="/contactame"
+        href="/contactme"
         className="p-2 mr-6 text-purple-400 lg:text-dark-light lg:hover:text-dark dark:text-pink-500 dark:hover:text-pink-600"
       >
         Contáctame
