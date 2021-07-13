@@ -1,6 +1,6 @@
 import Header from '@Components/Header'
 import Footer from '@Components/Footer'
-import PageUnderConstruction from '@Components/PageUnderConstruction'
+import PageUnderConstruction from '@Views/PageUnderConstruction'
 
 interface Props {
   isConstruction?: boolean

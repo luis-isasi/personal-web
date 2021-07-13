@@ -18,6 +18,13 @@ const Page404 = () => {
           LOST IN SPACE? Hmm, looks like that page doesn't exist.
         </p>
         <Icon404 />
+        <a
+          target="_blank"
+          href="https://codepen.io/hellochad/pen/weMpgE"
+          className="text-black hover:text-dark-light text-xs transition-colors ease-in-out duration-150 hover:underline text-center relative -top-8 lg:-top-13"
+        >
+          codepen: https://codepen.io/hellochad/pen/weMpgE
+        </a>
         <Link
           href="/"
           className="bg-dark-secondary hover:bg-dark-light rounded-md py-2 px-4 font-semibold transition-colors ease-in-out duration-200"
