@@ -13,9 +13,9 @@ const PresentingMe = () => {
               Luis Isasi
             </h1>
           </Link>
-          , un Desarrollador front-end con metas de ser Full Stack,
+          , un Desarrollador Front-end con metas de ser Full Stack,
           conviertiendo ideas del mundo real a codigo usando principalmente
-          Javascript y typescript.
+          Javascript y Typescript.
         </span>
       </section>
       <br />
@@ -29,8 +29,8 @@ const PresentingMe = () => {
         </p>
         <br />
         <p>
-          Esta claro que no soy el mejor pero aspiro a hacerlo y este sitio es
-          uno de los pasos para lograrlo.
+          Esta claro que no soy el mejor pero aspiro a serlo y este sitio es uno
+          de los pasos para lograrlo.
         </p>
       </section>
     </div>
