@@ -23,3 +23,12 @@ export type Theme = typeof DARK | typeof LIGHT
 export type UserSettings = {
   theme: Theme
 }
+
+//Post
+export type Blog = {
+  categories: string
+  contentPreview: string
+  createdAt: string
+  title: string
+  slug: string
+}
