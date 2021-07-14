@@ -32,3 +32,11 @@ export type Blog = {
   title: string
   slug: string
 }
+
+export type PreviewArticle = {
+  title: string
+  contentPreview: string
+  createdAt: string
+  slug: string
+  url: string
+}
