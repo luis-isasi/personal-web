@@ -1,11 +1,8 @@
 import { GetStaticPaths, GetStaticProps } from 'next'
-import { getAllBlogs, getBlogsSlug, getBlogBySlug } from '@/mdx-utils'
+import { getBlogsSlug, getBlogBySlug } from '@/mdx-utils'
 
-const BlogDetail: React.FC = (props) => {
-  console.log({ props })
-
-  return <div></div>
-}
+//BlogDetail
+export { default } from '@Views/Blog/BlogDetail'
 
 export const getStaticPaths: GetStaticPaths = async ({}) => {
   const blogsSlug = await getBlogsSlug()
@@ -36,5 +33,3 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
     },
   }
 }
-
-export default BlogDetail

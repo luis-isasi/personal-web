@@ -5,7 +5,7 @@ interface Props {
   blogsPreviews: TypePreviewArticle[]
 }
 
-const Blog: React.FC<Props> = ({ blogsPreviews }) => {
+const BlogList: React.FC<Props> = ({ blogsPreviews }) => {
   const renderBlogsPreviews = () => {
     return blogsPreviews.map(
       ({ title, contentPreview, createdAt, url, slug, categories }, i) => {
@@ -36,4 +36,4 @@ const Blog: React.FC<Props> = ({ blogsPreviews }) => {
   )
 }
 
-export default Blog
+export default BlogList
