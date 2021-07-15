@@ -25,18 +25,14 @@ export type UserSettings = {
 }
 
 //Post
-export type Blog = {
-  categories: string
+export interface Blog {
+  title: string
   contentPreview: string
   createdAt: string
-  title: string
-  slug: string
+  slug?: string
+  categories?: string
 }
 
-export type PreviewArticle = {
-  title: string
-  contentPreview: string
-  createdAt: string
-  slug: string
+export interface TypePreviewArticle extends Blog {
   url: string
 }
