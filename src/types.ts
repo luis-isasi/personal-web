@@ -1,3 +1,5 @@
+import { MDXRemoteSerializeResult } from 'next-mdx-remote'
+
 import {
   MEDIAQUERY_SM,
   MEDIAQUERY_MD,
@@ -33,6 +35,10 @@ export interface Blog {
   categories?: string
 }
 
+export interface TypeBlogDetail {
+  source: MDXRemoteSerializeResult
+  data: Blog
+}
 export interface TypePreviewArticle extends Blog {
   url: string
 }

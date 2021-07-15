@@ -1,9 +1,10 @@
 import { readFileSync, readdirSync } from 'fs'
+import { serialize } from 'next-mdx-remote/serialize'
 import matter from 'gray-matter'
 import { join } from 'path'
 import slugify from 'slugify'
 
-import { Blog, TypePreviewArticle } from '@Types'
+import { Blog, TypeBlogDetail, TypePreviewArticle } from '@Types'
 
 const Directory = join(process.cwd(), 'posts')
 
@@ -12,7 +13,7 @@ export const getAllBlogs = async () => {
 
   const blogs = DirectoryPosts.map((folder) => {
     const file = join(Directory, folder, 'index.mdx')
-    const fileContent = readFileSync(file)
+    const fileContent = readFileSync(file, 'utf-8')
     const { data } = matter(fileContent)
 
     return {
@@ -29,7 +30,7 @@ export const getBlogsPreview = () => {
 
   const previewArticle = DirectoryPosts.map((folder) => {
     const file = join(Directory, folder, 'index.mdx')
-    const fileContent = readFileSync(file)
+    const fileContent = readFileSync(file, 'utf-8')
     const { data } = matter(fileContent)
 
     return {
@@ -51,12 +52,15 @@ export const getBlogsSlug = () => {
   return blogsSlug
 }
 
-export const getBlogBySlug = (slug: string) => {
+export const getBlogBySlug = async (slug: string) => {
   const file = join(Directory, slug, 'index.mdx')
-  const fileContent = readFileSync(file)
-  const { data } = matter(fileContent)
+  const fileContent = readFileSync(file, 'utf-8')
+  const { content, data } = matter(fileContent)
+
+  const mdxSource = await serialize(content, { scope: data })
 
   return {
-    ...data,
-  }
+    source: mdxSource,
+    data,
+  } as TypeBlogDetail
 }
