@@ -18,11 +18,11 @@ const Header = () => {
   })
 
   return (
-    <header className="w-full h-auto bg-gradient-to-r from-gradient-start to-gradient-end dark:from-dark-secondary dark:to-dark-secondary">
+    <header className="w-full h-auto bg-gradient-to-r from-gradient-start to-gradient-end dark:from-dark-light dark:to-dark-light">
       <div className="h-14 w-full px-5 lg:px-0 flex justify-between flex-row-reverse lg:flex-row items-center md:mx-auto md:max-w-3xl lg:max-w-5xl">
         {isMovilAndTablet && <BtnDarkMode />}
         <Link href="/">
-          <h1 className="font-bold text-2xl text-center text-dark-light hover:text-dark dark:text-pink-500 dark:hover:text-pink-600">
+          <h1 className="font-bold text-2xl text-center text-dark-light dark:text-purple-400 dark:hover:text-purple-500 transition-colors ease-in-out duration">
             Luis Isasi
           </h1>
         </Link>

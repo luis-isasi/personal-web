@@ -14,7 +14,7 @@ const Categories = () => {
 
   return (
     <div className="w-full lg:min-w-xs lg:max-w-xs">
-      <p className="text-sm font-bold py-5 text-pink-600">CATEGORÍAS:</p>
+      <p className="text-sm font-bold py-5 text-pink-500">CATEGORÍAS:</p>
       {renderCategories()}
     </div>
   )
