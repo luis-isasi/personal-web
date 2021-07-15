@@ -1,5 +1,3 @@
-import Link from '@Components/Links/Link'
-
 const PresentingMe = () => {
   return (
     <div className="h-auto w-full xl:min-w-2xl xl:max-w-2xl  dark:text-white">
