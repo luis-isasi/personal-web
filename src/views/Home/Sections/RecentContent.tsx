@@ -25,7 +25,7 @@ const RecentContent = () => {
 
   return (
     <section className="w-full lg:max-w-2xl">
-      <p className="text-sm font-bold py-5 text-pink-600">
+      <p className="text-sm font-bold py-5 text-pink-500">
         CONTENIDO RECIENTE:
       </p>
       {renderArticle()}
