@@ -1,34 +1,31 @@
 import Highlight, { defaultProps } from 'prism-react-renderer'
 import nightOwlLight from 'prism-react-renderer/themes/nightOwlLight'
-import nightOwl from 'prism-react-renderer/themes/nightOwl'
+import palenight from 'prism-react-renderer/themes/palenight'
 
-import useTheme from '@Hooks/useTheme'
+import { LIGHT } from '@Constants'
+import { useContextTheme } from '@Context/contextTheme'
 
-interface Props {
-  children: string
-}
-
-const CodeSnippet: React.FC<Props> = ({ children }) => {
-  const { theme } = useTheme()
+const CodeSnippet: React.FC<{ children: string }> = ({ children }) => {
+  const { theme } = useContextTheme()
 
   return (
     <Highlight
       {...defaultProps}
       code={children.trim()}
       language="jsx"
-      theme={nightOwlLight}
+      theme={theme === LIGHT ? nightOwlLight : palenight}
     >
       {({ className, tokens, getLineProps, getTokenProps, style }) => {
-        // console.log({ className })
-        // console.log({ tokens })
-        // console.log({ getLineProps })
-        // console.log({ getTokenProps })
-        // console.log({ style })
-
         return (
-          <pre className="bg-white px-4 py-3 my-4 rounded-md font-semibold">
+          <pre
+            className={`${className} my-4 rounded-md font-semibold border-20 border-gray-100 dark:border-transparent`}
+            style={style}
+          >
             {tokens.map((line, i) => (
-              <div {...getLineProps({ line, key: i })}>
+              <div
+                {...getLineProps({ line, key: i })}
+                className="bg-gray-100 dark:bg-transparent"
+              >
                 {line.map((token, key) => (
                   <span {...getTokenProps({ token, key })} />
                 ))}

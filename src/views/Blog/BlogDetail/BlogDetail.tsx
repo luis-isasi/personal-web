@@ -23,7 +23,7 @@ const BlogDetail: React.FC<TypeBlogDetail> = ({ source, data }) => {
             <h3 className="text-black dark:text-yellow-400 font-bold text-center text-2xl lg:text-4xl pt-7 lg:pt-10 pb-4 lg:pb-8">
               {data.title}
             </h3>
-            <div className="bg-gray-400">
+            <div className="">
               <MDXRemote {...source} />
             </div>
           </MDXProvider>
