@@ -1,10 +1,10 @@
 import IconDark from '@Components/Icons/IconDark'
 import IconLight from '@Components/Icons/IconLight'
-import useTheme from '@Hooks/useTheme'
+import { useContextTheme } from '@Context/contextTheme'
 import { DARK, LIGHT } from '@Constants'
 
 const BtnDarkMode = () => {
-  const { theme, changeTheme } = useTheme()
+  const { theme, changeTheme } = useContextTheme()
 
   const darkModeOff = new Audio('/Sounds/switch_darkmode-off.mp3')
   const darkModeOn = new Audio('/Sounds/switch_darkmode-on.mp3')

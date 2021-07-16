@@ -19,6 +19,7 @@
       "@Components/*": ["./src/components/*"],
       "@Views/*": ["./src/views/*"],
       "@Hooks/*": ["./src/hooks/*"],
+      "@Context/*": ["./src/context/*"],
       "@Constants": ["./src/constants.ts"],
       "@Types": ["./src/types.ts"],
       "@Hoc/*": ["./src/hoc/*"]
