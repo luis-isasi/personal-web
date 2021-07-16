@@ -2,19 +2,31 @@
 title: "Este es mi primer post"
 contentPreview: 'Esta es la descripcion para mi primer post, espero que todo vaya bien'
 createdAt: "14/07/2021"
-categories: "react, go"
+categories: "react"
 ---
 ## Introducción
-Esta es una collección de snippets que suelo usar dentro de mis proyectos personales. La lista irá crecimiento conforme vaya descubriendo
-nuevas cosas. Puedes revisar la documentación completa en [gorm.io](https://gorm.io/).
+Este blog, es un blog de test, hablaremos sobre react js.
 
-## ¿Cómo instalar GORM?
+## ¿Cómo crear un proyecto de react con create-react-app?
 ```bash
-go get gorm.io/gorm
+  npx create-react-app my-app
 ```
 
-## ¿Cómo actualizar GORM?
-Similar a la instalación pero con el flag "-u" de update.
+## ¿Cómo crear un componente en react?
+Creamos un archivo con el nombre de tu componente(recuerda que los nombres de los componentes deben iniciar en mayúscula),
+dentro del archivo escribimos el siguiente código.
+
 ```bash
-go get -u gorm.io/gorm
+const MyComponent = () => {
+  const text = "Hello World!";
+
+  return (
+    <div>
+      <span>My first component</span>
+      <span>{text}</span>
+    </div>
+  );
+};
+
+export default MyComponent;
 ```

@@ -5,16 +5,9 @@ const PresentingMe = () => {
         <span>¡Hola! 😀</span>
         <br />
         <span>
-          Soy{' '}
-          {/* <Link href="/">
-            <h1 className="min-w-min inline-block text-purple-600">
-              Luis Isasi
-            </h1>
-          </Link> */}
-          {/* , */}
-          un Desarrollador Front-end con metas de ser Full Stack, conviertiendo
-          ideas del mundo real a codigo usando principalmente Javascript y
-          Typescript.
+          Soy un Desarrollador Front-end con metas de ser Full Stack,
+          conviertiendo ideas del mundo real a codigo usando principalmente
+          Javascript y Typescript.
         </span>
       </section>
       <br />
@@ -23,8 +16,7 @@ const PresentingMe = () => {
         <p>
           Este lugar será mi portafolio, donde almacenaré todos mis
           conocimientos a lo largo de mi carrera como front-end y aportar a
-          nuevos devs con artículos, proyectos, mis experiencias y demás, Espero
-          sea de tu agrado.
+          nuevos devs con artículos, proyectos, mis experiencias y demás.
         </p>
         <br />
         <p>
