@@ -5,16 +5,15 @@
 @layer utilities {
   .scrool-none::-webkit-scrollbar {
     -webkit-appearance: none;
-    width: 8px;
+    @apply w-2 h-2
   }
 
   .bg-scroolbar-white::-webkit-scrollbar-track {
-    background-color: white;
+    @apply bg-white dark:bg-gray-700;
   }
 
   .scroolbar::-webkit-scrollbar-thumb {
-    background-color: #aeaeb1;
     border-radius: 12px;
-    border: 1px solid white;
+    @apply border border-solid border-white dark:border-gray-700 bg-gray-400 dark:bg-gray-500
   }
 }
