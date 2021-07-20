@@ -8,7 +8,7 @@ const Categories: React.FC<{ categories: Categorie[] }> = ({ categories }) => {
         <Link
           href={url}
           key={`${i}-${name}`}
-          className="bg-indigo-600 m-1 px-3 py-1 rounded-md text-white font-medium hover:bg-indigo-500 transition-all ease-in-out duration-150"
+          className="bg-indigo-600 m-1 w-auto max-w-min px-3 pb-1 rounded-md text-white font-medium hover:bg-indigo-500 transition-all ease-in-out duration-150"
         >
           {name}
         </Link>
@@ -19,7 +19,7 @@ const Categories: React.FC<{ categories: Categorie[] }> = ({ categories }) => {
   return (
     <div className="w-full lg:min-w-xs lg:max-w-xs">
       <p className="text-sm font-bold py-5 text-pink-500">CATEGORÍAS:</p>
-      {renderCategories()}
+      <div className="flex flex-wrap">{renderCategories()}</div>
     </div>
   )
 }
