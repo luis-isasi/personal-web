@@ -121,9 +121,10 @@ export const getAllCategories = async () => {
       filteredCategories.push({
         name: categorie,
         url: `/blog/categories/${categorie}`,
+        slug: slugify(categorie),
       })
     }
   })
 
-  return filteredCategories
+  return filteredCategories as Categorie[]
 }
