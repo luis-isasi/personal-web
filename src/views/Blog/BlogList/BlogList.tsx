@@ -9,21 +9,18 @@ interface Props {
 
 const BlogList: React.FC<Props> = ({ blogsPreviews }) => {
   const renderBlogsPreviews = () => {
-    return blogsPreviews.map(
-      ({ title, contentPreview, createdAt, url, slug, categories }, i) => {
-        return (
-          <li key={`${i}-${slug}`} className="">
-            <PreviewArticle
-              title={title}
-              contentPreview={contentPreview}
-              createdAt={createdAt}
-              categories={categories}
-              url={url}
-            />
-          </li>
-        )
-      }
-    )
+    return blogsPreviews.map(({ title, contentPreview, createdAt, url }, i) => {
+      return (
+        <li key={`${i}-${title}`} className="">
+          <PreviewArticle
+            title={title}
+            contentPreview={contentPreview}
+            createdAt={createdAt}
+            url={url}
+          />
+        </li>
+      )
+    })
   }
 
   return (

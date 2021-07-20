@@ -4,7 +4,7 @@ import matter from 'gray-matter'
 import { join } from 'path'
 import slugify from 'slugify'
 
-import { Blog, TypeBlogDetail, TypePreviewArticle } from '@Types'
+import { Blog, TypeBlogDetail, TypePreviewArticle, Categorie } from '@Types'
 
 const Directory = join(process.cwd(), 'posts')
 
@@ -99,4 +99,35 @@ export const getPreviewRecentArticles = async (numberOfBlogs: number) => {
   })
 
   return recentsArticles as TypePreviewArticle[]
+}
+
+export const getAllCategories = async () => {
+  const DirectoryPosts = readdirSync(Directory)
+
+  let categories: string[] = []
+  let filteredCategories: Categorie[] = []
+
+  DirectoryPosts.forEach((folder) => {
+    const filePath = join(Directory, folder, 'index.mdx')
+    const file = readFileSync(filePath, 'utf-8')
+    const { data } = matter(file)
+
+    const fileCategories = data.categories.split('-')
+    categories = categories.concat(fileCategories)
+  })
+
+  // const filterCategories = categories.filter((categorie, index) => {
+  //   return categories.indexOf(categorie) === index
+  // })
+
+  categories.forEach((categorie, index) => {
+    if (categories.indexOf(categorie) === index) {
+      filteredCategories.push({
+        name: categorie,
+        url: `/blog/categories/${categorie}`,
+      })
+    }
+  })
+
+  return filteredCategories
 }
