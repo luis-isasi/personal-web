@@ -39,7 +39,7 @@ export interface TypeBlogDetail {
   source: MDXRemoteSerializeResult
   data: Blog
 }
-export interface TypePreviewArticle {
+export interface TypePreviewBlog {
   title: string
   contentPreview: string
   createdAt: string

@@ -1,12 +1,12 @@
-import { TypePreviewArticle } from '@Types'
-import PreviewArticle from '@Components/PreviewArticle'
+import { TypePreviewBlog } from '@Types'
+import PreviewBlog from '@/src/components/PreviewBlog'
 
-const RecentContent: React.FC<{ recentsArticles: TypePreviewArticle[] }> = ({
-  recentsArticles,
+const RecentContent: React.FC<{ recentsBlogs: TypePreviewBlog[] }> = ({
+  recentsBlogs,
 }) => {
-  const renderArticle = () =>
-    recentsArticles.map(({ title, contentPreview, createdAt, url }, i) => (
-      <PreviewArticle
+  const renderRecentsBlogs = () =>
+    recentsBlogs.map(({ title, contentPreview, createdAt, url }, i) => (
+      <PreviewBlog
         key={`${i}-${title}`}
         title={title}
         contentPreview={contentPreview}
@@ -20,7 +20,7 @@ const RecentContent: React.FC<{ recentsArticles: TypePreviewArticle[] }> = ({
       <p className="text-sm font-bold py-5 text-pink-500">
         CONTENIDO RECIENTE:
       </p>
-      {renderArticle()}
+      {renderRecentsBlogs()}
     </section>
   )
 }
