@@ -49,4 +49,5 @@ export interface TypePreviewBlog {
 export interface Categorie {
   name: string
   url: string
+  slug: string
 }
