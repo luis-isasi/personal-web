@@ -1,7 +1,7 @@
 import Link from '@Components/Links/Link'
-import { TypePreviewArticle } from '@Types'
+import { TypePreviewBlog } from '@Types'
 
-const PreviewArticle: React.FC<TypePreviewArticle> = ({
+const PreviewBlog: React.FC<TypePreviewBlog> = ({
   title,
   contentPreview,
   createdAt,
@@ -24,4 +24,4 @@ const PreviewArticle: React.FC<TypePreviewArticle> = ({
   )
 }
 
-export default PreviewArticle
+export default PreviewBlog

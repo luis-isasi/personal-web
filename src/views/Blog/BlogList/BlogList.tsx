@@ -1,10 +1,10 @@
 import Head from 'next/head'
 
-import PreviewArticle from '@Components/PreviewArticle'
-import { TypePreviewArticle } from '@Types'
+import PreviewBlog from '@/src/components/PreviewBlog'
+import { TypePreviewBlog } from '@Types'
 
 interface Props {
-  blogsPreviews: TypePreviewArticle[]
+  blogsPreviews: TypePreviewBlog[]
 }
 
 const BlogList: React.FC<Props> = ({ blogsPreviews }) => {
@@ -12,7 +12,7 @@ const BlogList: React.FC<Props> = ({ blogsPreviews }) => {
     return blogsPreviews.map(({ title, contentPreview, createdAt, url }, i) => {
       return (
         <li key={`${i}-${title}`} className="">
-          <PreviewArticle
+          <PreviewBlog
             title={title}
             contentPreview={contentPreview}
             createdAt={createdAt}

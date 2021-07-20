@@ -4,14 +4,14 @@ import matter from 'gray-matter'
 import { join } from 'path'
 import slugify from 'slugify'
 
-import { Blog, TypeBlogDetail, TypePreviewArticle, Categorie } from '@Types'
+import { Blog, TypeBlogDetail, TypePreviewBlog, Categorie } from '@Types'
 
-const Directory = join(process.cwd(), 'posts')
+const Directory = join(process.cwd(), 'blogs')
 
 export const getAllBlogs = async () => {
-  const DirectoryPosts = readdirSync(Directory)
+  const DirectoryBlogs = readdirSync(Directory)
 
-  const blogs = DirectoryPosts.map((folder) => {
+  const blogs = DirectoryBlogs.map((folder) => {
     const file = join(Directory, folder, 'index.mdx')
     const fileContent = readFileSync(file, 'utf-8')
     const { data } = matter(fileContent)
@@ -26,9 +26,9 @@ export const getAllBlogs = async () => {
 }
 
 export const getBlogsPreview = () => {
-  const DirectoryPosts = readdirSync(Directory)
+  const DirectoryBlogs = readdirSync(Directory)
 
-  const previewArticle = DirectoryPosts.map((folder) => {
+  const previewBlogs = DirectoryBlogs.map((folder) => {
     const filePath = join(Directory, folder, 'index.mdx')
     const fileContent = readFileSync(filePath, 'utf-8')
     const { data } = matter(fileContent)
@@ -39,13 +39,13 @@ export const getBlogsPreview = () => {
     }
   })
 
-  return previewArticle as TypePreviewArticle[]
+  return previewBlogs as TypePreviewBlog[]
 }
 
 export const getBlogsSlug = () => {
-  const DirectoryPosts = readdirSync(Directory)
+  const DirectoryBlogs = readdirSync(Directory)
 
-  const blogsSlug = DirectoryPosts.map((folder) => {
+  const blogsSlug = DirectoryBlogs.map((folder) => {
     return slugify(folder)
   })
 
@@ -65,21 +65,21 @@ export const getBlogBySlug = async (slug: string) => {
   } as TypeBlogDetail
 }
 
-export const getPreviewRecentArticles = async (numberOfBlogs: number) => {
-  const DirectoryFirstPosts = readdirSync(Directory).slice(0, numberOfBlogs)
+export const getPreviewRecentBlogs = async (numberOfBlogs: number) => {
+  const DirectoryRecentBlogs = readdirSync(Directory).slice(0, numberOfBlogs)
 
-  const recentsArticles = DirectoryFirstPosts.map((folder) => {
+  const recentsBlogs = DirectoryRecentBlogs.map((folder) => {
     const filePath = join(Directory, folder, 'index.mdx')
     const fileContent = readFileSync(filePath, 'utf-8')
     const { data } = matter(fileContent)
 
-    const article = { ...data, url: `/blog/${slugify(folder)}` }
+    const previewBlog = { ...data, url: `/blog/${slugify(folder)}` }
 
-    return article as TypePreviewArticle
+    return previewBlog as TypePreviewBlog
   })
 
   //order by date
-  recentsArticles.sort((a, b) => {
+  recentsBlogs.sort((a, b) => {
     const [yearA, monthA, dayA] = a.createdAt.split('/').reverse()
     const [yearB, monthB, dayB] = b.createdAt.split('/').reverse()
 
@@ -98,16 +98,16 @@ export const getPreviewRecentArticles = async (numberOfBlogs: number) => {
     return timeB - timeA
   })
 
-  return recentsArticles as TypePreviewArticle[]
+  return recentsBlogs as TypePreviewBlog[]
 }
 
 export const getAllCategories = async () => {
-  const DirectoryPosts = readdirSync(Directory)
+  const DirectoryBlogs = readdirSync(Directory)
 
   let categories: string[] = []
   let filteredCategories: Categorie[] = []
 
-  DirectoryPosts.forEach((folder) => {
+  DirectoryBlogs.forEach((folder) => {
     const filePath = join(Directory, folder, 'index.mdx')
     const file = readFileSync(filePath, 'utf-8')
     const { data } = matter(file)
@@ -115,10 +115,6 @@ export const getAllCategories = async () => {
     const fileCategories = data.categories.split('-')
     categories = categories.concat(fileCategories)
   })
-
-  // const filterCategories = categories.filter((categorie, index) => {
-  //   return categories.indexOf(categorie) === index
-  // })
 
   categories.forEach((categorie, index) => {
     if (categories.indexOf(categorie) === index) {
