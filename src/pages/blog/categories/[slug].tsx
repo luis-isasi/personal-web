@@ -1,5 +1,5 @@
 import { GetStaticProps, GetStaticPaths } from 'next'
-import { getAllCategories } from '@/mdx-utils'
+import { getAllCategories, getBlogsByCategorie } from '@/mdx-utils'
 
 export { default } from '@/src/views/Blog/BlogsByCategorie'
 
@@ -17,5 +17,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
 }
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
-  return { props: {} }
+  const categorie = params?.slug
+  const blogsByCategorie = await getBlogsByCategorie(categorie as string)
+  return { props: { blogsByCategorie } }
 }

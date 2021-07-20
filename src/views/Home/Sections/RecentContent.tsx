@@ -1,7 +1,7 @@
-import { TypePreviewBlog } from '@Types'
+import { Blog } from '@Types'
 import PreviewBlog from '@/src/components/PreviewBlog'
 
-const RecentContent: React.FC<{ recentsBlogs: TypePreviewBlog[] }> = ({
+const RecentContent: React.FC<{ recentsBlogs: Blog[] }> = ({
   recentsBlogs,
 }) => {
   const renderRecentsBlogs = () =>
