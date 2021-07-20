@@ -19,7 +19,7 @@ const BlogDetail: React.FC<TypeBlogDetail> = ({ source, data }) => {
         <title>{`${data.title} | Luis Isasi`}</title>
       </Head>
       <div className="w-full bg-white dark:bg-dark-light">
-        <div className="w-full sm:max-w-xl px-5 py-4 lg:px-0 md:max-w-2xl xl:max-w-5xl h-auto mx-auto">
+        <div className="w-full sm:max-w-xl px-5 py-4 lg:px-0 md:max-w-2xl xl:max-w-3xl h-auto mx-auto">
           <MDXProvider components={mdxComponents}>
             <h2 className="text-dark-light dark:text-white font-bold text-center text-2xl lg:text-4xl p-0 lg:py-8">
               {data.title}

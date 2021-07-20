@@ -29,8 +29,8 @@ export const getBlogsPreview = () => {
   const DirectoryPosts = readdirSync(Directory)
 
   const previewArticle = DirectoryPosts.map((folder) => {
-    const file = join(Directory, folder, 'index.mdx')
-    const fileContent = readFileSync(file, 'utf-8')
+    const filePath = join(Directory, folder, 'index.mdx')
+    const fileContent = readFileSync(filePath, 'utf-8')
     const { data } = matter(fileContent)
 
     return {
@@ -53,8 +53,8 @@ export const getBlogsSlug = () => {
 }
 
 export const getBlogBySlug = async (slug: string) => {
-  const file = join(Directory, slug, 'index.mdx')
-  const fileContent = readFileSync(file, 'utf-8')
+  const filePath = join(Directory, slug, 'index.mdx')
+  const fileContent = readFileSync(filePath, 'utf-8')
   const { content, data } = matter(fileContent)
 
   const mdxSource = await serialize(content, { scope: data })
@@ -63,4 +63,40 @@ export const getBlogBySlug = async (slug: string) => {
     source: mdxSource,
     data,
   } as TypeBlogDetail
+}
+
+export const getPreviewRecentArticles = async (numberOfBlogs: number) => {
+  const DirectoryFirstPosts = readdirSync(Directory).slice(0, numberOfBlogs)
+
+  const recentsArticles = DirectoryFirstPosts.map((folder) => {
+    const filePath = join(Directory, folder, 'index.mdx')
+    const fileContent = readFileSync(filePath, 'utf-8')
+    const { data } = matter(fileContent)
+
+    const article = { ...data, url: `/blog/${slugify(folder)}` }
+
+    return article as TypePreviewArticle
+  })
+
+  //order by date
+  recentsArticles.sort((a, b) => {
+    const [yearA, monthA, dayA] = a.createdAt.split('/').reverse()
+    const [yearB, monthB, dayB] = b.createdAt.split('/').reverse()
+
+    const timeA = new Date(
+      parseInt(yearA),
+      parseInt(monthA),
+      parseInt(dayA)
+    ).getTime()
+
+    const timeB = new Date(
+      parseInt(yearB),
+      parseInt(monthB),
+      parseInt(dayB)
+    ).getTime()
+
+    return timeB - timeA
+  })
+
+  return recentsArticles as TypePreviewArticle[]
 }
