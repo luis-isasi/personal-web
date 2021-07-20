@@ -5,10 +5,10 @@ import Technologies from './components/Technologies'
 import PresentingMe from './Sections/PresentingMe'
 import RecentContent from './Sections/RecentContent'
 import Categories from './components/Categories'
-import { TypePreviewBlog, Categorie } from '@Types'
+import { Blog, Categorie } from '@Types'
 
 const Home: React.FC<{
-  recentsBlogs: TypePreviewBlog[]
+  recentsBlogs: Blog[]
   categories: Categorie[]
 }> = ({ recentsBlogs, categories }) => {
   return (

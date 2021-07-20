@@ -36,8 +36,10 @@ const Layout: React.FC<Props> = ({
 
   return (
     <div className="w-full h-auto font-sans">
-      <Header />
-      {children}
+      <div className="min-h-screen h-auto w-full bg-white dark:bg-dark-light">
+        <Header />
+        {children}
+      </div>
       <Footer />
     </div>
   )

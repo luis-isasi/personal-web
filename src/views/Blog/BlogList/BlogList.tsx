@@ -1,10 +1,10 @@
 import Head from 'next/head'
 
 import PreviewBlog from '@/src/components/PreviewBlog'
-import { TypePreviewBlog } from '@Types'
+import { Blog } from '@Types'
 
 interface Props {
-  blogsPreviews: TypePreviewBlog[]
+  blogsPreviews: Blog[]
 }
 
 const BlogList: React.FC<Props> = ({ blogsPreviews }) => {
@@ -28,7 +28,7 @@ const BlogList: React.FC<Props> = ({ blogsPreviews }) => {
       <Head>
         <title>Blog | Luis Isasi</title>
       </Head>
-      <div className="dark:bg-dark-light w-full ">
+      <div className="dark:bg-dark-light w-full">
         <div className="w-full mx-auto px-5 xl:px-0 py-6 md:py-10 sm:max-w-xl md:max-w-3xl">
           <h3 className="text-yellow-500 dark:text-yellow-400 lg:mb-10  text-center font-bold text-2xl md:text-3xl lg:text-4xl">
             Listado de Blogs

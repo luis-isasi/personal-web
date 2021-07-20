@@ -26,28 +26,21 @@ export type UserSettings = {
   theme: Theme
 }
 
-//Post
 export interface Blog {
   title: string
   contentPreview: string
   createdAt: string
+  url: string
   slug?: string
-  categories?: string
+  categories?: Categorie[]
 }
-
 export interface TypeBlogDetail {
   source: MDXRemoteSerializeResult
   data: Blog
-}
-export interface TypePreviewBlog {
-  title: string
-  contentPreview: string
-  createdAt: string
-  url: string
 }
 
 export interface Categorie {
   name: string
   url: string
-  slug: string
+  slug?: string
 }
