@@ -45,3 +45,8 @@ export interface TypePreviewArticle {
   createdAt: string
   url: string
 }
+
+export interface Categorie {
+  name: string
+  url: string
+}

@@ -5,11 +5,12 @@ import Technologies from './components/Technologies'
 import PresentingMe from './Sections/PresentingMe'
 import RecentContent from './Sections/RecentContent'
 import Categories from './components/Categories'
-import { TypePreviewArticle } from '@Types'
+import { TypePreviewArticle, Categorie } from '@Types'
 
-const Home: React.FC<{ recentsArticles: TypePreviewArticle[] }> = ({
-  recentsArticles,
-}) => {
+const Home: React.FC<{
+  recentsArticles: TypePreviewArticle[]
+  categories: Categorie[]
+}> = ({ recentsArticles, categories }) => {
   return (
     <>
       <Head>
@@ -25,7 +26,7 @@ const Home: React.FC<{ recentsArticles: TypePreviewArticle[] }> = ({
         </div>
         <div className="h-auto w-full p-5 md:pt-5 md:pb-12 flex flex-col lg:flex-row lg:justify-between md:max-w-3xl lg:max-w-4xl xl:max-w-5xl lg:px-0 mx-auto">
           <RecentContent recentsArticles={recentsArticles} />
-          <Categories />
+          <Categories categories={categories} />
         </div>
       </div>
     </>
