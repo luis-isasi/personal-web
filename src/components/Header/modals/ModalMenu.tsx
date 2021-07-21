@@ -11,7 +11,7 @@ const ModalMenu: React.FC<Props> = ({ closeModal }) => {
     <ModalBase className="bg-dark-light">
       <div className="p-5 w-full h-full flex justify-between  md:mx-auto md:max-w-3xl">
         <div className="mt-8">
-          <Nav />
+          <Nav closeModal={closeModal} />
         </div>
         <button
           onClick={closeModal}

@@ -26,8 +26,8 @@ const BlogList: React.FC<Props> = ({ blogsPreviews, categories }) => {
   }
 
   const renderCategories = () => {
-    return categories.map(({ name, url }) => {
-      return <BtnCategorie url={url} name={name} />
+    return categories.map(({ name, url }, i) => {
+      return <BtnCategorie key={`${i}-${name}`} url={url} name={name} />
     })
   }
 
