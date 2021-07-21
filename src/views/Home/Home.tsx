@@ -4,7 +4,7 @@ import Wave from '@Components/Wave'
 import Technologies from './components/Technologies'
 import PresentingMe from './Sections/PresentingMe'
 import RecentContent from './Sections/RecentContent'
-import Categories from './components/Categories'
+import Categories from '@/src/views/Home/components/Categories'
 import { Blog, Categorie } from '@Types'
 
 const Home: React.FC<{
