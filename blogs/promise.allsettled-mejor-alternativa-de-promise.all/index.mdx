@@ -1,0 +1,115 @@
+--- 
+title: 'Promise.allSettled() - ¿Mejor alternativa que Promise.all()?'
+contentPreview: 'Probablemente conoces a Promise.all() y té gusta usarlo, pero hay una gran desventaja de este frente a Promise.allSettled(), pues en este blog te cuento esa diferencia que hace a Promise.allSettled() una mejor alternativa'
+createdAt: '22/08/2021'
+categories: "javascript"
+---
+
+### Introducción
+Probablemente conoces a `Promise.all()` y té gusta usarlo, pero hay una gran desventaja de este frente a `Promise.allSettled()`, pues en este blog te cuento esa diferencia que lo hace una mejor alternativa.
+
+Como sabras `Promise.all()` es un método que nos ayuda a resolver varias promesas en js y te devuelve el resultado de esas promesas tal como se las pasaste (en el mismo orden luego de que todas se resuelvan), pero ¿Qué sucede si alguna de estas promesas o request falla? pues vamos a verlo.
+
+### Promise.all
+Como dije anteriormente esta nos resuelve las promesas en el mismo orden que se las pasamos y nos la retorna dentro de una array.
+
+```
+Promise.all([promise1, promise2, promise3])
+.then((values) => {
+	const [resultPromise1, resultPromise2, resultPromise3] = values;
+})
+.catch()
+```
+
+y hasta ahora todo okey, ¿verdad? pero no es así, el único defecto que tiene `Promise.all()` es que si una de esas promesas falla, este se resolverá en el catch, dando a entender como si todas hubieran fallado.
+
+```
+Promise.all([
+	Promise.resolve('Promesa resuelta exitosamente'),
+	Promise.reject(new Error('ERROR!!!!!!!!'))
+])
+.then()
+.catch((e) => {
+    console.error(e) // output: 'ERROR!!!!!!!!'
+})
+```
+####¿Qué sucede si varias promesas fallan?
+Otra desventaja es que si varias promesas fallan, se detendrá en el primer fallo, un ejemplo para que lo puedas entender mejor.
+
+```
+Promise.all([
+	Promise.resolve('Promesa resuelta exitosamente'),
+	Promise.reject(new Error('FIRST ERROR!!!!!!!!')),
+	Promise.reject(new Error('SECOND ERROR!!!!!!!!'))
+])
+.then()
+.catch((e) => {
+    console.error(e) // output: 'FIRST ERROR!!!!!!!!'
+})
+```
+
+Y quizás puedas decir "no hay problema ya tengo una solución para eso" y está bien, pero quizás cuando conozcas la ventaja de `Promise.allSettled()` te preguntaras 2 veces si en verdad necesitas tener una solución para ello.
+
+### Promise.allSettled
+Este método trabaja de la misma manera que el anterior, pero la única diferencia es que si una promesa falla, este no lo resolverá en el `.catch`, si no mandará todos los valores dentro del `.then` y cuando hagas [destructuring]('https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment') del array que contiene la data, ahí encontrarás la falla de aquella promesa errónea.
+
+En el siguiente ejemplo le pasaremos 3 promesas, en la primera todo ok luego de 5 segundos (con esto quiero que se aclare que siempre se retornará en el mismo orden, no importa cuanto demoré alguna de las promesas), en la segunda se resolverá al instante, **la tercera fallará**.
+
+```
+Promise.allSettled([
+	new Promise(resolve => setTimeout(() => resolve(1), 5000)),
+	Promise.resolve('Promesa resuelta'),
+	Promise.reject(new Error('ERROR!!!!!!!!'))
+])
+.then((values) => {
+	const [resultPromise1, resultPromise2, resultPromise3] = values;
+	console.log({resultPromise1, resultPromise2, resultPromise3})
+})
+.catch()
+
+//output
+{
+  resultPromise1: { status: 'fulfilled', value: 1 },
+  resultPromise2: {
+    status: 'fulfilled',
+    value: 'Promesa resuelta'
+  },
+  resultPromise3: {
+    status: 'rejected',
+    reason: Error: 'ERROR!!!!!!!!'
+  }
+}
+```
+Como pueden ver también nos devolverá una propiedad `status` dependiendo si la promesa se resolvió correctamente o incorrectamente (si está todo bien será `fulfilled`, y si falla será `rejected`)
+
+#### ¿Qué sucede si varias promesas fallan?
+Pues su comportamiento sigue siendo el mismo, devolviendo en una array las promesas falladas en el mismo orden.
+```
+Promise.allSettled([
+	Promise.reject(new Error('FIRST ERROR!!!!!!!!')),
+	Promise.reject(new Error('SECOND ERROR!!!!!!!!'))
+  
+])
+.then((values) => {
+	const [resultPromise1, resultPromise2] = values;
+	console.log({resultPromise1, resultPromise2 })
+})
+.catch()
+
+//output
+{
+  resultPromise1: {
+    status: 'rejected',
+    reason: Error: 'FIRST ERROR!!!!!!!!'
+  },
+  resultPromise2: {
+    status: 'rejected',
+    reason: Error: 'SECOND ERROR!!!!!!!!'
+  }
+}
+```
+
+Entonces con `Promise.allSettled()` podemos manejar la respuesta de cada promesa sin importar cuantas fallen.
+
+### Conclusión
+Está claro que `Promise.allSettled()` tiene algunas ventajas sobre `Promise.all()` pero eso no significa que todos debamos usar siempre `Promise.allSettled()`, todo depende lo que estés haciendo, quizás en verdad tú si quieres que se detengan las request cuando una de ellas falla, pues ahí si estaría bien usar `Promise.all()`, entonces ninguno de los 2 es mejor que el otro, todo depende del caso de uso que tengas y de lo que quieras hacer, espero haberte ayudado.
