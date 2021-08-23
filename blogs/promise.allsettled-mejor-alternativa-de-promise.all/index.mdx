@@ -1,6 +1,6 @@
 --- 
-title: 'Promise.allSettled() - ¿Mejor alternativa que Promise.all()?'
-contentPreview: 'Probablemente conoces a Promise.all() y té gusta usarlo, pero hay una gran desventaja de este frente a Promise.allSettled(), pues en este blog te cuento esa diferencia que hace a Promise.allSettled() una mejor alternativa'
+title: 'Promise.allSettled - ¿Mejor alternativa que Promise.all 🤨?'
+contentPreview: 'Probablemente conoces a Promise.all() y té gusta usarlo, pero hay una gran desventaja de este frente a Promise.allSettled(), pues en este blog te cuento esa diferencia que hace a Promise.allSettled() una mejor alternativa.'
 createdAt: '22/08/2021'
 categories: "javascript"
 ---
@@ -33,7 +33,7 @@ Promise.all([
     console.error(e) // output: 'ERROR!!!!!!!!'
 })
 ```
-####¿Qué sucede si varias promesas fallan?
+#### ¿Qué sucede si varias promesas fallan?
 Otra desventaja es que si varias promesas fallan, se detendrá en el primer fallo, un ejemplo para que lo puedas entender mejor.
 
 ```
@@ -48,12 +48,18 @@ Promise.all([
 })
 ```
 
-Y quizás puedas decir "no hay problema ya tengo una solución para eso" y está bien, pero quizás cuando conozcas la ventaja de `Promise.allSettled()` te preguntaras 2 veces si en verdad necesitas tener una solución para ello.
+Y quizás puedas decir "no hay problema ya tengo una solución para eso" y está bien, pero quizás cuando
+ conozcas la ventaja de `Promise.allSettled()` te preguntaras 2 veces si en verdad necesitas tener una solución para ello.
 
 ### Promise.allSettled
-Este método trabaja de la misma manera que el anterior, pero la única diferencia es que si una promesa falla, este no lo resolverá en el `.catch`, si no mandará todos los valores dentro del `.then` y cuando hagas [destructuring]('https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment') del array que contiene la data, ahí encontrarás la falla de aquella promesa errónea.
+Este método trabaja de la misma manera que el anterior, pero la única diferencia es que si una promesa falla,
+este no lo resolverá en el `.catch`, si no mandará todos los valores dentro del `.then` y cuando hagas
+[destructuring](https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment) del 
+array que contiene la data, ahí encontrarás la falla de aquella promesa errónea.
 
-En el siguiente ejemplo le pasaremos 3 promesas, en la primera todo ok luego de 5 segundos (con esto quiero que se aclare que siempre se retornará en el mismo orden, no importa cuanto demoré alguna de las promesas), en la segunda se resolverá al instante, **la tercera fallará**.
+En el siguiente ejemplo le pasaremos 3 promesas, en la primera todo ok luego de 5 segundos 
+(con esto quiero que se aclare que siempre se retornará en el mismo orden, no importa cuanto demoré alguna de las promesas),
+en la segunda se resolverá al instante, **la tercera fallará**.
 
 ```
 Promise.allSettled([
@@ -80,10 +86,12 @@ Promise.allSettled([
   }
 }
 ```
-Como pueden ver también nos devolverá una propiedad `status` dependiendo si la promesa se resolvió correctamente o incorrectamente (si está todo bien será `fulfilled`, y si falla será `rejected`)
+Como pueden ver también nos devolverá una propiedad `status` dependiendo si la promesa se resolvió correctamente 
+o incorrectamente (si está todo bien será `fulfilled`, y si falla será `rejected`)
 
 #### ¿Qué sucede si varias promesas fallan?
 Pues su comportamiento sigue siendo el mismo, devolviendo en una array las promesas falladas en el mismo orden.
+
 ```
 Promise.allSettled([
 	Promise.reject(new Error('FIRST ERROR!!!!!!!!')),
@@ -112,4 +120,8 @@ Promise.allSettled([
 Entonces con `Promise.allSettled()` podemos manejar la respuesta de cada promesa sin importar cuantas fallen.
 
 ### Conclusión
-Está claro que `Promise.allSettled()` tiene algunas ventajas sobre `Promise.all()` pero eso no significa que todos debamos usar siempre `Promise.allSettled()`, todo depende lo que estés haciendo, quizás en verdad tú si quieres que se detengan las request cuando una de ellas falla, pues ahí si estaría bien usar `Promise.all()`, entonces ninguno de los 2 es mejor que el otro, todo depende del caso de uso que tengas y de lo que quieras hacer, espero haberte ayudado.
+Está claro que `Promise.allSettled()` tiene algunas ventajas sobre `Promise.all()` pero eso no significa que 
+todos debamos usar siempre `Promise.allSettled()`, todo depende lo que estés haciendo, quizás en verdad tú si 
+quieres que se detengan las request cuando una de ellas falla, pues ahí si estaría bien usar `Promise.all()`, 
+entonces ninguno de los 2 es mejor que el otro, todo depende del caso de uso que tengas y de lo que quieras hacer,
+espero haberte ayudado 😀.
