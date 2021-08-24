@@ -2,7 +2,7 @@ import Head from 'next/head'
 import { TypeBlogDetail } from '@Types'
 import { MDXRemote } from 'next-mdx-remote'
 import { MDXProvider, MDXProviderProps } from '@mdx-js/react'
-import { H3, H4, H5, P, InlineCode, A } from '@Components/MdxComponents'
+import { H3, H4, H5, P, InlineCode, A, Li } from '@Components/MdxComponents'
 import CodeSnippet from '@/src/components/CodeSnippet'
 
 const mdxComponents: MDXProviderProps['components'] = {
@@ -11,6 +11,7 @@ const mdxComponents: MDXProviderProps['components'] = {
   h5: H5,
   p: P,
   a: A,
+  li: Li,
   inlineCode: InlineCode,
   code: CodeSnippet,
 }

@@ -42,6 +42,10 @@ export const A: React.FC<{ href: string }> = ({ children, href }) => {
   )
 }
 
+export const Li: React.FC = ({ children }) => {
+  return <li className="list-disc list-inside py-2">{children}</li>
+}
+
 export const InlineCode: React.FC = ({ children }) => {
   return (
     <code className="bg-pink-50 dark:bg-base-light-dark-mode rounded-sm px-1">
