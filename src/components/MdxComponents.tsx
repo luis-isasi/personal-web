@@ -43,7 +43,9 @@ export const A: React.FC<{ href: string }> = ({ children, href }) => {
 }
 
 export const Li: React.FC = ({ children }) => {
-  return <li className="list-disc list-inside py-2">{children}</li>
+  return (
+    <li className="list-disc list-inside py-2 dark:text-white">{children}</li>
+  )
 }
 
 export const InlineCode: React.FC = ({ children }) => {

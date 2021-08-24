@@ -44,23 +44,23 @@ Necesitamos un número de posibilidades, pero si restamos el `max` y `min` tendr
   let random = Math.random() * posibilidades;
 ```
 
-Ahora con `Math.random()`, podemos aprovechar eso para convertirlo a un porcentaje y multiplicarlo por el número de posibilidades, tomando el ejemplo anterior de 3 y 6, las posibildades serian 4, si lo muliplicamos por decimal generado entre 0 y 1, es decir que el resultado de esta multiplicación sería menor que 4 y mayor que 0, entonces te estarás preguntando "y para qué quiero un decimal aleatorio entre 0 a 4", pues ahora vamos a las siguientes líneas de código.
+Ahora con el decimal generado por `Math.random()`, podemos multiplicarlo por el número de posibilidades, tomando el ejemplo anterior de 3 y 6, las posibildades serian 4, si lo muliplicamos por decimal generado, **entonces el resultado de esta multiplicación sería menor que 4 y mayor que 0**, entonces te estarás preguntando "y para qué quiero un decimal aleatorio entre 0 a 4", pues ahora vamos a las siguientes líneas de código.
 
 ```
-  random = Math.floor(random);
-  return min + random;
+random = Math.floor(random);
+return min + random;
 ```
 Ya que tenemos un decimal aleatorio de 0 a 4, agarramos la parte entera con `Math.floor()`, **tendríamos un número aleatorio entre 0 y el 4 (excluido, ya que `Math.random()` nunca retornará 1)** y solo faltaría sumarle el intervalo menor(`min`) y **la suma de estos nunca será mayor que el `max` ni menor que el `min`(ya que lo sumamos).**
 
-Un ejemplo con 3 y 6:
+Un ejemplo con 3 y 6 (puedes cambiar el valor generado por `Math.random` y siempre funcionará):
 ```
 function intervalNum(min, max) {
   const posibilidades =  max - min + 1; // posibilidades = 6 - 3 + 1 =  4
   let random = Math.random() * posibilidades; // random = 0.7 * 4 = 2.8
-  random = Math.floor(decimal); // random = 2
+  random = Math.floor(random); // random = 2
   return min + random; // output: 3 + 2 = 5
 }
 ```
-Con esta explicación quiero tu creatividad crezca y que sepas que todo es posible para los programadores.
+Con esta explicación quiero que tu creatividad crezca y que sepas que todo es posible para los programadores.
 
 Gracias por leer 😀.

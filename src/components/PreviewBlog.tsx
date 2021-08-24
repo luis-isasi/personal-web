@@ -8,7 +8,7 @@ const PreviewBlog: React.FC<Blog> = ({
   url,
 }) => {
   return (
-    <article className="rounded-md py-8">
+    <article className="rounded-md py-8 text-dark-light">
       <header className="font-bold text-xl dark:text-white">{title}</header>
       <time className="text-sm font-bold text-gray-400 dark:text-gray-500">
         {createdAt}
