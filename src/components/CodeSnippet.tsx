@@ -1,20 +1,27 @@
-import Highlight, { defaultProps } from 'prism-react-renderer'
+import Highlight, { defaultProps, Language } from 'prism-react-renderer'
+
 import palenight from 'prism-react-renderer/themes/palenight'
 
-const CodeSnippet: React.FC<{ children: string }> = ({ children }) => {
+const CodeSnippet: React.FC<{ children: string; language: Language }> = ({
+  children,
+  language = 'javascript',
+}) => {
   return (
     <Highlight
       {...defaultProps}
       code={children.trim()}
-      language="javascript"
+      language={language}
       theme={palenight}
     >
       {({ className, tokens, getLineProps, getTokenProps, style }) => {
         return (
           <pre
-            className={`${className} my-6 rounded-md font-semibold border-20 border-transparent overflow-x-auto`}
+            className={`${className} relative my-6 rounded-md font-semibold p-5 overflow-x-auto`}
             style={style}
           >
+            <span className="absolute top-0 right-1 text-sm text-white">
+              {language}
+            </span>
             {tokens.map((line, i) => (
               <div {...getLineProps({ line, key: i })}>
                 {line.map((token, key) => (
