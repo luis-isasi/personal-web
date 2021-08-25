@@ -5,11 +5,11 @@ import Technologies from './components/Technologies'
 import PresentingMe from './Sections/PresentingMe'
 import RecentContent from './Sections/RecentContent'
 import Categories from '@/src/views/Home/components/Categories'
-import { Blog, Categorie } from '@Types'
+import { Blog, Category } from '@Types'
 
 const Home: React.FC<{
   recentsBlogs: Blog[]
-  categories: Categorie[]
+  categories: Category[]
 }> = ({ recentsBlogs, categories }) => {
   return (
     <>

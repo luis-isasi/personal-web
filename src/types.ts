@@ -32,14 +32,14 @@ export interface Blog {
   createdAt: string
   url: string
   slug?: string
-  categories?: Categorie[]
+  categories?: Category[]
 }
 export interface TypeBlogDetail {
   source: MDXRemoteSerializeResult
   data: Blog
 }
 
-export interface Categorie {
+export interface Category {
   name: string
   url: string
   slug?: string

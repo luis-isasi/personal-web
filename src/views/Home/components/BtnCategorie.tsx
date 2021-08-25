@@ -1,7 +1,7 @@
 import Link from '@Components/Links/Link'
-import { Categorie } from '@Types'
+import { Category } from '@Types'
 
-const BtnCategorie: React.FC<Categorie> = ({ url, name }) => {
+const BtnCategorie: React.FC<Category> = ({ url, name }) => {
   return (
     <Link
       href={url}

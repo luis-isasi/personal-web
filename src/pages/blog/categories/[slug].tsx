@@ -17,7 +17,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
 }
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
-  const categorie = params?.slug
-  const blogsByCategorie = await getBlogsByCategorie(categorie as string)
+  const category = params?.slug
+  const blogsByCategorie = await getBlogsByCategorie(category as string)
   return { props: { blogsByCategorie } }
 }

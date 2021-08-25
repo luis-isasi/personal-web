@@ -1,8 +1,7 @@
-import Link from '@Components/Links/Link'
 import BtnCategorie from './BtnCategorie'
-import { Categorie } from '@Types'
+import { Category } from '@Types'
 
-const Categories: React.FC<{ categories: Categorie[] }> = ({ categories }) => {
+const Categories: React.FC<{ categories: Category[] }> = ({ categories }) => {
   const renderCategories = () => {
     return categories.map(({ name, url }, i) => {
       return <BtnCategorie key={`${i}-${name}`} url={url} name={name} />

@@ -6,7 +6,7 @@ const BlogsByCategorie: React.FC<{ blogsByCategorie: Blog[] }> = ({
   blogsByCategorie,
 }) => {
   const {
-    query: { slug: categorie },
+    query: { slug: category },
   } = useRouter()
 
   const renderBlogsByCategorie = () => {
@@ -30,7 +30,7 @@ const BlogsByCategorie: React.FC<{ blogsByCategorie: Blog[] }> = ({
     <div className="w-full dark:bg-dark-light">
       <div className="w-full mx-auto px-5 xl:px-0 py-6 md:py-10 sm:max-w-xl md:max-w-3xl">
         <h3 className="text-yellow-500 dark:text-yellow-400 lg:mb-10  text-center font-bold text-2xl md:text-3xl lg:text-4xl">
-          {`Blogs de ${categorie}`}
+          {`Blogs de ${category}`}
         </h3>
         <ul>{renderBlogsByCategorie()}</ul>
       </div>

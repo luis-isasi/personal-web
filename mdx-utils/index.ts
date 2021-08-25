@@ -4,7 +4,7 @@ import matter from 'gray-matter'
 import { join } from 'path'
 import slugify from 'slugify'
 
-import { TypeBlogDetail, Blog, Categorie } from '@Types'
+import { TypeBlogDetail, Blog, Category } from '@Types'
 
 const Directory = join(process.cwd(), 'blogs')
 const DirectoryBlogs = readdirSync(Directory)
@@ -47,7 +47,7 @@ export const getBlogBySlug = async (slug: string) => {
 
 export const getAllCategories = async () => {
   let categories: string[] = []
-  let filteredCategories: Categorie[] = []
+  let filteredCategories: Category[] = []
 
   DirectoryBlogs.forEach((folder) => {
     const filePath = join(Directory, folder, 'index.mdx')
@@ -58,20 +58,20 @@ export const getAllCategories = async () => {
     categories = categories.concat(fileCategories)
   })
 
-  categories.forEach((categorie, index) => {
-    if (categories.indexOf(categorie) === index) {
+  categories.forEach((category, index) => {
+    if (categories.indexOf(category) === index) {
       filteredCategories.push({
-        name: categorie,
-        url: `/blog/categories/${categorie}`,
-        slug: slugify(categorie),
+        name: category,
+        url: `/blog/categories/${category}`,
+        slug: slugify(category),
       })
     }
   })
 
-  return filteredCategories as Categorie[]
+  return filteredCategories as Category[]
 }
 
-export const getBlogsByCategorie = (categorie: string) => {
+export const getBlogsByCategorie = (category: string) => {
   const blogsByCategorie: Blog[] = []
 
   DirectoryBlogs.forEach((folder) => {
@@ -81,9 +81,9 @@ export const getBlogsByCategorie = (categorie: string) => {
 
     const categories: string[] = data.categories?.split(', ')
 
-    if (categories.includes(categorie)) {
+    if (categories.includes(category)) {
       const url = `/blog/${slugify(folder)}`
-      const categoriesTemplate: Categorie[] = categories.map((value) => {
+      const categoriesTemplate: Category[] = categories.map((value) => {
         return {
           name: value,
           url: `/blog/categories/${value}`,

@@ -2,11 +2,11 @@ import Head from 'next/head'
 
 import PreviewBlog from '@/src/components/PreviewBlog'
 import BtnCategorie from '@Views/Home/components/BtnCategorie'
-import { Blog, Categorie } from '@Types'
+import { Blog, Category } from '@Types'
 
 interface Props {
   blogsPreviews: Blog[]
-  categories: Categorie[]
+  categories: Category[]
 }
 
 const BlogList: React.FC<Props> = ({ blogsPreviews, categories }) => {
