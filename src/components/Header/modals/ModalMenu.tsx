@@ -3,18 +3,18 @@ import IconClose from '@Components/Icons/IconClose'
 import Nav from '../components/Nav'
 
 interface Props {
-  closeModal: () => void
+  handleModalNav: () => void
 }
 
-const ModalMenu: React.FC<Props> = ({ closeModal }) => {
+const ModalMenu: React.FC<Props> = ({ handleModalNav }) => {
   return (
     <ModalBase className="bg-dark-light">
       <div className="p-5 w-full h-full flex justify-between  md:mx-auto md:max-w-3xl">
         <div className="mt-8">
-          <Nav closeModal={closeModal} />
+          <Nav handleModalNav={handleModalNav} />
         </div>
         <button
-          onClick={closeModal}
+          onClick={handleModalNav}
           className="h-12 w-12 transform active:scale-80 transition-all duration-150 ease-in-out animate-appear-rotating"
         >
           <IconClose className="w-10 h-10 text-white" />

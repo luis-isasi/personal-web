@@ -11,8 +11,8 @@ const BtnMenu = () => {
     setIsModalMenu(!isModalMenu)
   }
 
-  const closeModal = () => {
-    setIsModalMenu(false)
+  const handleModalNav = () => {
+    setIsModalMenu(!isModalMenu)
   }
 
   return (
@@ -23,7 +23,7 @@ const BtnMenu = () => {
       >
         <Menu className="dark:text-white" />
       </button>
-      {isModalMenu && <ModalMenu closeModal={closeModal} />}
+      {isModalMenu && <ModalMenu handleModalNav={handleModalNav} />}
     </>
   )
 }

@@ -42,7 +42,7 @@ const BlogList: React.FC<Props> = ({ blogsPreviews, categories }) => {
             Listado de Blogs
           </h3>
           <div className="h-auto max-w-2xl mx-auto flex flex-col items-center mt-3 lg:mt-0">
-            <p className="mb-1 text-sm font-bold dark:text-white">Categorias</p>
+            <p className="mb-1 text-sm font-bold dark:text-white">Categorías</p>
             <div className="flex flex-wrap justify-center">
               {renderCategories()}
             </div>

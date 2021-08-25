@@ -7,15 +7,12 @@ export { default } from '@Views/Blog/BlogDetail'
 export const getStaticPaths: GetStaticPaths = async ({}) => {
   const blogsSlug = await getBlogsSlug()
 
-  //TODO: refactoring
-  const paths: any[] = []
-
-  blogsSlug.forEach((value) => {
-    paths.push({
+  const paths: any[] = blogsSlug.map((blogSlug) => {
+    return {
       params: {
-        slug: value,
+        blogSlug,
       },
-    })
+    }
   })
 
   return {
@@ -25,8 +22,7 @@ export const getStaticPaths: GetStaticPaths = async ({}) => {
 }
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
-  const slug = params?.slug as string
-  const { data, source } = await getBlogBySlug(slug)
+  const { data, source } = await getBlogBySlug(params?.blogSlug as string)
 
   return {
     props: {

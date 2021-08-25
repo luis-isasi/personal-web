@@ -1,13 +1,10 @@
-import dynamic from 'next/dynamic'
-
 import Link from '@Components/Links/Link'
 
 import useResponsive from '@Hooks/useResponsive'
 import { MEDIAQUERY_LG } from '@Constants'
 import Nav from './components/Nav'
 import BtnMenu from './components/BtnMenu'
-
-const BtnDarkMode = dynamic(() => import('@Components/Buttons/BtnDarkMode'))
+import BtnDarkMode from '@Components/Buttons/BtnDarkMode'
 
 const Header = () => {
   const isMovilAndTablet = useResponsive({
