@@ -24,7 +24,7 @@ export const H5: React.FC = ({ children }) => {
 
 export const P: React.FC = ({ children }) => {
   return (
-    <p className="mt-4 mb-8 text-base lg:text-lg text-dark-light dark:text-white">
+    <p className="mt-4 mb-8 text-base lg:text-lg xl:text-xl text-dark-light dark:text-white">
       {children}
     </p>
   )
@@ -44,7 +44,9 @@ export const A: React.FC<{ href: string }> = ({ children, href }) => {
 
 export const Li: React.FC = ({ children }) => {
   return (
-    <li className="list-disc list-inside py-2 dark:text-white">{children}</li>
+    <li className="list-disc list-inside pb-3 dark:text-white lg:text-lg xl:text-xl">
+      {children}
+    </li>
   )
 }
 
