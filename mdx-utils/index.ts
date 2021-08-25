@@ -9,8 +9,28 @@ import { TypeBlogDetail, Blog, Category } from '@Types'
 const Directory = join(process.cwd(), 'blogs')
 const DirectoryBlogs = readdirSync(Directory)
 
+const orderPreviewBlogsByDate = (previewBlogs: Blog[]) =>
+  previewBlogs.sort((a, b) => {
+    const [yearA, monthA, dayA] = a.createdAt.split('/').reverse()
+    const [yearB, monthB, dayB] = b.createdAt.split('/').reverse()
+
+    const timeA = new Date(
+      parseInt(yearA),
+      parseInt(monthA),
+      parseInt(dayA)
+    ).getTime()
+
+    const timeB = new Date(
+      parseInt(yearB),
+      parseInt(monthB),
+      parseInt(dayB)
+    ).getTime()
+
+    return timeB - timeA
+  })
+
 export const getBlogsPreview = () => {
-  const previewBlogs = DirectoryBlogs.map((folder) => {
+  let previewBlogs = DirectoryBlogs.map((folder) => {
     const filePath = join(Directory, folder, 'index.mdx')
     const fileContent = readFileSync(filePath, 'utf-8')
     const { data } = matter(fileContent)
@@ -18,10 +38,10 @@ export const getBlogsPreview = () => {
     return {
       ...data,
       url: `/blog/${slugify(folder)}`,
-    }
+    } as Blog
   })
 
-  return previewBlogs as Blog[]
+  return orderPreviewBlogsByDate(previewBlogs)
 }
 
 export const getBlogsSlug = () => {
@@ -115,25 +135,5 @@ export const getPreviewRecentBlogs = async (numberOfBlogs: number) => {
     return previewBlog as Blog
   })
 
-  //order by date
-  recentsBlogs.sort((a, b) => {
-    const [yearA, monthA, dayA] = a.createdAt.split('/').reverse()
-    const [yearB, monthB, dayB] = b.createdAt.split('/').reverse()
-
-    const timeA = new Date(
-      parseInt(yearA),
-      parseInt(monthA),
-      parseInt(dayA)
-    ).getTime()
-
-    const timeB = new Date(
-      parseInt(yearB),
-      parseInt(monthB),
-      parseInt(dayB)
-    ).getTime()
-
-    return timeB - timeA
-  })
-
-  return recentsBlogs as Blog[]
+  return orderPreviewBlogsByDate(recentsBlogs)
 }
