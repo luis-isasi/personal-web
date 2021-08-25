@@ -1,6 +1,7 @@
 import { GetStaticProps } from 'next'
 
-import { getBlogsPreview, getAllCategories } from '@/mdx-utils'
+import { getAllCategories } from '@/mdx-utils'
+import { getBlogsPreview } from '@/mdx-utils/blog'
 
 //BlogList
 export { default } from '@Views/Blog/BlogList'

@@ -1,5 +1,5 @@
 import { GetStaticPaths, GetStaticProps } from 'next'
-import { getBlogsSlug, getBlogBySlug } from '@/mdx-utils'
+import { getBlogsSlug, getBlogBySlug } from '@/mdx-utils/blog'
 
 //BlogDetail
 export { default } from '@Views/Blog/BlogDetail'
@@ -7,6 +7,7 @@ export { default } from '@Views/Blog/BlogDetail'
 export const getStaticPaths: GetStaticPaths = async ({}) => {
   const blogsSlug = await getBlogsSlug()
 
+  //TODO: refactoring
   const paths: any[] = []
 
   blogsSlug.forEach((value) => {
