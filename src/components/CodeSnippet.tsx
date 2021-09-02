@@ -22,7 +22,7 @@ const CodeSnippet: React.FC<{ children: string; language: Language }> = ({
             <span className="absolute top-0 right-1 text-xs text-white">
               {language}
             </span>
-            <div className="p-5  overflow-x-auto">
+            <div className="p-5 overflow-x-auto">
               {tokens.map((line, i) => (
                 <div {...getLineProps({ line, key: i })}>
                   {line.map((token, key) => (

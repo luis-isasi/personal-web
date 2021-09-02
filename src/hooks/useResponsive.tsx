@@ -7,10 +7,7 @@ interface Parameters {
   maxMediaQuery?: MediaQuery
 }
 
-const useResponsive = ({
-  minMediaQuery = undefined,
-  maxMediaQuery = undefined,
-}: Parameters) => {
+const useResponsive = ({ minMediaQuery, maxMediaQuery }: Parameters) => {
   const [isScreen, setIsScreen] = useState<undefined | boolean>(undefined)
 
   useEffect(() => {
@@ -40,7 +37,7 @@ const useResponsive = ({
       screen = widthScreen > minMediaQuery && widthScreen < maxMediaQuery
     }
 
-    if (isScreen != screen) {
+    if (isScreen !== screen) {
       setIsScreen(screen)
     }
   }

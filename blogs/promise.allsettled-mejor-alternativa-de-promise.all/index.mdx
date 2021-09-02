@@ -13,7 +13,7 @@ Como sabrás `Promise.all()` es un método que nos ayuda a resolver varias prome
 ### Promise.all
 Como dije anteriormente esta nos resuelve las promesas en el mismo orden que se las pasamos y nos la retorna dentro de una array.
 
-```
+```javascript language=javascript
 Promise.all([promise1, promise2, promise3])
 .then((values) => {
 	const [resultPromise1, resultPromise2, resultPromise3] = values;
@@ -23,7 +23,7 @@ Promise.all([promise1, promise2, promise3])
 
 y hasta ahora todo okey, ¿verdad? pero no es así, el único defecto que tiene `Promise.all()` es que si una de esas promesas falla, este se resolverá en el catch, dando a entender como si todas hubieran fallado.
 
-```
+```javascript language=javascript
 Promise.all([
 	Promise.resolve('Promesa resuelta exitosamente'),
 	Promise.reject(new Error('ERROR!!!!!!!!'))
@@ -36,7 +36,7 @@ Promise.all([
 #### ¿Qué sucede si varias promesas fallan?
 Otra desventaja es que si varias promesas fallan, se detendrá en el primer fallo, un ejemplo para que lo puedas entender mejor.
 
-```
+```javascript language=javascript
 Promise.all([
 	Promise.resolve('Promesa resuelta exitosamente'),
 	Promise.reject(new Error('FIRST ERROR!!!!!!!!')),
@@ -61,7 +61,7 @@ En el siguiente ejemplo le pasaremos 3 promesas, en la primera todo ok luego de 
 (con esto quiero que se aclare que siempre se retornará en el mismo orden, no importa cuanto demoré alguna de las promesas),
 en la segunda se resolverá al instante, **la tercera fallará**.
 
-```
+```javascript language=javascript
 Promise.allSettled([
 	new Promise(resolve => setTimeout(() => resolve(1), 5000)),
 	Promise.resolve('Promesa resuelta'),
@@ -92,7 +92,7 @@ o incorrectamente (si está todo bien será `fulfilled`, y si falla será `rejec
 #### ¿Qué sucede si varias promesas fallan?
 Pues su comportamiento sigue siendo el mismo, devolviendo en una array las promesas falladas en el mismo orden.
 
-```
+```javascript language=javascript
 Promise.allSettled([
 	Promise.reject(new Error('FIRST ERROR!!!!!!!!')),
 	Promise.reject(new Error('SECOND ERROR!!!!!!!!'))

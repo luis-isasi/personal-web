@@ -25,8 +25,7 @@ Define como se comporta el texto desbordado.
 
 Ahora que ya conoces como trabajan las 3 propiedades `CSS` que utilizaremos, vamos a por el código css.
 
-<code language="jsx">
-{`
+```jsx language=jsx
 <p id="parrafo">
   Lorem Ipsum is simply dummy text of the printing and typesetting industry.
   Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
@@ -37,12 +36,11 @@ Ahora que ya conoces como trabajan las 3 propiedades `CSS` que utilizaremos, vam
   and more recently with desktop publishing software like Aldus PageMaker
   including versions of Lorem Ipsum.
 </p>
-`}
-</code>
+```
 
 Ya que tenemos un párrafo con su id, agregamos los siguientes propiedades css.
 
-<code language="css">
+```css language=css
 {`
 #parrafo {
   max-width: 100%;
@@ -51,7 +49,7 @@ Ya que tenemos un párrafo con su id, agregamos los siguientes propiedades css.
   text-overflow: ellipsis;
 }
 `}
-</code>
+```
 
 **Con `white-space` hacemos que el texto sea lineal con la intención que se desborde, luego con `overflow` escondemos el texto desbordado, finalmente con `text-overflow` agregamos los puntos suspensivos.**
 
