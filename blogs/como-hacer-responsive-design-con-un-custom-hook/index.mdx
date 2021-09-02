@@ -131,13 +131,14 @@ export default function useResponsive ({
 }
 ```
 
-Nota: Como verás cuando cambiamos el valor de nuestro state, solo lo hacemos cuando este sea diferente al state actual, ya que quizás el width del screen puede haber cambiado 1 pixel y eso mandará una actualización de nuestro componente, entonces qu sucede si se actualiza varias veces nuestro `state` con el caso que mencione antes, pues cuando un state se actualiza con su mismo valor por tercera vez consecutiva, este no se actualiza, esto es muy bueno, ya que si usamos un `console.log` para ver valor del `state` en la consola veremos que se muestra 2 veces.
+> **Nota:** Como verás cuando cambiamos el valor de nuestro state, solo lo hacemos cuando este sea diferente al `state` actual, ya que quizás el width del screen puede haber cambiado 1 pixel y eso mandará un re render de nuestro componente, entonces
+>
+> **_¿Que sucede si se actualiza varias veces nuestro `state` con el mismo `value`?_**, 
+>
+> Pues cuando un state se actualiza con su mismo valor por tercera vez consecutiva, este no se vuelve a renderizar el componente, esto es muy bueno, ya que si usamos un `console.log` para ver valor del `state` 
+> en la consola veremos que se muestra 2 veces, con esto podriamos notar que react está impidiendo que nuestro componente se rendericé infinitamente y ver claramente nuestro error.
 
-**¿Por qué no solo no renderiza cuando le llega el mismo `value` por segunda vez?**
-
-Pues como dije anteriormente, si fuera así, no podríamos notar aquel error.
-
-Como vez es fácil la implementación de nuestro custom hook, ahora podrás usarlo en tus componentes de la siguiente manera:
+Ahora podrás usarlo en tus componentes de la siguiente manera:
 
 ```jsx language=jsx
 import useResponsive from './hook/useResponsive'
@@ -175,10 +176,8 @@ const useResponsive = ({ minMediaQuery, maxMediaQuery }: Parameters) => {
 
   useEffect(() => {
     validateScreen()
-  }, [])
-
-  useEffect(() => {
     window.addEventListener('resize', validateScreen)
+    
     return () => {
       window.removeEventListener('resize', validateScreen)
     }

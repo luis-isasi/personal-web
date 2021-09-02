@@ -57,3 +57,11 @@ export const InlineCode: React.FC = ({ children }) => {
     </code>
   )
 }
+
+export const Blockquote: React.FC = ({ children }) => {
+  return (
+    <blockquote className="bg-gray-200 dark:bg-base-lighter-dark-mode border-l-3 border-indigo-500 dark:border-purple-600 px-5 py-1">
+      {children}
+    </blockquote>
+  )
+}
