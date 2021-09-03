@@ -20,9 +20,6 @@ const Nav: React.FC<{ handleModalNav?: () => void }> = ({ handleModalNav }) => {
       >
         Snippets
       </Link>
-      <Link href="/experiments" className={itemClass} onClick={handlerClick}>
-        Experimentos
-      </Link>
       <Link href="/aboutme" className={itemClass} onClick={handlerClick}>
         Sobre mí
       </Link>
