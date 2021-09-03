@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react'
+import _debounce from 'lodash/debounce'
 
 import { MediaQuery } from '@Types'
 
@@ -21,7 +22,7 @@ const useResponsive = ({ minMediaQuery, maxMediaQuery }: Parameters) => {
     }
   }, [isScreen])
 
-  const validateScreen = () => {
+  const validateScreen = _debounce(() => {
     let widthScreen = window.innerWidth
     let screen
 
@@ -37,10 +38,8 @@ const useResponsive = ({ minMediaQuery, maxMediaQuery }: Parameters) => {
       screen = widthScreen > minMediaQuery && widthScreen < maxMediaQuery
     }
 
-    if (isScreen !== screen) {
-      setIsScreen(screen)
-    }
-  }
+    isScreen !== screen && setIsScreen(screen)
+  }, 30)
 
   return isScreen
 }
