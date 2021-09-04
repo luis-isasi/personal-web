@@ -1,6 +1,7 @@
 import UnderConstruction from '@Components/Icons/UnderConstruction'
 import useResponsive from '@Hooks/useResponsive'
 import { MEDIAQUERY_SM } from '@Constants'
+import Link from '@Components/Links/Link'
 
 const PageUnderConstruction: React.FC = () => {
   const isMovil = useResponsive({
@@ -32,6 +33,12 @@ const PageUnderConstruction: React.FC = () => {
             ? '¡codepen here!'
             : 'codepen: https://codepen.io/bungeedesign/pen/yMqZyv'}
         </a>
+        <Link
+          href="/"
+          className="text-white bg-indigo-700 hover:bg-indigo-600 mt-7 rounded-md py-2 px-4 font-semibold transition-colors ease-in-out duration-200"
+        >
+          Back to Home
+        </Link>
       </div>
     </div>
   )

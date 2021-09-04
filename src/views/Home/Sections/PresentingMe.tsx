@@ -16,12 +16,12 @@ const PresentingMe = () => {
         <p>
           Este lugar será mi portafolio, donde almacenaré todos mis
           conocimientos a lo largo de mi carrera como front-end y aportar a
-          nuevos devs con artículos, proyectos, mis experiencias y demás.
+          nuevos devs con artículos, mis experiencias y demás.
         </p>
         <br />
         <p>
-          Esta claro que no soy el mejor pero aspiro a serlo y este sitio es uno
-          de los pasos para lograrlo.
+          Anhelo ser un buen developer para toda la comunidad y este sitio es
+          uno de los pasos para lograrlo.
         </p>
       </section>
     </div>
