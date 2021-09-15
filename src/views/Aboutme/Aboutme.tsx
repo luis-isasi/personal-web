@@ -1,18 +1,13 @@
-import MyGmail from './components/MyGmail'
-
 import PresentingMe from './sections/PresentingMe'
 import AboutmeText from './sections/AboutmeText'
 
 const Aboutme = () => {
   return (
-    <div className="h-full mx-auto w-full max-w-7xl flex flex-col items-center dark:text-white">
-      <div className="w-full mt-20 mb-10">
+    <div className="h-full mx-auto w-full max-w-7xl flex flex-col items-center dark:text-white px-5">
+      <div className="w-full mt-10 md:mt-20 mb-20 md:mb-30">
         <PresentingMe />
       </div>
-      <div className="self-start mb-15">
-        <MyGmail />
-      </div>
-      <div>
+      <div className="w-full mb-10">
         <AboutmeText />
       </div>
     </div>

@@ -1,15 +1,20 @@
 import Image from 'next/image'
 
+import useResponsive from '@/src/hooks/useResponsive'
 import SocialNetworks from '../components/SocialNetworks'
+import MyGmail from '../components/MyGmail'
+import { MEDIAQUERY_MD } from '@Constants'
 
 const PresentingMe = () => {
+  const untilTablet = useResponsive({ maxMediaQuery: MEDIAQUERY_MD })
+
   return (
-    <section className="w-full flex items-center justify-between text-2xl font-medium ">
-      <div className="flex flex-col justify-between h-76">
+    <section className="w-full flex flex-col-reverse xl:flex-row items-center justify-between text-lg sm:text-xl md:text-2xl font-medium ">
+      <div className="justify-between min-h-80 h-auto text-center sm:text-left flex flex-col items-center sm:items-start">
         <div />
         <div>
           Hola, soy
-          <div className="font-bold text-6xl my-1 mb-2">
+          <div className="font-bold text-4xl md:text-5xl my-1 mb-2">
             <h1>Luis Isasi Oyolo</h1>
             un{' '}
             <span className="text-blue-600 dark:text-blue-600">
@@ -21,14 +26,18 @@ const PresentingMe = () => {
         <div className="flex justify-between">
           <SocialNetworks />
         </div>
+        <MyGmail />
       </div>
-      <Image
-        layout="intrinsic"
-        src="/Images/luis-isasi.jpeg"
-        width="300"
-        height="300"
-        className="rounded-circle overflow-hidden"
-      />
+      <div className="px-10 sm:px-0">
+        <Image
+          layout="intrinsic"
+          src="/Images/luis-isasi.jpeg"
+          width={`${untilTablet ? '250' : '300'}`}
+          height={`${untilTablet ? '250' : '300'}`}
+          className="rounded-circle overflow-hidden"
+          alt="Luis Isasi"
+        />
+      </div>
     </section>
   )
 }
