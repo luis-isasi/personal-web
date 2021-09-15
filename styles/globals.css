@@ -16,6 +16,10 @@
     border-radius: 12px;
     @apply border border-solid border-white dark:border-gray-700 bg-gray-400 dark:bg-gray-500;
   }
+
+  .bg-gradient-primary {
+    @apply bg-gradient-to-r from-gradient-start to-gradient-end dark:from-dark-light dark:to-dark-light;
+  }
 }
 
 #nprogress {

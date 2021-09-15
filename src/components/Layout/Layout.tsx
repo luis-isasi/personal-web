@@ -14,11 +14,9 @@ const Layout: React.FC<Props> = ({
 }) => {
   if (isConstruction) {
     return (
-      <div className="w-full h-auto font-sans">
+      <div className="w-full h-auto font-sans dark">
         <PageUnderConstruction />
-        <div className="dark">
-          <Footer />
-        </div>
+        <Footer />
       </div>
     )
   }
@@ -36,9 +34,9 @@ const Layout: React.FC<Props> = ({
 
   return (
     <div className="w-full h-auto font-sans">
-      <div className="min-h-screen h-auto w-full bg-white dark:bg-dark-light">
+      <div className="min-h-screen h-auto w-full bg-white dark:bg-dark-light flex flex-col">
         <Header />
-        {children}
+        <div className="flex-grow">{children}</div>
       </div>
       <Footer />
     </div>

@@ -37,7 +37,6 @@ function MyApp({ Component, pageProps }: AppProps) {
         pageNotFound={pageProps.pageNotFound}
       >
         <Component {...pageProps} />
-        <div id="modal"></div>
       </Layout>
     </ContextThemeProvider>
   )

@@ -8,6 +8,7 @@ export default class MyDocument extends Document {
         <body className="scrool-none scroolbar bg-scroolbar-white">
           <Main />
           <NextScript />
+          <div id="modal" />
         </body>
       </Html>
     )

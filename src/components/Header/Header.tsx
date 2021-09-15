@@ -15,7 +15,7 @@ const Header = () => {
   })
 
   return (
-    <header className="w-full h-auto bg-gradient-to-r from-gradient-start to-gradient-end dark:from-dark-light dark:to-dark-light">
+    <header className="w-full h-auto bg-gradient-primary">
       <div className="h-14 w-full px-5 lg:px-0 flex justify-between flex-row-reverse lg:flex-row items-center md:mx-auto md:max-w-3xl lg:max-w-5xl">
         {isMovilAndTablet && <BtnDarkMode />}
         <Link href="/">

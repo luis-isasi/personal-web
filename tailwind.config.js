@@ -1,3 +1,5 @@
+const plugin = require('tailwindcss/plugin')
+
 module.exports = {
   purge: ['./pages/**/*.{js,ts,jsx,tsx}', './src/**/*.{js,ts,jsx,tsx}'],
   mode: 'jit',
@@ -159,5 +161,12 @@ module.exports = {
       },
     },
   },
-  plugins: [],
+  plugins: [
+    plugin(function ({ addUtilities }) {
+      const newUtilities = {
+        'gradient-primary': '@apply  bg-red-500',
+      }
+      addUtilities(newUtilities, ['responsive', 'hover'])
+    }),
+  ],
 }

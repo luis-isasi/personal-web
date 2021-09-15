@@ -2,7 +2,7 @@ import Link from '@Components/Links/Link'
 
 const Footer = () => {
   return (
-    <footer className="h-auto w-full  bg-gradient-to-r from-gradient-start to-gradient-end px-5 dark:from-dark-secondary dark:to-dark-secondary py-7">
+    <footer className="h-auto w-full bg-gradient-primary py-7">
       <div className="h-auto w-full lg:mx-auto lg:max-w-5xl flex flex-col lg:flex-row lg:justify-between lg:items-center">
         <div className="">
           <div className="flex flex-col lg:flex-row text-purple-600 dark:text-gray-400">
@@ -19,12 +19,6 @@ const Footer = () => {
               Snippets
             </Link>
             <Link
-              href="/experimentos"
-              className="font-bold text-sm p-1 my-1 lg:mr-7"
-            >
-              Experimentos
-            </Link>
-            <Link
               href="/aboutme"
               className="font-bold text-sm p-1 my-1 lg:mr-7"
             >
@@ -33,16 +27,11 @@ const Footer = () => {
           </div>
           <div className="mt-4 lg:mt-0 flex flex-col lg:flex-row text-purple-800 dark:text-gray-300">
             <a
-              href="https://www.google.com/"
+              target="_blank"
+              href="https://twitter.com/luis_isasi"
               className="font-bold text-sm p-1 my-1 lg:mr-7"
             >
               Twitter
-            </a>
-            <a
-              href="https://www.google.com/"
-              className="font-bold text-sm p-1 my-1 lg:mr-7"
-            >
-              Instagram
             </a>
             <Link
               href="/contactame"
