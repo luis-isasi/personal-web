@@ -25,13 +25,21 @@
     @apply bg-gradient-to-r from-gradient-start to-gradient-end;
   }
 
-  .bg-gradient-dark {
+  .bg-gradient-dark-lg {
     background: linear-gradient(
       90deg,
-      rgba(2, 14, 74, 1) 0%,
-      rgba(10, 53, 69, 1) 32%,
-      rgba(84, 3, 92, 1) 68%,
-      rgba(103, 2, 2, 1) 100%
+      rgba(5, 18, 83, 1) 0%,
+      rgba(13, 48, 77, 1) 34%,
+      rgba(71, 7, 78, 1) 74%,
+      rgba(84, 5, 46, 1) 100%
+    );
+  }
+
+  .bg-gradient-dark-sm {
+    background: linear-gradient(
+      90deg,
+      rgba(1, 13, 73, 1) 0%,
+      rgba(71, 2, 51, 1) 100%
     );
   }
 }

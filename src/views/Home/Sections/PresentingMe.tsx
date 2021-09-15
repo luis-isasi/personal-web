@@ -6,7 +6,7 @@ const PresentingMe = () => {
         <br />
         <span>
           Soy un Desarrollador Front-end con metas de ser Full Stack,
-          conviertiendo ideas del mundo real a codigo usando principalmente
+          convirtiendo ideas del mundo real a código usando principalmente
           Javascript y Typescript.
         </span>
       </section>

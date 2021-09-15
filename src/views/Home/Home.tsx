@@ -17,7 +17,7 @@ const Home: React.FC<{
         <title>Home | Luis Isasi</title>
       </Head>
       <div className="w-full dark:bg-dark-primary">
-        <div className="w-full h-auto bg-gradient-primary dark:bg-gradient-dark">
+        <div className="w-full h-auto bg-gradient-primary dark:bg-gradient-dark-sm dark:lg:bg-gradient-dark-lg">
           <div className="h-auto w-full md:max-w-3xl lg:max-w-4xl xl:max-w-5xl p-5 md:pt-5 lg:pt-10 md:pb-0 lg:px-0 mx-auto xl:flex xl:justify-between">
             <PresentingMe />
             <Technologies />
