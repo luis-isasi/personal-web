@@ -8,7 +8,7 @@ interface Props {
 
 const ModalMenu: React.FC<Props> = ({ handleModalNav }) => {
   return (
-    <ModalBase className="bg-dark-light">
+    <ModalBase className="bg-dark-primary">
       <div className="p-5 w-full h-full flex justify-between  md:mx-auto md:max-w-3xl">
         <div className="mt-8">
           <Nav handleModalNav={handleModalNav} />

@@ -2,9 +2,9 @@ import Link from '@Components/Links/Link'
 
 const Footer = () => {
   return (
-    <footer className="h-auto w-full py-7 bg-gradient-primary dark:bg-gradient-dark ">
-      <div className="h-auto w-full lg:mx-auto lg:max-w-5xl flex flex-col lg:flex-row lg:justify-between lg:items-center">
-        <div className="">
+    <footer className="py-7 px-5 bg-gradient-primary dark:bg-gradient-dark ">
+      <div className="lg:mx-auto lg:max-w-5xl flex flex-col lg:flex-row lg:justify-between lg:items-center">
+        <div>
           <div className="flex flex-col lg:flex-row text-purple-600 dark:text-gray-400">
             <Link
               href="/blog"
