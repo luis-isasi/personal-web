@@ -16,7 +16,7 @@ const CodeSnippet: React.FC<{ children: string; language: Language }> = ({
       {({ className, tokens, getLineProps, getTokenProps, style }) => {
         return (
           <pre
-            className={`${className} relative my-6 rounded-md font-semibold`}
+            className={`${className} relative my-6 rounded-md font-semibold text-sm md:text-base`}
             style={style}
           >
             <span className="absolute top-0 right-1 text-xs text-white">

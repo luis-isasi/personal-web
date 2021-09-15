@@ -12,7 +12,7 @@ const AboutmeText = () => {
         JavaScript, hasta ese punto descubrí que el desarrollo web era un mundo
         muy extenso, pero me agradaba y estaba dispuesto a seguir estudiando de
         la mano con la universidad,
-        <i className="font-medium">
+        <i className="font-bold">
           {' '}
           luego comencé con React js, react hooks, Github, styled components,
           webpack, babel, tailwind css, next js, etc.{' '}
