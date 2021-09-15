@@ -35,7 +35,7 @@ export const A: React.FC<{ href: string }> = ({ children, href }) => {
     <a
       target="_blank"
       href={href}
-      className="text-green-500 dark:text-gray-400 underline cursor-pointer"
+      className="text-green-500 dark:text-indigo-500 underline cursor-pointer"
     >
       {children}
     </a>
