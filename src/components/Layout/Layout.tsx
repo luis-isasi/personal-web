@@ -34,7 +34,7 @@ const Layout: React.FC<Props> = ({
 
   return (
     <div className="w-full h-auto font-sans">
-      <div className="min-h-screen h-auto w-full bg-white dark:bg-dark-light flex flex-col">
+      <div className="min-h-screen h-auto w-full bg-white dark:bg-dark-primary flex flex-col">
         <Header />
         <div className="flex-grow">{children}</div>
       </div>

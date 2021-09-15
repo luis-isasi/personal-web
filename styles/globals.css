@@ -18,7 +18,21 @@
   }
 
   .bg-gradient-primary {
-    @apply bg-gradient-to-r from-gradient-start to-gradient-end dark:from-dark-light dark:to-dark-light;
+    @apply bg-gradient-to-r from-gradient-start to-gradient-end;
+  }
+
+  .bg-gradient-secondary {
+    @apply bg-gradient-to-r from-gradient-start to-gradient-end;
+  }
+
+  .bg-gradient-dark {
+    background: linear-gradient(
+      90deg,
+      rgba(2, 14, 74, 1) 0%,
+      rgba(10, 53, 69, 1) 32%,
+      rgba(84, 3, 92, 1) 68%,
+      rgba(103, 2, 2, 1) 100%
+    );
   }
 }
 
