@@ -33,10 +33,15 @@ const Layout: React.FC<Props> = ({
   }
 
   return (
-    <div className="w-full h-auto font-sans">
-      <div className="min-h-screen h-auto w-full bg-white dark:bg-dark-primary flex flex-col">
+    <div
+      className="w-full min-h-screen h-auto font-sans grid"
+      style={{
+        gridTemplateRows: 'minmax(100vh, auto) auto',
+      }}
+    >
+      <div className="h-auto w-full bg-white dark:bg-dark-primary flex flex-col">
         <Header />
-        <div className="flex-grow">{children}</div>
+        <div className="h-full">{children}</div>
       </div>
       <Footer />
     </div>
