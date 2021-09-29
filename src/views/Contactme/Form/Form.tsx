@@ -78,8 +78,6 @@ const Form = () => {
     formError,
   } = formState.error
 
-  console.log({ formState })
-
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
 
@@ -176,7 +174,10 @@ const Form = () => {
   }
 
   return (
-    <form className="text-white flex flex-col w-full" onSubmit={handleSubmit}>
+    <form
+      className="text-black dark:text-white flex flex-col w-full"
+      onSubmit={handleSubmit}
+    >
       <input
         type="text"
         onChange={handleChange}
@@ -184,9 +185,9 @@ const Form = () => {
         value={name}
         required
         placeholder="Nombre"
-        className={`${
-          nameError && 'border-red-500 caret-red-500'
-        } bg-transparent p-2 outline-none border-b-1 `}
+        className={`bg-transparent p-2 outline-none border-b-1 ${
+          nameError ? 'border-red-500 caret-red-500' : 'border-gray-400'
+        } `}
       />
       <Error>{nameError}</Error>
       <input
@@ -196,9 +197,9 @@ const Form = () => {
         name="email"
         required
         placeholder="Email"
-        className={`${
-          emailError && 'border-red-500 caret-red-500'
-        } bg-transparent p-2 outline-none border-b-1`}
+        className={`bg-transparent p-2 outline-none border-b-1 ${
+          emailError ? 'border-red-500 caret-red-500' : 'border-gray-400'
+        } `}
       />
       <Error>{emailError}</Error>
       <input
@@ -208,9 +209,9 @@ const Form = () => {
         name="subject"
         required
         placeholder="Asunto"
-        className={`${
-          subjectError && 'border-red-500 caret-red-500'
-        } bg-transparent p-2 outline-none border-b-1`}
+        className={`bg-transparent p-2 outline-none border-b-1 ${
+          subjectError ? 'border-red-500 caret-red-500' : 'border-gray-400'
+        } `}
       />
       <Error>{subjectError}</Error>
       <textarea
@@ -220,8 +221,8 @@ const Form = () => {
         required
         placeholder="Mensaje..."
         className={`${
-          messageError && 'border-red-500 caret-red-500'
-        } bg-transparent p-2 h-40 outline-none border-b-1 resize-none`}
+          messageError ? 'border-red-500 caret-red-500' : 'border-gray-400'
+        }  bg-transparent p-2 h-40 outline-none border-b-1 resize-none`}
       />
       <Error>{messageError}</Error>
       <Error>{formError}</Error>
