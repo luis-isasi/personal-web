@@ -10,6 +10,9 @@ const Nav: React.FC<{ handleModalNav?: () => void }> = ({ handleModalNav }) => {
 
   return (
     <nav className="font-bold flex flex-col lg:flex-row lg:items-center">
+      <Link href="/" className={itemClass} onClick={handlerClick}>
+        Home
+      </Link>
       <Link href="/blog" className={itemClass} onClick={handlerClick}>
         Blog
       </Link>
