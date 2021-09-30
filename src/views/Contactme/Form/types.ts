@@ -9,10 +9,17 @@ export enum Status {
   INITIAL = 'INITIAL',
   ERROR = 'ERROR',
   READY = 'READY',
+  LOADING = 'LOADING',
   SUCCESS = 'SUCCESS',
 }
 
-type StatusType = Status.INITIAL | Status.ERROR | Status.READY | Status.SUCCESS
+type StatusType =
+  | Status.INITIAL
+  | Status.ERROR
+  | Status.READY
+  | Status.LOADING
+  | Status.SUCCESS
+
 export type InitialState = {
   name: string
   email: string

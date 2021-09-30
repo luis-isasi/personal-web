@@ -1,9 +1,10 @@
-import { useReducer } from 'react'
+import { useReducer, memo } from 'react'
 import type { Action, InitialState } from './types'
 import { Fields, Status } from './types'
 
 import Error from './components/Error'
 import BtnSubmit from './components/BtnSubmit'
+import IconLoading from '@Components/Icons/IconLoading'
 
 const initialState: InitialState = {
   name: '',
@@ -51,7 +52,9 @@ const formReducer = (state: InitialState, action: Action) => {
         error: {
           ...state.error,
           [action.name]: '',
+          formError: '',
         },
+        status: Status.INITIAL,
       }
     case 'SET_STATUS':
       return {
@@ -59,16 +62,32 @@ const formReducer = (state: InitialState, action: Action) => {
         status: action.status,
       }
     case 'CLEAN_FORM':
-      return initialState
+      return {
+        ...state,
+        name: '',
+        email: '',
+        message: '',
+        subject: '',
+        error: {
+          name: '',
+          email: '',
+          message: '',
+          subject: '',
+          formError: '',
+        },
+      }
     default:
       return initialState
   }
 }
 
-const Form = () => {
+const Form: React.FC<{ onSuccess?: () => void; onLoading?: () => void }> = ({
+  onSuccess,
+  onLoading,
+}) => {
   const [formState, dispatch] = useReducer(formReducer, initialState)
 
-  const { name, email, subject, message, status } = formState
+  const { name, email, subject, message, status: formStatus } = formState
 
   const {
     name: nameError,
@@ -80,6 +99,8 @@ const Form = () => {
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
+    dispatch({ type: 'SET_STATUS', status: Status.LOADING })
+    onLoading!()
 
     const response: Response = await fetch('https://formspree.io/f/xrgrjvgj', {
       headers: { Accept: 'Application/json' },
@@ -93,10 +114,16 @@ const Form = () => {
     })
 
     if (response.ok) {
-      console.log('enviado correctamente')
-
       dispatch({ type: 'SET_STATUS', status: Status.SUCCESS })
       dispatch({ type: 'CLEAN_FORM' })
+      onSuccess!()
+    } else {
+      dispatch({ type: 'SET_STATUS', status: Status.ERROR })
+      dispatch({
+        type: 'SET_ERROR',
+        message:
+          'Al Parecer ocurrió algo salió mal, inténtalo de nuevo en un momento 😕',
+      })
     }
   }
 
@@ -159,7 +186,7 @@ const Form = () => {
     }
   }
 
-  const isDisabledBtn = () => {
+  const isDisabledBtnSubmit = () => {
     return !nameError &&
       !messageError &&
       !emailError &&
@@ -168,7 +195,9 @@ const Form = () => {
       name &&
       email &&
       subject &&
-      message
+      message &&
+      formStatus !== Status.LOADING &&
+      formStatus !== Status.ERROR
       ? false
       : true
   }
@@ -184,10 +213,11 @@ const Form = () => {
         name="name"
         value={name}
         required
+        disabled={formStatus === Status.LOADING}
         placeholder="Nombre"
         className={`bg-transparent p-2 outline-none border-b-1 ${
           nameError ? 'border-red-500 caret-red-500' : 'border-gray-400'
-        } `}
+        }`}
       />
       <Error>{nameError}</Error>
       <input
@@ -196,6 +226,7 @@ const Form = () => {
         value={email}
         name="email"
         required
+        disabled={formStatus === Status.LOADING}
         placeholder="Email"
         className={`bg-transparent p-2 outline-none border-b-1 ${
           emailError ? 'border-red-500 caret-red-500' : 'border-gray-400'
@@ -208,6 +239,7 @@ const Form = () => {
         value={subject}
         name="subject"
         required
+        disabled={formStatus === Status.LOADING}
         placeholder="Asunto"
         className={`bg-transparent p-2 outline-none border-b-1 ${
           subjectError ? 'border-red-500 caret-red-500' : 'border-gray-400'
@@ -219,16 +251,24 @@ const Form = () => {
         name="message"
         value={message}
         required
+        disabled={formStatus === Status.LOADING}
         placeholder="Mensaje..."
         className={`${
           messageError ? 'border-red-500 caret-red-500' : 'border-gray-400'
         }  bg-transparent p-2 h-40 outline-none border-b-1 resize-none`}
       />
       <Error>{messageError}</Error>
-      <Error>{formError}</Error>
-      <BtnSubmit handleDisabled={isDisabledBtn} />
+      {formError && <Error>{formError}</Error>}
+      {formStatus === Status.SUCCESS && (
+        <span className="text-center mb-3 animate-fade-in text-sm font-medium ">
+          Mensaje enviado Correctamente 😀
+        </span>
+      )}
+      <BtnSubmit handleDisabled={isDisabledBtnSubmit}>
+        {formStatus === Status.LOADING ? <IconLoading /> : 'Enviar'}
+      </BtnSubmit>
     </form>
   )
 }
 
-export default Form
+export default memo(Form)

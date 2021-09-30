@@ -137,39 +137,45 @@ module.exports = {
         16: '16',
         18: '18',
       },
-    },
-    scale: {
-      0: '0',
-      25: '.25',
-      50: '.5',
-      75: '.75',
-      80: '.8',
-      85: '.85',
-      90: '.9',
-      95: '.95',
-      100: '1',
-      105: '1.05',
-      110: '1.1',
-      125: '1.25',
-      150: '1.5',
-      200: '2',
-    },
-    animation: {
-      float: 'float 4s ease-in-out infinite',
-      'appear-rotating': 'rotate 0.1s ease-in-out',
-    },
-    keyframes: {
-      float: {
-        '0%, 100%': { transform: 'translateY(0px)' },
-        '50%': { transform: 'translateY(22px)' },
+      animation: {
+        float: 'float 4s ease-in-out infinite',
+        'appear-rotating': 'rotate 0.1s ease-in-out',
+        'fade-in': 'fadeIn 1.3s ease-in-out forwards',
       },
-      rotate: {
-        '0%': {
-          transform: 'rotate(90deg)',
+      keyframes: {
+        float: {
+          '0%, 100%': { transform: 'translateY(0px)' },
+          '50%': { transform: 'translateY(22px)' },
         },
-        '100%': {
-          transform: 'rotate(0deg)',
+        fadeIn: {
+          '0%': { opacity: 0 },
+          '50%': { opacity: 0.5 },
+          '100%': { opacity: 1 },
         },
+        rotate: {
+          '0%': {
+            transform: 'rotate(90deg)',
+          },
+          '100%': {
+            transform: 'rotate(0deg)',
+          },
+        },
+      },
+      scale: {
+        0: '0',
+        25: '.25',
+        50: '.5',
+        75: '.75',
+        80: '.8',
+        85: '.85',
+        90: '.9',
+        95: '.95',
+        100: '1',
+        105: '1.05',
+        110: '1.1',
+        125: '1.25',
+        150: '1.5',
+        200: '2',
       },
     },
   },
