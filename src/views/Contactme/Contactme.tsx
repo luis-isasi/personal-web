@@ -4,8 +4,8 @@ import { useState } from 'react'
 import Image from 'next/image'
 import Form from './Form'
 
-const msg_sent = 'message_sent'
-const new_msg = 'new_message'
+const msg_sent = '/Images/message_sent.svg'
+const new_msg = '/Images/new_message.svg'
 
 const contactme = () => {
   const [isSuccess, setIsSuccess] = useState<boolean>(false)
@@ -25,7 +25,7 @@ const contactme = () => {
       <div className="text-white w-full px-5 max-w-sm h-auto mx-auto mt-10">
         <Image
           layout="responsive"
-          src={`/Images/${isSuccess ? msg_sent : new_msg}.svg`}
+          src={`${isSuccess ? msg_sent : new_msg}`}
           width="300"
           height="200"
           className={`${isSuccess && 'animate-fade-in'}`}

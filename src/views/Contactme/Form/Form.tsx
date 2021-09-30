@@ -1,4 +1,4 @@
-import { useReducer, memo } from 'react'
+import { useReducer, memo, useMemo } from 'react'
 import type { Action, InitialState } from './types'
 import { Fields, Status } from './types'
 
@@ -88,6 +88,16 @@ const Form: React.FC<{ onSuccess?: () => void; onLoading?: () => void }> = ({
   const [formState, dispatch] = useReducer(formReducer, initialState)
 
   const { name, email, subject, message, status: formStatus } = formState
+
+  const isFormError = useMemo(
+    () => formStatus === Status.ERROR,
+    [formState.status]
+  )
+
+  const isFormLoading = useMemo(
+    () => formStatus === Status.LOADING,
+    [formState.status]
+  )
 
   const {
     name: nameError,
@@ -196,8 +206,8 @@ const Form: React.FC<{ onSuccess?: () => void; onLoading?: () => void }> = ({
       email &&
       subject &&
       message &&
-      formStatus !== Status.LOADING &&
-      formStatus !== Status.ERROR
+      !isFormError &&
+      !isFormLoading
       ? false
       : true
   }
@@ -213,7 +223,7 @@ const Form: React.FC<{ onSuccess?: () => void; onLoading?: () => void }> = ({
         name="name"
         value={name}
         required
-        disabled={formStatus === Status.LOADING}
+        disabled={isFormLoading}
         placeholder="Nombre"
         className={`bg-transparent p-2 outline-none border-b-1 ${
           nameError ? 'border-red-500 caret-red-500' : 'border-gray-400'
@@ -226,7 +236,7 @@ const Form: React.FC<{ onSuccess?: () => void; onLoading?: () => void }> = ({
         value={email}
         name="email"
         required
-        disabled={formStatus === Status.LOADING}
+        disabled={isFormLoading}
         placeholder="Email"
         className={`bg-transparent p-2 outline-none border-b-1 ${
           emailError ? 'border-red-500 caret-red-500' : 'border-gray-400'
@@ -239,7 +249,7 @@ const Form: React.FC<{ onSuccess?: () => void; onLoading?: () => void }> = ({
         value={subject}
         name="subject"
         required
-        disabled={formStatus === Status.LOADING}
+        disabled={isFormLoading}
         placeholder="Asunto"
         className={`bg-transparent p-2 outline-none border-b-1 ${
           subjectError ? 'border-red-500 caret-red-500' : 'border-gray-400'
@@ -251,7 +261,7 @@ const Form: React.FC<{ onSuccess?: () => void; onLoading?: () => void }> = ({
         name="message"
         value={message}
         required
-        disabled={formStatus === Status.LOADING}
+        disabled={isFormLoading}
         placeholder="Mensaje..."
         className={`${
           messageError ? 'border-red-500 caret-red-500' : 'border-gray-400'
@@ -265,7 +275,7 @@ const Form: React.FC<{ onSuccess?: () => void; onLoading?: () => void }> = ({
         </span>
       )}
       <BtnSubmit handleDisabled={isDisabledBtnSubmit}>
-        {formStatus === Status.LOADING ? <IconLoading /> : 'Enviar'}
+        {isFormLoading ? <IconLoading /> : 'Enviar'}
       </BtnSubmit>
     </form>
   )
