@@ -22,7 +22,7 @@ const contactme = () => {
 
   return (
     <div className="w-full h-full">
-      <div className="text-white w-full px-5 max-w-sm h-auto mx-auto mt-10">
+      <div className="text-white w-full px-5 max-w-sm h-auto mx-auto mt-10 pb-10">
         <Image
           layout="responsive"
           src={`${isSuccess ? msg_sent : new_msg}`}
