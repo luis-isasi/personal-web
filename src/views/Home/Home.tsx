@@ -1,4 +1,4 @@
-import Head from 'next/head'
+import { NextSeo } from 'next-seo'
 
 import Wave from '@Components/Wave'
 import Technologies from './components/Technologies'
@@ -13,9 +13,34 @@ const Home: React.FC<{
 }> = ({ recentsBlogs, categories }) => {
   return (
     <>
-      <Head>
-        <title>Home | Luis Isasi</title>
-      </Head>
+      <NextSeo
+        title="Home | Luis Isasi"
+        description="Hola, Soy Luis Isasi un Front-end Developer con metas de ser Full Stack, convirtiendo ideas del mundo real a código usando principalmente Javascript y Typescript, Anhelo ser un buen developer para toda la comunidad y este sitio es uno de los pasos para lograrlo."
+        //TODO: add url, example("https://luis-isasi.com")
+        canonical=""
+        twitter={{
+          handle: '@handle',
+          site: '@luis_isasi',
+          cardType: 'summary_large_image',
+        }}
+        openGraph={{
+          type: 'website',
+          //TODO: add url, example("https://luis-isasi.com")
+          url: '',
+          title: 'Home | Luis Isasi',
+          description:
+            'Hola, Soy Luis Isasi un Front-end Developer con metas de ser Full Stack, convirtiendo ideas del mundo real a código usando principalmente Javascript y Typescript, Anhelo ser un buen developer para toda la comunidad y este sitio es uno de los pasos para lograrlo.',
+          site_name: 'Home | Luis Isasi',
+          images: [
+            {
+              //TODO: add image's url
+              url: '',
+              width: 640,
+              height: 628,
+            },
+          ],
+        }}
+      />
       <div className="w-full dark:bg-dark-primary">
         <div className="w-full h-auto bg-gradient-primary dark:bg-gradient-dark-sm dark:lg:bg-gradient-dark-lg">
           <div className="h-auto w-full md:max-w-3xl lg:max-w-4xl xl:max-w-5xl p-5 md:pt-5 lg:pt-10 md:pb-0 lg:px-0 mx-auto xl:flex xl:justify-between">
