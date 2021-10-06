@@ -22,11 +22,12 @@ export const getStaticPaths: GetStaticPaths = async ({}) => {
 }
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
-  const { data, source } = await getBlogBySlug(params?.blogSlug as string)
+  const blogSlug = params?.blogSlug as string
+  const { blog, source } = await getBlogBySlug(blogSlug)
 
   return {
     props: {
-      data,
+      blog,
       source,
     },
   }

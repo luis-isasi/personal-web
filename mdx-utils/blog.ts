@@ -23,16 +23,25 @@ export const getBlogBySlug = async (slug: string) => {
   const fileContent = readFileSync(filePath, 'utf-8')
   const { content, data } = matter(fileContent)
 
+  const categories: string[] = data.categories?.split(', ')
+  const categoriesTemplate: Category[] = categories.map((value) => {
+    return {
+      name: value,
+      url: `/blog/categories/${value}`,
+      slug: slugify(value),
+    }
+  })
+
   const mdxSource = await serialize(content, { scope: data })
 
   return {
     source: mdxSource,
-    data,
+    blog: { ...data, categories: categoriesTemplate, slug },
   } as TypeBlogDetail
 }
 
-export const getBlogsByCategorie = (category: string) => {
-  const blogsByCategorie: Blog[] = []
+export const getBlogsByCategory = (category: string) => {
+  const blogsByCategory: Blog[] = []
 
   DirectoryBlogs.forEach((folder) => {
     const filePath = join(Directory, folder, 'index.mdx')
@@ -51,7 +60,7 @@ export const getBlogsByCategorie = (category: string) => {
         }
       })
 
-      blogsByCategorie.push({
+      blogsByCategory.push({
         ...data,
         categories: categoriesTemplate,
         url,
@@ -59,7 +68,7 @@ export const getBlogsByCategorie = (category: string) => {
     } else return
   })
 
-  return blogsByCategorie
+  return blogsByCategory
 }
 
 export const getBlogsPreview = async (numberOfBlogs?: number) => {

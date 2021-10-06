@@ -31,12 +31,12 @@ export interface Blog {
   contentPreview: string
   createdAt: string
   url: string
-  slug?: string
-  categories?: Category[]
+  slug: string
+  categories: Category[]
 }
 export interface TypeBlogDetail {
   source: MDXRemoteSerializeResult
-  data: Blog
+  blog: Blog
 }
 
 export interface Category {

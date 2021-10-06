@@ -1,3 +1,5 @@
+export const URL_BASE_FRONT = 'https://luis-isasi.vercel.app/'
+
 export const USER_SESSION = 'user_session'
 export const USER_SETTINGS = 'user_settings'
 

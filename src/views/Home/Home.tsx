@@ -6,6 +6,7 @@ import PresentingMe from './Sections/PresentingMe'
 import RecentContent from './Sections/RecentContent'
 import Categories from '@/src/views/Home/components/Categories'
 import { Blog, Category } from '@Types'
+import { URL_BASE_FRONT } from '@Constants'
 
 const Home: React.FC<{
   recentsBlogs: Blog[]
@@ -17,7 +18,7 @@ const Home: React.FC<{
         title="Home | Luis Isasi"
         description="Hola, Soy Luis Isasi un Front-end Developer con metas de ser Full Stack, convirtiendo ideas del mundo real a código usando principalmente Javascript y Typescript, Anhelo ser un buen developer para toda la comunidad y este sitio es uno de los pasos para lograrlo."
         //TODO: add url, example("https://luis-isasi.com")
-        canonical=""
+        canonical={URL_BASE_FRONT}
         twitter={{
           handle: '@handle',
           site: '@luis_isasi',
@@ -26,7 +27,7 @@ const Home: React.FC<{
         openGraph={{
           type: 'website',
           //TODO: add url, example("https://luis-isasi.com")
-          url: '',
+          url: URL_BASE_FRONT,
           title: 'Home | Luis Isasi',
           description:
             'Hola, Soy Luis Isasi un Front-end Developer con metas de ser Full Stack, convirtiendo ideas del mundo real a código usando principalmente Javascript y Typescript, Anhelo ser un buen developer para toda la comunidad y este sitio es uno de los pasos para lograrlo.',
@@ -34,9 +35,10 @@ const Home: React.FC<{
           images: [
             {
               //TODO: add image's url
-              url: '',
+              url: `${URL_BASE_FRONT}Image/opengraph.jpg`,
               width: 640,
               height: 628,
+              alt: 'Luis Isasi',
             },
           ],
         }}
