@@ -65,7 +65,7 @@ const BlogDetail: React.FC<TypeBlogDetail> = ({ source, blog }) => {
           images: [
             {
               //TODO: add image's url
-              url: `${URL_BASE_FRONT}Image/opengraph.jpg`,
+              url: `${URL_BASE_FRONT}Images/opengraph.jpg`,
               width: 640,
               height: 628,
               alt: 'Luis Isasi',
@@ -81,12 +81,12 @@ const BlogDetail: React.FC<TypeBlogDetail> = ({ source, blog }) => {
       <ArticleJsonLd
         title={title}
         url={url}
-        images={[`${URL_BASE_FRONT}Image/opengraph.jpg`]}
+        images={[`${URL_BASE_FRONT}Images/opengraph.jpg`]}
         datePublished={createdAt}
         dateModified={createdAt}
         authorName="Luis Isasi"
         publisherName="Luis Isasi"
-        publisherLogo={`${URL_BASE_FRONT}Image/opengraph.jpg`}
+        publisherLogo={`${URL_BASE_FRONT}Images/opengraph.jpg`}
         description={contentPreview}
       />
     </>

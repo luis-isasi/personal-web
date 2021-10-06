@@ -63,7 +63,7 @@ const contactme = () => {
           images: [
             {
               //TODO: add image's url
-              url: `${URL_BASE_FRONT}Image/opengraph.jpg`,
+              url: `${URL_BASE_FRONT}Images/opengraph.jpg`,
               width: 640,
               height: 628,
               alt: 'Luis Isasi',
