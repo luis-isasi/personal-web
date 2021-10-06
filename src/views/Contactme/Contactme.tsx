@@ -1,7 +1,9 @@
+import { NextSeo } from 'next-seo'
+import Image from 'next/image'
 import { useRouter } from 'next/router'
 import { useState } from 'react'
 
-import Image from 'next/image'
+import { URL_BASE_FRONT } from '@Constants'
 import Form from './Form'
 
 const msg_sent = 'message_sent'
@@ -21,24 +23,55 @@ const contactme = () => {
   const onLoading = () => {}
 
   return (
-    <div className="w-full h-full">
-      <div className="text-white w-full px-5 max-w-sm h-auto mx-auto mt-10 pb-10">
-        <Image
-          layout="responsive"
-          src={`/Images/${isSuccess ? msg_sent : new_msg}.svg`}
-          width="300"
-          height="200"
-          className={`${isSuccess && 'animate-fade-in'}`}
-          alt={isSuccess ? msg_sent : new_msg}
-        />
-        <div>
-          <p className="mt-6 mb-10 text-center text-black dark:text-white">
-            👋 Hola, envíame un mensaje para contactarme
-          </p>
+    <>
+      <div className="w-full h-full">
+        <div className="text-white w-full px-5 max-w-sm h-auto mx-auto mt-10 pb-10">
+          <Image
+            layout="responsive"
+            src={`/Images/${isSuccess ? msg_sent : new_msg}.svg`}
+            width="300"
+            height="200"
+            className={`${isSuccess && 'animate-fade-in'}`}
+            alt={isSuccess ? msg_sent : new_msg}
+          />
+          <div>
+            <p className="mt-6 mb-10 text-center text-black dark:text-white">
+              👋 Hola, envíame un mensaje para contactarme
+            </p>
+          </div>
+          <Form onSuccess={onSuccess} onLoading={onLoading} />
         </div>
-        <Form onSuccess={onSuccess} onLoading={onLoading} />
       </div>
-    </div>
+      <NextSeo
+        title="Contactame | Luis Isasi"
+        description="Hola, Soy Luis Isasi un Front-end Developer, convirtiendo ideas del mundo real a código usando principalmente Typescript, por este medio me puedes contactar, será un gusto comunicarme contigo 😀."
+        //TODO: add url, example("https://luis-isasi.com")
+        canonical={URL_BASE_FRONT}
+        twitter={{
+          handle: '@handle',
+          site: '@luis_isasi',
+          cardType: 'summary_large_image',
+        }}
+        openGraph={{
+          type: 'website',
+          //TODO: add url, example("https://luis-isasi.com")
+          url: URL_BASE_FRONT,
+          title: 'Contactame | Luis Isasi',
+          description:
+            'Hola, Soy Luis Isasi un Front-end Developer, convirtiendo ideas del mundo real a código usando principalmente Typescript, por este medio me puedes contactar, será un gusto comunicarme contigo 😀.',
+          site_name: 'Contactame | Luis Isasi',
+          images: [
+            {
+              //TODO: add image's url
+              url: `${URL_BASE_FRONT}Image/opengraph.jpg`,
+              width: 640,
+              height: 628,
+              alt: 'Luis Isasi',
+            },
+          ],
+        }}
+      />
+    </>
   )
 }
 

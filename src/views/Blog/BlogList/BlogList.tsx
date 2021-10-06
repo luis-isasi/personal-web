@@ -35,8 +35,8 @@ const BlogList: React.FC<Props> = ({ blogsPreviews, categories }) => {
   return (
     <>
       <NextSeo
-        title="List de Blogs | Luis Isasi"
-        description="Hola, Soy Luis Isasi un Front-end Developer con metas de ser Full Stack, convirtiendo ideas del mundo real a código usando principalmente Javascript y Typescript, te presento mi lista de blogs, espero sea de tu agrado."
+        title="Listado de Blogs | Luis Isasi"
+        description="Hola, Soy Luis Isasi un Front-end Developer, convirtiendo ideas del mundo real a código usando principalmente typescript, te presento mis blogs."
         //TODO: add url, example("https://luis-isasi.com")
         canonical={URL_BASE_FRONT}
         twitter={{
@@ -48,10 +48,10 @@ const BlogList: React.FC<Props> = ({ blogsPreviews, categories }) => {
           type: 'website',
           //TODO: add url, example("https://luis-isasi.com")
           url: URL_BASE_FRONT,
-          title: 'List de Blogs | Luis Isasi',
+          title: 'Listado de Blogs | Luis Isasi',
           description:
-            'Hola, Soy Luis Isasi un Front-end Developer con metas de ser Full Stack, convirtiendo ideas del mundo real a código usando principalmente Javascript y Typescript, te presento mi lista de blogs, espero sea de tu agrado.',
-          site_name: 'List de Blogs | Luis Isasi',
+            'Hola, Soy Luis Isasi un Front-end Developer, convirtiendo ideas del mundo real a código usando principalmente typescript, te presento mis blogs.',
+          site_name: 'Listado de Blogs | Luis Isasi',
           images: [
             {
               //TODO: add image's url
