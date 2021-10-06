@@ -6,6 +6,8 @@ const PreviewBlog: React.FC<Blog> = ({
   contentPreview,
   createdAt,
   url,
+  categories,
+  slug,
 }) => {
   return (
     <article className="rounded-md py-8 text-dark-light group">
