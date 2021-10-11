@@ -37,7 +37,6 @@ const BlogList: React.FC<Props> = ({ blogsPreviews, categories }) => {
       <NextSeo
         title="Listado de Blogs | Luis Isasi"
         description="Hola, Soy Luis Isasi un Front-end Developer, convirtiendo ideas del mundo real a código usando principalmente typescript, te presento mis blogs."
-        //TODO: add url, example("https://luis-isasi.com")
         canonical={URL_BASE_FRONT}
         twitter={{
           handle: '@handle',
@@ -46,7 +45,6 @@ const BlogList: React.FC<Props> = ({ blogsPreviews, categories }) => {
         }}
         openGraph={{
           type: 'website',
-          //TODO: add url, example("https://luis-isasi.com")
           url: URL_BASE_FRONT,
           title: 'Listado de Blogs | Luis Isasi',
           description:
@@ -54,7 +52,6 @@ const BlogList: React.FC<Props> = ({ blogsPreviews, categories }) => {
           site_name: 'Listado de Blogs | Luis Isasi',
           images: [
             {
-              //TODO: add image's url
               url: `${URL_BASE_FRONT}Images/opengraph.jpg`,
               width: 640,
               height: 628,

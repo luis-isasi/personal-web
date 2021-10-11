@@ -17,7 +17,6 @@ const Home: React.FC<{
       <NextSeo
         title="Home | Luis Isasi"
         description="Hola, Soy Luis Isasi un Front-end Developer, convirtiendo ideas del mundo real a código usando principalmente Typescript, Anhelo ser un buen developer para toda la comunidad y este sitio es uno de los pasos para lograrlo."
-        //TODO: add url, example("https://luis-isasi.com")
         canonical={URL_BASE_FRONT}
         twitter={{
           handle: '@handle',
@@ -26,7 +25,6 @@ const Home: React.FC<{
         }}
         openGraph={{
           type: 'website',
-          //TODO: add url, example("https://luis-isasi.com")
           url: URL_BASE_FRONT,
           title: 'Home | Luis Isasi',
           description:
@@ -34,7 +32,6 @@ const Home: React.FC<{
           site_name: 'Home | Luis Isasi',
           images: [
             {
-              //TODO: add image's url
               url: `${URL_BASE_FRONT}Images/opengraph.jpg`,
               width: 640,
               height: 628,

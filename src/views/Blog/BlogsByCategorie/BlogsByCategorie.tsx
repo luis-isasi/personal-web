@@ -30,7 +30,6 @@ const BlogsByCategorie: React.FC<{
       <NextSeo
         title={seoTitle}
         description={`Hola, Soy Luis Isasi un Front-end Developer, convirtiendo ideas del mundo real a código usando principalmente typescript, te presento mis blogs de ${category}.`}
-        //TODO: add url, example("https://luis-isasi.com")
         canonical={URL_BASE_FRONT}
         twitter={{
           handle: '@handle',
@@ -39,14 +38,12 @@ const BlogsByCategorie: React.FC<{
         }}
         openGraph={{
           type: 'website',
-          //TODO: add url, example("https://luis-isasi.com")
           url: URL_BASE_FRONT,
           title: seoTitle,
           description: `Hola, Soy Luis Isasi un Front-end Developer, convirtiendo ideas del mundo real a código usando principalmente typescript, te presento mis blogs de ${category}.`,
           site_name: seoTitle,
           images: [
             {
-              //TODO: add image's url
               url: `${URL_BASE_FRONT}Images/opengraph.jpg`,
               width: 640,
               height: 628,

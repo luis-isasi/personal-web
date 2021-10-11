@@ -45,7 +45,6 @@ const contactme = () => {
       <NextSeo
         title="Contactame | Luis Isasi"
         description="Hola, Soy Luis Isasi un Front-end Developer, convirtiendo ideas del mundo real a código usando principalmente Typescript, por este medio me puedes contactar, será un gusto comunicarme contigo 😀."
-        //TODO: add url, example("https://luis-isasi.com")
         canonical={URL_BASE_FRONT}
         twitter={{
           handle: '@handle',
@@ -54,7 +53,6 @@ const contactme = () => {
         }}
         openGraph={{
           type: 'website',
-          //TODO: add url, example("https://luis-isasi.com")
           url: URL_BASE_FRONT,
           title: 'Contactame | Luis Isasi',
           description:
@@ -62,7 +60,6 @@ const contactme = () => {
           site_name: 'Contactame | Luis Isasi',
           images: [
             {
-              //TODO: add image's url
               url: `${URL_BASE_FRONT}Images/luis-isasi.jpeg`,
               width: 640,
               height: 628,
