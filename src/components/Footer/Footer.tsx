@@ -13,7 +13,7 @@ const Footer = () => {
               Blog
             </Link>
             <Link
-              href="/snippets"
+              href="/blog/categories/snippets"
               className="font-bold text-sm p-1 my-1 lg:mr-7"
             >
               Snippets
@@ -34,7 +34,7 @@ const Footer = () => {
               Twitter
             </a>
             <Link
-              href="/contactame"
+              href="/contactme"
               className="font-bold text-sm p-1 my-1 lg:mr-7"
             >
               Contáctame
