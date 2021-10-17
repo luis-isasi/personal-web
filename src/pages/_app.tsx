@@ -5,8 +5,9 @@ import NProgress from 'nprogress'
 
 import '../../styles/globals.css'
 
-import Layout from '@Components/Layout'
 import { ContextThemeProvider } from '@Context/contextTheme'
+import Layout from '@Components/Layout'
+import * as ga from '@/Google-Analytics'
 
 function MyApp({ Component, pageProps }: AppProps) {
   const router = useRouter()
@@ -15,8 +16,9 @@ function MyApp({ Component, pageProps }: AppProps) {
     const handleStart = () => {
       NProgress.start()
     }
-    const handleStop = () => {
+    const handleStop = (url: any) => {
       NProgress.done()
+      ga.pageView(url)
     }
 
     router.events.on('routeChangeStart', handleStart)
