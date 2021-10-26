@@ -1,17 +1,17 @@
 --- 
 title: 'Como hacer responsive design con un custom hook'
-contentPreview: '¿Alguna vez has deseado renderizar un componente dependiendo al width del screen?, pues te enseño a como hacerlo con un custom hook'
+contentPreview: '¿Alguna vez has deseado renderizar un componente dependiendo al width del screen (mobile, tablet, laptop, desktop)?, pues te enseño a como hacerlo con un custom hook'
 createdAt: '03/09/2021'
 categories: "react"
 ---
 
-Hace un tiempo tenia mucha curiosidad de como hacer responsive design en react js, esta claro que se puede con las Medias Queries a nivel de css y pues si, hablo en css, pero que pasá si quiero renderizar un componente dependediendo al width del screen, en lo primero que pensarías quizas es en lo siguiente.
+Hace un tiempo tenia mucha curiosidad de como hacer responsive design en react js, esta claro que se puede con las Medias Queries a nivel de css y pues si, hablo en css, pero que pasá si quiero pintar un componente en la pantalla dependediendo al width del screen, en lo primero que pensarías quizas es en lo siguiente.
 
 ```jsx language=jsx
 import * as React from 'react'
 
 const MyComponent = () => {
-  let widthScreen: number = window.innerWidth;
+  let widthScreen = window.innerWidth;
 
   if (widthScreen > 1200) {
     return <p>Genial! Estamos en una PC</p>
