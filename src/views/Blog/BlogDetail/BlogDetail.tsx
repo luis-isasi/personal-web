@@ -38,9 +38,14 @@ const BlogDetail: React.FC<TypeBlogDetail> = ({ source, blog }) => {
       <div className="w-full bg-white dark:bg-dark-primary">
         <div className="w-full h-auto mx-auto px-5 py-4 sm:max-w-xl md:max-w-2xl lg:max-w-3xl lg:px-0 xl:max-w-4xl">
           <MDXProvider components={mdxComponents}>
-            <h2 className="text-dark-light dark:text-white font-bold text-center text-2xl lg:text-4xl p-0 lg:py-8">
-              {title}
-            </h2>
+            <div className="text-center p-0 lg:py-8">
+              <h2 className="text-dark-light dark:text-white font-bold text-2xl lg:text-4xl ">
+                {title}
+              </h2>
+              <div className="mt-3 text-xs  xl:text-sm font-medium text-gray-500">
+                <time>{createdAt}</time>
+              </div>
+            </div>
             <div>
               <MDXRemote {...source} />
             </div>
