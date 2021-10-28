@@ -1,0 +1,39 @@
+---
+title: '¿Conoces realmente el proceso de renderizado en React?'
+contentPreview: 'Todo escuchamos el concepto de renderizado en react, pero en verdad sabes lo que hace react por detrás y que este no es lo mismo a pintar el componente en la pantalla.'
+createdAt: '27/10/2021'
+categories: "react, snippets"
+---
+
+### introducción
+
+Hace más de 1 año me preguntaba que es el render en `React`, al parecer ese concepto que tenía en ese momento estaba mal, oh por dios, viví engañado toda mi vida, ¡perdóname `React`! 😥 , pero bueno hago este blog para que sepas lo que es lo que en verdad es el `render` en `React`.
+
+Todos comenzamos en `React ` comprendiendo los componentes y que estos componentes devuelven un `JSX` y que a la misma vez ese `JSX`es el mismo `React` creando nodos para a futuro insertarlo en el `DOM ` y pues en ese momento quizás escuchaste el concepto de `render`, pues si regresamos a los componentes hechos con clases, estas clases retornaban un método llamado `render` y **este era el método que se encargaba de supuestamente pintar el componente en la pantalla, hey! Dije supuestamente...**
+
+### Como que renderizar un componente no es lo mismo a pintarlo en la pantalla 😲
+
+La mayoría de casos y creo que todos cuando comenzamos en `React` **entendemos que el `render` es el pintado de un componente en la pantalla del usuario y no es así**, y lo podemos confirmar al leer la propia documentación de `React`.
+
+Entonces comencemos por entender los pasos de como un componente es creado hasta que el usuario ve el componente
+
+- Se crea tu componente o se actualiza por algún cambio de `props` o cambio de valor un `state`, etc.
+- `React` renderiza tu componente
+- La pantalla se actualiza para el usuario
+
+Entonces como verás, los últimos 2 pasos son de renderizar y actualizar la pantalla, es decir son diferentes, pero ¿Entonces que rayos es el `renderizado`?
+
+### ¿Qué es el renderizado en React js?
+
+Pues para resumirlo, el Proceso de renderizado comprende en como React recopila el estado actual de nuestra aplicación, cambios en la interfaz del usuario, cambios de `className`, etc. 
+Luego de esto React genera el `DOM` virtual con la información recapitulada y lo compara con el `DOM` real, ahora esta comparación tiene un algoritmo por detrás llamado [reconciliación][https://es.reactjs.org/docs/reconciliation.html#gatsby-focus-wrapper], te dejo la documentación, luego de eso se actualiza la pantalla del usuario.
+
+Una vez terminado el proceso de renderizado comienza la fase del `commit`, en esta fase se insertan los cambios en el `DOM` real, estos se van insertando de manera síncrona y el `DOM` se actualiza.
+
+Hice esta explicación, ya que necesitaba entender la diferencia entre `useLayoutEffect` y `useEffect`, el cual subiré muy pronto.
+
+### Conclusión
+
+Ahora ya sabes como `React` trabaja por detrás en el proceso de renderizado y que este concepto no equivale a pintar los componentes en la pantalla, con esto sé que te resultará fácil entender mi siguiente blog. Espero haberte ayudado.
+
+¡Muchas gracias por leer! 👋
