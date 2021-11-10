@@ -26,7 +26,7 @@ Entonces como verás, los últimos 2 pasos son de renderizar y actualizar la pan
 ### ¿Qué es el renderizado en React js?
 
 Pues para resumirlo, el Proceso de renderizado comprende en como React recopila el estado actual de nuestra aplicación, cambios en la interfaz del usuario, cambios de `className`, etc. 
-Luego de esto React genera el `DOM` virtual con la información recapitulada y lo compara con el `DOM` real, ahora esta comparación tiene un algoritmo por detrás llamado [reconciliación][https://es.reactjs.org/docs/reconciliation.html#gatsby-focus-wrapper], te dejo la documentación, luego de eso se actualiza la pantalla del usuario.
+Luego de esto React genera el `DOM` virtual con la información recapitulada y lo compara con el `DOM` real, ahora esta comparación tiene un algoritmo por detrás llamado [reconciliación](https://es.reactjs.org/docs/reconciliation.html#gatsby-focus-wrapper), te dejo la documentación, luego de eso se actualiza la pantalla del usuario.
 
 Una vez terminado el proceso de renderizado comienza la fase del `commit`, en esta fase se insertan los cambios en el `DOM` real, estos se van insertando de manera síncrona y el `DOM` se actualiza.
 
