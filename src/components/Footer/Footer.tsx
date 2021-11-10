@@ -1,5 +1,7 @@
 import Link from '@Components/Links/Link'
 
+import SocialNetworks from '@Components/SocialNetworks'
+
 const Footer = () => {
   return (
     <footer className="py-7 px-5 bg-gradient-primary dark:bg-gradient-dark-sm dark:lg:bg-gradient-dark-lg">
@@ -24,15 +26,6 @@ const Footer = () => {
             >
               Sobre mí
             </Link>
-          </div>
-          <div className="mt-4 lg:mt-0 flex flex-col lg:flex-row text-purple-800 dark:text-gray-300">
-            <a
-              target="_blank"
-              href="https://twitter.com/luis_isasi"
-              className="font-bold text-sm p-1 my-1 lg:mr-7"
-            >
-              Twitter
-            </a>
             <Link
               href="/contactme"
               className="font-bold text-sm p-1 my-1 lg:mr-7"
@@ -40,10 +33,15 @@ const Footer = () => {
               Contáctame
             </Link>
           </div>
+          <div className="mt-2 md:mt-0">
+            <SocialNetworks />
+          </div>
         </div>
         <div className="mt-7 lg:mt-0 text-center lg:text-right flex flex-col items-center dark:text-white">
-          <h2 className="w-full text-2xl font-semibold ">Luis Isasi</h2>
-          <p className="font-semibold text-sm">
+          <h2 className="w-full text-xl md:text-2xl font-semibold">
+            Luis Isasi
+          </h2>
+          <p className="font-semibold text-xs md:text-sm">
             ©2021 Luis Isasi - All Rights Reserved.
           </p>
         </div>

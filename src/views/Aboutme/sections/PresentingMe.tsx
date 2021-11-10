@@ -1,7 +1,7 @@
 import Image from 'next/image'
 
 import useResponsive from '@/src/hooks/useResponsive'
-import SocialNetworks from '../components/SocialNetworks'
+import SocialNetworks from '@Components/SocialNetworks'
 import MyGmail from '../components/MyGmail'
 import { MEDIAQUERY_MD } from '@Constants'
 
