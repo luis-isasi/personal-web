@@ -6,16 +6,15 @@ const AboutmeText = () => {
         Soy{' '}
         <b className="text-blue-600 dark:text-blue-500">Luis Isasi Oyolo,</b>{' '}
         tengo 22 años y soy un estudiante cursando el octavo ciclo de la carrera
-        de ING. De Sistemas, en los primeros ciclos me interesaba mucho el
+        de Ing. De Sistemas, en los primeros ciclos me interesaba mucho el
         desarrollo web, comencé estudiando HTML5 y CSS3, como todo principiante
         pensé que eso era suficiente y me equivoque, seguí tomando cursos de
         JavaScript, hasta ese punto descubrí que el desarrollo web era un mundo
-        muy extenso, pero me agradaba y estaba dispuesto a seguir estudiando de
-        la mano con la universidad,
+        muy extenso, pero me agradaba y estaba dispuesto a seguir estudiando en
+        paralelo con la universidad,
         <i className="font-bold">
           {' '}
-          luego comencé con React js, react hooks, Github, styled components,
-          webpack, babel, tailwind css, next js, etc.{' '}
+          luego comencé con React js, me adentre en todo su ecosistema.{' '}
         </i>
         Hasta el día de hoy sigo aprendiendo en diferentes plataformas
         virtuales, tengo proyectos en mi perfil de github y estoy dispuesto a
