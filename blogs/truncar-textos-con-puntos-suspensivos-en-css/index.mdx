@@ -1,27 +1,32 @@
---- 
+---
 title: 'Truncar textos con puntos suspensivos en CSS'
 contentPreview: '¿Tienes textos que se desbordan dentro del contenedor?, probablemente quieras colocar los famosos puntos suspensivos al final del texto y así evitar el desborde de texto, pues te enseño a como hacerlo.'
 createdAt: '25/08/2021'
-categories: "css, snippets"
+categories: 'css, snippets'
 ---
 
 Para comenzar, usaremos 3 propiedades `CSS`(no vamos a profundizar en estas propiedades pero dejaré lo enlaces en [**cssreference.io**](https://cssreference.io/) por si no las conoces).
 
 ##### [**white-space**](https://cssreference.io/property/white-space/)
+
 Nos permite manejar los espacios en blanco con los siguientes valores:
 
-* **normal**(default): El contenido del texto está envuelto.
-* **nowrap**: Coloca el texto en forma lineal sin saltos de líneas y sobrepasando al contenedor si es necesario(de ahí el nombre 'nowrap' es decir 'sin envoltura').
-* **pre**: simula a la etiqueta [pre](https://developer.mozilla.org/es/docs/Web/HTML/Element/pre) en HTML.
+- **normal**(default): El contenido del texto está envuelto.
+- **nowrap**: Coloca el texto en forma lineal sin saltos de líneas y sobrepasando al contenedor si es necesario(de ahí el nombre 'nowrap' es decir 'sin envoltura').
+- **pre**: simula a la etiqueta [pre](https://developer.mozilla.org/es/docs/Web/HTML/Element/pre) en HTML.
 
 Hay 2 valores más **pre-wrap** y **pre-line**, te los dejo para que los investigues.
 
 ##### [**overflow**](https://cssreference.io/property/overflow/)
-Básicamente define como mostrar el contenido desbordado, dependiendo de esto también el scroll en el contenedor (valores: **visible**(default), **hidden**, **scroll** y **auto**). 
+
+Básicamente define como mostrar el contenido desbordado, dependiendo de esto también el scroll en el contenedor (valores: **visible**(default), **hidden**, **scroll** y **auto**).
+
 ##### [**text-overflow**](https://cssreference.io/property/text-overflow/)
+
 Define como se comporta el texto desbordado.
-* **clip**(default): El texto no tiene envoltura y estará recortado si se desborda.
-* **ellipsis**: si el texto desbordado se recortará con puntos suspensivos al final.
+
+- **clip**(default): El texto no tiene envoltura y estará recortado si se desborda.
+- **ellipsis**: si el texto desbordado se recortará con puntos suspensivos al final.
 
 Ahora que ya conoces como trabajan las 3 propiedades `CSS` que utilizaremos, vamos a por el código css.
 
@@ -29,10 +34,10 @@ Ahora que ya conoces como trabajan las 3 propiedades `CSS` que utilizaremos, vam
 <p id="parrafo">
   Lorem Ipsum is simply dummy text of the printing and typesetting industry.
   Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
-  when an unknown printer took a galley of type and scrambled it to make a type 
+  when an unknown printer took a galley of type and scrambled it to make a type
   specimen book. It has survived not only five centuries, but also the leap into
-  electronic typesetting, remaining essentially unchanged. It was popularised 
-  in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages,
+  electronic typesetting, remaining essentially unchanged. It was popularised in
+  the 1960s with the release of Letraset sheets containing Lorem Ipsum passages,
   and more recently with desktop publishing software like Aldus PageMaker
   including versions of Lorem Ipsum.
 </p>
@@ -53,18 +58,25 @@ Ya que tenemos un párrafo con su id, agregamos los siguientes propiedades css.
 
 El resultado sería:
 
-<div className="dark:text-white" style={{ padding: '0px 30px', whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>
+<div
+  className="dark:text-white"
+  style={{
+    padding: '0px 30px',
+    whiteSpace: 'nowrap',
+    overflow: 'hidden',
+    textOverflow: 'ellipsis',
+  }}
+>
   <strong>
     Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-    Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
-    when an unknown printer took a galley of type and scrambled it to make a type 
-    specimen book. It has survived not only five centuries, but also the leap into
-    electronic typesetting, remaining essentially unchanged. It was popularised 
-    in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages,
-    and more recently with desktop publishing software like Aldus PageMaker
-    including versions of Lorem Ipsum.
+    Lorem Ipsum has been the industry's standard dummy text ever since the
+    1500s, when an unknown printer took a galley of type and scrambled it to
+    make a type specimen book. It has survived not only five centuries, but also
+    the leap into electronic typesetting, remaining essentially unchanged. It
+    was popularised in the 1960s with the release of Letraset sheets containing
+    Lorem Ipsum passages, and more recently with desktop publishing software
+    like Aldus PageMaker including versions of Lorem Ipsum.
   </strong>
 </div>
 
 Gracias por leer.
-

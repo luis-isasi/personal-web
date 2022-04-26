@@ -1,67 +1,72 @@
---- 
+---
 title: 'Generar un número aleatorio en un intervalo'
 contentPreview: 'Seguro te suena la famosa clase Math y su metodo random (Math.random), pero sabes ¿Cómo usarlas para obtener un número aleatorio en un intervalo?, pues te enseño y explico como hacerlo.'
 createdAt: '24/08/2021'
-categories: "javascript, snippets"
+categories: 'javascript, snippets'
 ---
 
 ### Introducción
-Hace algunas semanas tuve el mismo obstáculo por el que entraste a este blog, en primer lugar me puse a pensar en el famoso [`Math.random`](https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Math/random), y probablemente tú también y pues fue un buen paso para comenzar, a continuación te presentaré la solución directa y luego su explicación.
 
+Hace algunas semanas tuve el mismo obstáculo por el que entraste a este blog, en primer lugar me puse a pensar en el famoso [`Math.random`](https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Math/random), y probablemente tú también y pues fue un buen paso para comenzar, a continuación te presentaré la solución directa y luego su explicación.
 
 ```javascript language=javascript
 function intervalNum(min, max) {
-  return Math.floor(Math.random() * (max - min + 1) + min);
+  return Math.floor(Math.random() * (max - min + 1) + min)
 }
 
-console.log(intervalNum(10, 20)); //output: 17
+console.log(intervalNum(10, 20)) //output: 17
 ```
+
 **¿Qué acaba de suceder en el código anterior?**, pues acá te lo explicaré.
 
 Comenzaremos por explicar brevemente a `Math.floor()` y `Math.random()`.
-* [`Math.random`](https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Math/random): retorna un decimal desde el 0 (Incluido) hasta el 1 pero sin incluirlo.
-* [`Math.floor`](https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Math/floor): recibe un decimal y devuelve la parte entera del decimal.
-    
+
+- [`Math.random`](https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Math/random): retorna un decimal desde el 0 (Incluido) hasta el 1 pero sin incluirlo.
+- [`Math.floor`](https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Math/floor): recibe un decimal y devuelve la parte entera del decimal.
+
 Teniendo eso en cuenta, vamos a refactorizar el código para que se pueda entender mejor.
 
 ```javascript language=javascript
 function intervalNum(min, max) {
-  const posibilidades =  max - min + 1;
-  let random = Math.random() * posibilidades;
-  random = Math.floor(random);
-  return min + random;
+  const posibilidades = max - min + 1
+  let random = Math.random() * posibilidades
+  random = Math.floor(random)
+  return min + random
 }
 ```
+
 Ahora se ve agradable, ¿Verdad?, pues ahora vamos paso a paso.
 
 ```javascript language=javascript
-  const posibilidades =  max - min + 1;
+const posibilidades = max - min + 1
 ```
 
 Necesitamos un número de posibilidades, pero si restamos el `max` y `min` tendremos una posibilidad menos, es decir, si necesito un número aleatorio entre 3 y 6, la resta es 3, pero las posibilidades reales son 4 (`3, 4, 5, 6`) y así para todo caso, es por eso el `+ 1` en el número de posibilidades.
 
 ```javascript language=javascript
-  let random = Math.random() * posibilidades;
+let random = Math.random() * posibilidades
 ```
 
 Ahora con el decimal generado por `Math.random()`, podemos multiplicarlo por el número de posibilidades, tomando el ejemplo anterior de 3 y 6, las posibildades serian 4, si lo muliplicamos por decimal generado, **entonces el resultado de esta multiplicación sería menor que 4 y mayor que 0**, entonces te estarás preguntando "y para qué quiero un decimal aleatorio entre 0 a 4", pues ahora vamos a las siguientes líneas de código.
 
 ```javascript language=javascript
-random = Math.floor(random);
-return min + random;
+random = Math.floor(random)
+return min + random
 ```
+
 Ya que tenemos un decimal aleatorio de 0 a 4, agarramos la parte entera con `Math.floor()`, **tendríamos un número aleatorio entre 0 y el 4 (excluido, ya que `Math.random()` nunca retornará 1)** y solo faltaría sumarle el intervalo menor(`min`) y **la suma de estos nunca será mayor que el `max` ni menor que el `min`(ya que lo sumamos).**
 
 Un ejemplo con 3 y 6 (puedes cambiar el valor generado por `Math.random` y siempre funcionará):
 
 ```javascript language=javascript
 function intervalNum(min, max) {
-  const posibilidades =  max - min + 1; // posibilidades = 6 - 3 + 1 =  4
-  let random = Math.random() * posibilidades; // random = 0.7 * 4 = 2.8
-  random = Math.floor(random); // random = 2
-  return min + random; // output: 3 + 2 = 5
+  const posibilidades = max - min + 1 // posibilidades = 6 - 3 + 1 =  4
+  let random = Math.random() * posibilidades // random = 0.7 * 4 = 2.8
+  random = Math.floor(random) // random = 2
+  return min + random // output: 3 + 2 = 5
 }
 ```
+
 Con esta explicación quiero que tu creatividad crezca y que sepas que todo es posible para los programadores.
 
 Gracias por leer.

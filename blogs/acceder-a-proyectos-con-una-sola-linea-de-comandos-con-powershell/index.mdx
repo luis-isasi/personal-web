@@ -1,0 +1,69 @@
+---
+title: 'Accede a todos tus proyectos con una "Z" en Powershell'
+contentPreview: 'Todos queremos ser más ágiles al momento de desarrollar, y si te digo que puedes moverte entre tus proyectos con una sola línea de comando. Pues te presento una herramienta que te ayudara a saltar entre todos tus proyectos con una "Z" en Powershell.'
+createdAt: '25/04/2022'
+categories: 'Terminal'
+---
+
+### Introducción
+
+Todos tenemos nuestros mejores tips para nuestro ambiente de desarrollo, aquellas configuraciones que hacen nos más ágiles al momento de desarrollar y una de ellas es "Z" para [PowerShell](https://docs.microsoft.com/es-es/powershell/scripting/overview?view=powershell-7.2), si, hoy es un blog para los usuarios de Windows, así que veamos como puedes instalar esta herramienta que **te permite acceder a un directorio con un solo comando en la terminal 😮**,
+
+### Instalando el módulo "Z"
+
+Sinceramente, es muy fácil, tenemos que instalar el módulo con el siguiente comando.
+
+```PowerShell language=PowerShell
+$ Install-Module z -AllowClobber
+```
+
+Una vez instalado, tenemos que configurar nuestro archivo `PowerShell_profile.ps1`, que usualmente se ubica en en la carpeta de instalación de PowerShell, una vez que hallamos ubicado nuestro archivo, añadiremos la siguiente línea al final de nuestra configuración.
+
+```"" language=
+Import-Module z
+```
+
+Listo, ya tenemos "Z" en nuestra terminal [PowerShell](https://docs.microsoft.com/es-es/powershell/scripting/overview?view=powershell-7.2), pero ¿Y ahora como accedemos a nuestros directorios con esta herramienta?
+
+### Conociendo a "Z"
+
+Creo que el mejor sitio donde puedes conocer más de esta herramienta es su [repositorio](https://github.com/badmotorfinger/z?WT.mc_id=-blog-scottha), pero acá te hacemos la vida más facil, vamos a entender como funciona esta herramienta.
+
+Lo que hace es que cada vez que accedas a un directorio con **cd** este guardará la ruta a ese directorio, entonces para cuando quieras acceder a esa ruta, solo debes hacer algo como esto:
+
+```PowerShell language=PowerShell
+$ z my-proyect
+```
+
+Lo que esta herramienta será buscar todas las rutas a las que accediste anteriormente y ver si alguna de ellas hace match con lo que escribiste, **¿Match 🤔?** Si, match, **es decir, no necesariamente tienes que escribir todo el nombre del directorio al que quieres acceder**, con que simplemente escribas `z proyect` estarías accediendo a un directorio con el nombre ** my-proyect-with-react **, esto hace a "Z" una herramienta mas ágil de lo que pensamos.
+
+Acá un ejemplo de como podemos usarlo:
+
+<img
+  src="https://raw.githubusercontent.com/luis-isasi/project_files/master/blog-z-in-powershell/z-example.gif"
+  width="600"
+  height="600"
+  className="mx-auto"
+/>
+
+Otros comandos con esta herramienta podrían ser:
+
+- Ver todas las rutas que tiene registradas:
+
+```PowerShell language=PowerShell
+$ z -l
+```
+
+- Eliminar las rutas inaccesibles del archivo de datos:
+
+```PowerShell language=PowerShell
+$ z -clean
+```
+
+Y así hay más cosas que esta herramienta nos puede ofrecer.
+
+### Conclusión
+
+Hoy conocimos a "Z" en [PowerShell](https://docs.microsoft.com/es-es/powershell/scripting/overview?view=powershell-7.2), una herramienta que nos hará más ágil al momento de movernos entre directorios, espero que te haya servido y que lo compartas con tus colegas desarrolladores 😊.
+
+¡Muchas gracias por leer! 👋

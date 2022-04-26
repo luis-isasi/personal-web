@@ -3,7 +3,7 @@ const Skills = () => {
     <section>
       <h3 className="font-bold text-3xl md:text-4xl mb-2">Skills</h3>
       <div className="my-7 w-4/5 mx-auto text-lg text-center lg:text-left md:text-xl font-normal">
-        <p className="mb-4">Soy Tengo conocimientos solidos en:</p>
+        <p className="mb-4">Tengo conocimientos solidos en:</p>
         <div>
           <ul className="list-disc list-inside mb-4">
             <p className="mb-1 font-bold">UI</p>
@@ -23,6 +23,11 @@ const Skills = () => {
             <li>Tailwind css</li>
             <li>sass</li>
             <li>css modules</li>
+          </ul>
+          <ul className="list-disc list-inside mb-4">
+            <p className="mb-1 font-bold">Testing Tools</p>
+            <li>Jest</li>
+            <li>React testing Library</li>
           </ul>
           <ul className="list-disc list-inside mb-4">
             <p className="mb-1 font-bold">Javascript Tooling</p>

@@ -1,8 +1,8 @@
---- 
+---
 title: 'Como hacer responsive design con un custom hook'
 contentPreview: '¿Alguna vez has deseado renderizar un componente dependiendo al width del screen (mobile, tablet, laptop, desktop)?, pues te enseño a como hacerlo con un custom hook'
 createdAt: '03/09/2021'
-categories: "react"
+categories: 'react'
 ---
 
 Hace un tiempo tenia mucha curiosidad de como hacer responsive design en react js, esta claro que se puede con las Medias Queries a nivel de css y pues si, hablo en css, pero que pasá si quiero pintar un componente en la pantalla dependediendo al width del screen, en lo primero que pensarías quizas es en lo siguiente.
@@ -11,7 +11,7 @@ Hace un tiempo tenia mucha curiosidad de como hacer responsive design en react j
 import * as React from 'react'
 
 const MyComponent = () => {
-  let widthScreen = window.innerWidth;
+  let widthScreen = window.innerWidth
 
   if (widthScreen > 1200) {
     return <p>Genial! Estamos en una PC</p>
@@ -28,15 +28,12 @@ Claro que se puede hacer esto y está bien, pero si te dijera que con un custom 
 Para comenzar, usaremos un event listener llamado [resize](https://developer.mozilla.org/en-US/docs/Web/API/Window/resize_event), asi que si aún no lo conoces te invito a hacerlo, para comenzar vamos a tener unos parámetros (`minMediaQuery`, `maxMediaQuery`), estos indicarán el rango (width del screen) que evaluaremos, luego crearemos un `state` que será boolean, este indicará si estamos dentro del rango para retornar ese valor, entonces se vería algo así.
 
 ```jsx language=jsx
-import * as React from 'react';
- 
-export default function useResponsive (
-  minMediaQuery, maxMediaQuery 
-) {
-  const [isScreen, setIsScreen] = React.useState(undefined);
+import * as React from 'react'
+
+export default function useResponsive(minMediaQuery, maxMediaQuery) {
+  const [isScreen, setIsScreen] = React.useState(undefined)
 }
 ```
-
 
 Tengamos en cuenta que no siempre llegarán ambos parámetros, ya que a veces no queremos un rango sino simplemente un `min` o un `max`, esto sería equivalente en css con media queries a esto.
 
@@ -47,40 +44,40 @@ Tengamos en cuenta que no siempre llegarán ambos parámetros, ya que a veces no
   }
 }
 ```
-Pues también agregaremos esta funcionalidad, ahora para continuar, crearemos una función que obtenga el width del screen y valide si se encuentra dentro del rango y agregando la funcionalidad de media queries de css, como notarás nuestra función se encuentra envuelto con [debounce](https://lodash.com/docs/4.17.15#debounce), 
 
-##### debounce: 
+Pues también agregaremos esta funcionalidad, ahora para continuar, crearemos una función que obtenga el width del screen y valide si se encuentra dentro del rango y agregando la funcionalidad de media queries de css, como notarás nuestra función se encuentra envuelto con [debounce](https://lodash.com/docs/4.17.15#debounce),
+
+##### debounce:
+
 básicamente debounce es algo parecido a [setTimeout](https://developer.mozilla.org/es/docs/Web/API/setTimeout) con la diferencia en que si esta función se vuelve a llamar dentro del delay programado, esta no se coloca en la cola de tareas, sino que vuelve a reiniciar el tiempo de delay que le hallamos pasado, entonces cuando el usuario cambie el size del screen, solo se llamará una vez luego del delay programado por nosotros, en este caso es `30` milisegundos.
 
 ```jsx language=jsx
 import * as React from 'react'
 import _debounce from 'lodash/debounce'
 
-export default function useResponsive ({ 
-  minMediaQuery, maxMediaQuery
-}) {
-  const [isScreen, setIsScreen] = React.useState(undefined);
-  
+export default function useResponsive({ minMediaQuery, maxMediaQuery }) {
+  const [isScreen, setIsScreen] = React.useState(undefined)
+
   const validateRange = _debounce(() => {
-    let widthScreen = window.innerWidth;
-    let isRange;
+    let widthScreen = window.innerWidth
+    let isRange
 
     //Si solo hay minMediaQuery, solo evaluamos si es mayor a esa media query
     if (minMediaQuery && !maxMediaQuery) {
-      isRange = widthScreen > minMediaQuery;
-    }
-    
-    //Si solo hay maxMediaQuery, solo evaluamos si es menor a esa media query
-    if (!minMediaQuery && maxMediaQuery) {
-      isRange = widthScreen < maxMediaQuery;
-    }
-    
-    //Si hay minMediaQuery y maxMediaQuery, evaluamos si esta entre el rango de las media query
-    if (minMediaQuery && maxMediaQuery) {
-      isRange = widthScreen > minMediaQuery && widthScreen < maxMediaQuery;
+      isRange = widthScreen > minMediaQuery
     }
 
-    //por último cambiamos el valor solo si es diferente 
+    //Si solo hay maxMediaQuery, solo evaluamos si es menor a esa media query
+    if (!minMediaQuery && maxMediaQuery) {
+      isRange = widthScreen < maxMediaQuery
+    }
+
+    //Si hay minMediaQuery y maxMediaQuery, evaluamos si esta entre el rango de las media query
+    if (minMediaQuery && maxMediaQuery) {
+      isRange = widthScreen > minMediaQuery && widthScreen < maxMediaQuery
+    }
+
+    //por último cambiamos el valor solo si es diferente
     isScreen !== isRange && setIsScreen(isRange)
   }, 30)
 }
@@ -92,9 +89,7 @@ Una vez creado nuestra función, tenemos que ponerla a funcionar, vamos a crear 
 import * as React from 'react'
 import _debounce from 'lodash/debounce'
 
-export default function useResponsive ({ 
-  minMediaQuery, maxMediaQuery
-}) {
+export default function useResponsive({ minMediaQuery, maxMediaQuery }) {
   const [isScreen, setIsScreen] = React.useState(undefined)
 
   //ejecutamos nuestra función de validación solo la primera vez
@@ -110,23 +105,23 @@ export default function useResponsive ({
     //se desmonte, eliminaremos el event listener
     return () => {
       window.removeEventListener('resize', validateDimensions)
-    };
-  }, [isScreen]);
+    }
+  }, [isScreen])
 
   const validateScreen = _debounce(() => {
-    let widthScreen = window.innerWidth;
-    let isRange;
+    let widthScreen = window.innerWidth
+    let isRange
 
     if (minMediaQuery && !maxMediaQuery) {
-      isRange = widthScreen > minMediaQuery;
+      isRange = widthScreen > minMediaQuery
     }
-    
+
     if (!minMediaQuery && maxMediaQuery) {
-      isRange = widthScreen < maxMediaQuery;
+      isRange = widthScreen < maxMediaQuery
     }
-    
+
     if (minMediaQuery && maxMediaQuery) {
-      isRange = widthScreen > minMediaQuery && widthScreen < maxMediaQuery;
+      isRange = widthScreen > minMediaQuery && widthScreen < maxMediaQuery
     }
 
     isScreen !== isRange && setIsScreen(isRange)
@@ -138,26 +133,22 @@ export default function useResponsive ({
 
 > **Nota:** Como verás cuando cambiamos el valor de nuestro state, solo lo hacemos cuando este sea diferente al `state` actual, ya que quizás el width del screen puede haber cambiado 1 pixel y eso mandará un re render de nuestro componente, entonces
 >
-> **_¿Que sucede si se actualiza varias veces nuestro `state` con el mismo `value`?_**, 
+> **_¿Que sucede si se actualiza varias veces nuestro `state` con el mismo `value`?_**,
 >
-> Cuando un state se actualiza con su mismo valor por tercera vez consecutiva, este no se vuelve a renderizar el componente, esto es muy bueno, ya que si usamos un `console.log` para ver valor del `state` 
+> Cuando un state se actualiza con su mismo valor por tercera vez consecutiva, este no se vuelve a renderizar el componente, esto es muy bueno, ya que si usamos un `console.log` para ver valor del `state`
 > en la consola veremos que se muestra 2 veces, con esto podriamos notar que react está impidiendo que nuestro componente se rendericé infinitamente y ver claramente nuestro error.
 
 Ahora podrás usarlo en tus componentes de la siguiente manera:
 
 ```jsx language=jsx
 import useResponsive from './hook/useResponsive'
- 
-const MyComponent = () => {
-  //le pasamos el rango a evaluar, recuerda que es posible no pasarle uno de ellos, 
-  //pero no es posible no pasar ningún parámetro
-  const isMobile = useResponsive({maxMediaQuery: 640});
 
-  return (
-  <div>
-    {isMobile && <p>Genial :D, Estamos en un Mobile</p>}
-  </div>
-  )
+const MyComponent = () => {
+  //le pasamos el rango a evaluar, recuerda que es posible no pasarle uno de ellos,
+  //pero no es posible no pasar ningún parámetro
+  const isMobile = useResponsive({ maxMediaQuery: 640 })
+
+  return <div>{isMobile && <p>Genial :D, Estamos en un Mobile</p>}</div>
 }
 ```
 
@@ -217,9 +208,6 @@ export default useResponsive
 
 ### Conclusión
 
-Como vez, es muy fácil implementar este custom hook para realizar responsive design en nuestra web y quizás esta no sea la mejor opción, podrás encontrar varias soluciones en [npm](https://www.npmjs.com/search?q=responsive%20design%20react), pero la idea de este blog es ayudar que tu imaginación crezca en cuanto a crear tus propias funcionalidades para tu web, recuerda que así nacen las grandes librerías, espero haberte ayudado. 
+Como vez, es muy fácil implementar este custom hook para realizar responsive design en nuestra web y quizás esta no sea la mejor opción, podrás encontrar varias soluciones en [npm](https://www.npmjs.com/search?q=responsive%20design%20react), pero la idea de este blog es ayudar que tu imaginación crezca en cuanto a crear tus propias funcionalidades para tu web, recuerda que así nacen las grandes librerías, espero haberte ayudado.
 
 ¡Gracias por leer!
-
-
-

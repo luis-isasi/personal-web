@@ -2,10 +2,10 @@
 title: 'Cosas que no sabías del proceso de renderizado en React'
 contentPreview: 'Todo escuchamos el concepto de renderizado en react, pero en verdad, ¿Sabes lo que hace react por detrás?, y que este no es lo mismo a pintar el componente en la pantalla.'
 createdAt: '27/10/2021'
-categories: "react, snippets"
+categories: 'react, snippets'
 ---
 
-### introducción
+### Introducción
 
 Hace más de 1 año me preguntaba que es el render en `React`, al parecer ese concepto que tenía en ese momento estaba mal, oh por dios, viví engañado toda mi vida, ¡perdóname `React`! 😥 , pero bueno hago este blog para que sepas lo que es lo que en verdad es el `render` en `React`.
 
@@ -25,7 +25,7 @@ Entonces como verás, los últimos 2 pasos son de renderizar y actualizar la pan
 
 ### ¿Qué es el renderizado en React js?
 
-Pues para resumirlo, el Proceso de renderizado comprende en como React recopila el estado actual de nuestra aplicación, cambios en la interfaz del usuario, cambios de `className`, etc. 
+Pues para resumirlo, el Proceso de renderizado comprende en como React recopila el estado actual de nuestra aplicación, cambios en la interfaz del usuario, cambios de `className`, etc.
 Luego de esto React genera el `DOM` virtual con la información recapitulada y lo compara con el `DOM` real, ahora esta comparación tiene un algoritmo por detrás llamado [reconciliación](https://es.reactjs.org/docs/reconciliation.html#gatsby-focus-wrapper), te dejo la documentación, luego de eso se actualiza la pantalla del usuario.
 
 Una vez terminado el proceso de renderizado comienza la fase del `commit`, en esta fase se insertan los cambios en el `DOM` real, estos se van insertando de manera síncrona y el `DOM` se actualiza.
