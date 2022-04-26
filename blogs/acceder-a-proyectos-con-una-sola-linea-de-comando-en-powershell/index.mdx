@@ -7,7 +7,7 @@ categories: 'Terminal'
 
 ### Introducción
 
-Todos tenemos nuestros mejores tips para nuestro ambiente de desarrollo, aquellas configuraciones que hacen nos más ágiles al momento de desarrollar y una de ellas es "Z" para [PowerShell](https://docs.microsoft.com/es-es/powershell/scripting/overview?view=powershell-7.2), si, hoy es un blog para los usuarios de Windows, así que veamos como puedes instalar esta herramienta que **te permite acceder a un directorio con un solo comando en la terminal 😮**,
+Todos tenemos nuestros mejores tips para nuestro ambiente de desarrollo, aquellas configuraciones que nos hacen más ágiles al momento de desarrollar y una de ellas es "Z" para [PowerShell](https://docs.microsoft.com/es-es/powershell/scripting/overview?view=powershell-7.2), sí, hoy es un blog para los usuarios de Windows, así que veamos como puedes instalar esta herramienta que **te permite acceder a un directorio con un solo comando en la terminal 😮**.
 
 ### Instalando el módulo "Z"
 
@@ -17,13 +17,13 @@ Sinceramente, es muy fácil, tenemos que instalar el módulo con el siguiente co
 $ Install-Module z -AllowClobber
 ```
 
-Una vez instalado, tenemos que configurar nuestro archivo `PowerShell_profile.ps1`, que usualmente se ubica en en la carpeta de instalación de PowerShell, una vez que hallamos ubicado nuestro archivo, añadiremos la siguiente línea al final de nuestra configuración.
+Una vez instalado, tenemos que configurar nuestro archivo `PowerShell_profile.ps1`, que usualmente se ubica en la carpeta de instalación de PowerShell, una vez que hallamos ubicado nuestro archivo, añadiremos la siguiente línea al final de nuestra configuración.
 
 ```"" language=
 Import-Module z
 ```
 
-Listo, ya tenemos "Z" en nuestra terminal [PowerShell](https://docs.microsoft.com/es-es/powershell/scripting/overview?view=powershell-7.2), pero ¿Y ahora como accedemos a nuestros directorios con esta herramienta?
+Listo, ya tenemos "Z" en nuestra terminal [PowerShell](https://docs.microsoft.com/es-es/powershell/scripting/overview?view=powershell-7.2), pero ¿y ahora como accedemos a nuestros directorios con esta herramienta?
 
 ### Conociendo a "Z"
 
@@ -35,7 +35,7 @@ Lo que hace es que cada vez que accedas a un directorio con **cd** este guardar�
 $ z my-proyect
 ```
 
-Lo que esta herramienta será buscar todas las rutas a las que accediste anteriormente y ver si alguna de ellas hace match con lo que escribiste, **¿Match 🤔?** Si, match, **es decir, no necesariamente tienes que escribir todo el nombre del directorio al que quieres acceder**, con que simplemente escribas `z proyect` estarías accediendo a un directorio con el nombre ** my-proyect-with-react **, esto hace a "Z" una herramienta mas ágil de lo que pensamos.
+Lo que esta herramienta será buscar todas las rutas a las que accediste anteriormente y ver si alguna de ellas hace match con lo que escribiste, **¿Match 🤔?** sí, match, **es decir, no necesariamente tienes que escribir todo el nombre del directorio al que quieres acceder**, con que simplemente escribas `z proyect` estarías accediendo a un directorio con el nombre ** my-proyect-with-react **, esto hace a "Z" una herramienta mas ágil de lo que pensamos.
 
 Acá un ejemplo de como podemos usarlo:
 
