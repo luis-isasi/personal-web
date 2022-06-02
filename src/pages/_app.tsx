@@ -2,6 +2,7 @@ import * as React from 'react'
 import type { AppProps } from 'next/app'
 import { useRouter } from 'next/router'
 import NProgress from 'nprogress'
+import TagManager from 'react-gtm-module'
 
 import '../../styles/globals.css'
 
@@ -11,6 +12,10 @@ import * as ga from '@/Google-Analytics'
 
 function MyApp({ Component, pageProps }: AppProps) {
   const router = useRouter()
+
+  React.useEffect(() => {
+    TagManager.initialize({ gtmId: 'GTM-P93BCLS' })
+  }, [])
 
   React.useEffect(() => {
     const handleStart = () => {
