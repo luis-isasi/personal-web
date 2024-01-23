@@ -1,18 +1,16 @@
-import Highlight, { defaultProps, Language } from 'prism-react-renderer'
+import { Highlight, themes } from 'prism-react-renderer'
 
-import palenight from 'prism-react-renderer/themes/palenight'
+const CodeSnippet: React.FC = ({ children }) => {
+  if (!children) return null
 
-const CodeSnippet: React.FC<{ children: string; language: Language }> = ({
-  children,
-  language = 'javascript',
-}) => {
+  const {
+    props: { className, children: code },
+  } = children as { props: { className: string; children: string } }
+
+  const language = className ? className.replace(/language-/, '') : 'javascript'
+
   return (
-    <Highlight
-      {...defaultProps}
-      code={children.trim()}
-      language={language}
-      theme={palenight}
-    >
+    <Highlight code={code.trim()} language={language} theme={themes.palenight}>
       {({ className, tokens, getLineProps, getTokenProps, style }) => {
         return (
           <pre

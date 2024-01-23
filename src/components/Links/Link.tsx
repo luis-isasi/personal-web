@@ -6,10 +6,8 @@ const MyLink: React.FC<{
   onClick?: React.MouseEventHandler<HTMLAnchorElement>
 }> = ({ children, className, href, onClick }) => {
   return (
-    <Link href={href}>
-      <a className={className} onClick={onClick}>
-        {children}
-      </a>
+    <Link href={href} className={className} onClick={onClick}>
+      {children}
     </Link>
   )
 }

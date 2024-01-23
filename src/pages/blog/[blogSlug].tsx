@@ -1,7 +1,5 @@
 import { GetStaticPaths, GetStaticProps } from 'next'
 import { getBlogsSlug, getBlogBySlug } from '@/mdx-utils/blog'
-
-//BlogDetail
 export { default } from '@Views/Blog/BlogDetail'
 
 export const getStaticPaths: GetStaticPaths = async ({}) => {

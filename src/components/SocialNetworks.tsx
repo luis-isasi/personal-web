@@ -1,6 +1,6 @@
-import LinkedInIcon from '@material-ui/icons/LinkedIn'
-import GitHubIcon from '@material-ui/icons/GitHub'
-import TwitterIcon from '@material-ui/icons/Twitter'
+import IconGitHub from './Icons/IconGitHub'
+import IconLinkedin from './Icons/IconLinkedin'
+import IconTwitter from './Icons/IconTwitter'
 
 const SocialNetworks = () => {
   return (
@@ -10,21 +10,21 @@ const SocialNetworks = () => {
         target="_blank"
         href="https://www.linkedin.com/in/luis-isasi-oyolo-147865212/"
       >
-        <LinkedInIcon className="fill-current text-blue-500 dark:text-white" />
+        <IconLinkedin className="w-5 max-w-5 h-5 max-h-5" />
       </a>
       <a
         className=" hover:scale-125 ease-in-out duration-75"
         target="_blank"
         href="https://twitter.com/luis_isasi"
       >
-        <TwitterIcon className="fill-current text-blue-500 dark:text-white" />
+        <IconTwitter className="w-5 max-w-5 h-5 max-h-5" />
       </a>
       <a
         className=" hover:scale-125 ease-in-out duration-75"
         target="_blank"
         href="https://github.com/luis-isasi"
       >
-        <GitHubIcon className="fill-current dark:text-white" />
+        <IconGitHub className="w-5 max-w-5 h-5 max-h-5" />
       </a>
     </div>
   )

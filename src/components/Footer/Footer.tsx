@@ -42,7 +42,7 @@ const Footer = () => {
             Luis Isasi
           </h2>
           <p className="font-semibold text-xs md:text-sm">
-            ©2021 Luis Isasi - All Rights Reserved.
+            ©2024 Luis Isasi - All Rights Reserved.
           </p>
         </div>
       </div>
