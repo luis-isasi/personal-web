@@ -1,6 +1,11 @@
 {
   "parser": "@typescript-eslint/parser",
-  "extends": ["prettier", "plugin:@next/next/recommended", "next/core-web-vitals", "next"],
+  "extends": [
+    "prettier",
+    "plugin:@next/next/recommended",
+    "next/core-web-vitals",
+    "next"
+  ],
   "plugins": ["@typescript-eslint", "eslint-plugin-prettier"],
   "rules": {
     "prettier/prettier": [
@@ -9,6 +14,7 @@
         "singleQuote": true,
         "endOfLine": "auto"
       }
-    ]
+    ],
+    "react-hooks/exhaustive-deps": "off"
   }
 }

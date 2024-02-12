@@ -34,10 +34,10 @@
     "@types/node": "20.10.4",
     "@types/react": "17.0.11",
     "@types/react-dom": "^17.0.8",
-    "@typescript-eslint/eslint-plugin": "^4.28.1",
-    "@typescript-eslint/parser": "^4.28.1",
+    "@typescript-eslint/eslint-plugin": "^7.0.1",
+    "@typescript-eslint/parser": "^7.0.1",
     "autoprefixer": "^10.2.6",
-    "eslint": "^7.30.0",
+    "eslint": "^8.56.0",
     "eslint-config-next": "^14.0.4",
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-prettier": "^3.4.0",
@@ -46,23 +46,6 @@
     "next-seo": "^6.4.0",
     "postcss": "^8.3.5",
     "tailwindcss": "^2.2.4",
-    "typescript": "4.3.4"
-  },
-  "Resources": {
-    "UserPool": {
-      "Type": "AWS::Cognito::UserPool",
-      "Properties": {
-        "AdminCreateUserConfig": {
-          "AllowAdminCreateUserOnly": false
-        },
-        "AliasAttributes": [
-          "email",
-          "preferred_username"
-        ],
-        "UserPoolName": {
-          "Fn::Sub": "${AWS::StackName}-UserPool"
-        }
-      }
-    }
+    "typescript": "^4.9.5"
   }
 }

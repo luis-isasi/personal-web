@@ -15,7 +15,7 @@ const Page404 = () => {
           Oh No! Error 404 😕
         </p>
         <p className="text-sm sm:text-base md:text-xl lg:text-2xl text-center font-medium py-2">
-          LOST IN SPACE? Hmm, looks like that page doesn't exist.
+          LOST IN SPACE? Hmm, looks like that page doesn&apos;t exist.
         </p>
         <Icon404 />
         <a

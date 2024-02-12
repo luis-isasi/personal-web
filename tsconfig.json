@@ -23,7 +23,8 @@
       "@Constants": ["./src/constants.ts"],
       "@Types": ["./src/types.ts"],
       "@Hoc/*": ["./src/hoc/*"]
-    }
+    },
+    "incremental": true
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
   "exclude": ["node_modules"]

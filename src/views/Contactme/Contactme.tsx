@@ -9,7 +9,7 @@ import Form from './Form'
 const msg_sent = 'message_sent'
 const new_msg = 'new_message'
 
-const contactme = () => {
+const ContactMe = () => {
   const [isSuccess, setIsSuccess] = useState<boolean>(false)
   const router = useRouter()
 
@@ -72,4 +72,4 @@ const contactme = () => {
   )
 }
 
-export default contactme
+export default ContactMe
