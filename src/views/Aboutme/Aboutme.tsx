@@ -1,11 +1,11 @@
 import { NextSeo } from 'next-seo'
 
 import PresentingMe from './sections/PresentingMe'
-import AboutMeText from './sections/AboutMeText'
+import AboutMeText from './sections/AboutMe_Text'
 import Skills from './sections/Skills'
 import { URL_BASE_FRONT } from '@Constants'
 
-const Aboutme = () => {
+const AboutMe = () => {
   return (
     <>
       <NextSeo
@@ -47,4 +47,4 @@ const Aboutme = () => {
   )
 }
 
-export default Aboutme
+export default AboutMe
