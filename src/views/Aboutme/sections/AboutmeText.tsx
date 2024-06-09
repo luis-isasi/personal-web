@@ -1,21 +1,27 @@
-const AboutmeText = () => {
+const AboutMeText = () => {
   return (
     <section>
       <h3 className="font-bold text-3xl md:text-4xl mb-2">Sobre mí</h3>
       <p className="my-7 w-4/5 mx-auto text-lg text-center lg:text-left md:text-xl font-normal">
         Soy{' '}
         <b className="text-blue-600 dark:text-blue-500">Luis Isasi Oyolo,</b>{' '}
-        tengo 22 años y soy un estudiante cursando el octavo ciclo de la carrera
-        de Ing. De Sistemas, en los primeros ciclos me interesaba mucho el
-        desarrollo web, comencé estudiando HTML5 y CSS3, como todo principiante
-        pensé que eso era suficiente y me equivoque, seguí tomando cursos de
-        JavaScript, hasta ese punto descubrí que el desarrollo web era un mundo
-        muy extenso, pero me agradaba y estaba dispuesto a seguir estudiando en
-        paralelo con la universidad,
-        <i className="font-bold">
-          {' '}
-          luego comencé con React js, me adentre en todo su ecosistema.{' '}
-        </i>
+        tengo 25 años, soy un apasionado por el Desarrollo Web, llevo 4 años de
+        experiencia en esta industria de la tecnología, comenzando como un
+        desarollador Frontend y actualmente como Fullstack Developer.
+        <br />
+        <i className="font-bold"> Comencé con React js,</i> me adentre en todo
+        su ecosistema llegando a trabajar 2 años en Frontend con tecnologías
+        como Next Js, tailwind css, react-hook-from, etc.
+        <br /> <br />
+        Luego me adentre en el mundo del Backend con Node js y full tecnologías
+        de AWS como (Amazon Cognito, DynamoDb, S3, AWS Lambda, etc).
+        <br /> <br />
+        Actualmente conseguí conocimientos sólidos en el mundo de la
+        Infraestructura del Desarrollo Web usando el concepto de{' '}
+        <b>&quot;Infraestructura como código&quot;</b> usando herramientas de
+        AWS como aws-cdk, aws Iam, amazon event bridge, aws cloudformation, aws
+        cloudfront, etc, liderando un equipo de desarrollo.
+        <br /> <br />
         Hasta el día de hoy sigo aprendiendo en diferentes plataformas
         virtuales, tengo proyectos en mi perfil de github y estoy dispuesto a
         crecer personalmente y profesionalmente para aportar a esta comunidad
@@ -25,4 +31,4 @@ const AboutmeText = () => {
   )
 }
 
-export default AboutmeText
+export default AboutMeText

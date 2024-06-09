@@ -1,7 +1,7 @@
 import { NextSeo } from 'next-seo'
 
 import PresentingMe from './sections/PresentingMe'
-import AboutmeText from './sections/AboutmeText'
+import AboutMeText from './sections/AboutMeText'
 import Skills from './sections/Skills'
 import { URL_BASE_FRONT } from '@Constants'
 
@@ -39,7 +39,7 @@ const Aboutme = () => {
           <PresentingMe />
         </div>
         <div className="w-full mb-10">
-          <AboutmeText />
+          <AboutMeText />
           <Skills />
         </div>
       </div>

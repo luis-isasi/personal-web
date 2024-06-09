@@ -5,9 +5,10 @@ const PresentingMe = () => {
         <span>¡Hola! 😀</span>
         <br />
         <span>
-          Soy un Desarrollador Front-end con metas de ser Full Stack,
-          convirtiendo ideas del mundo real a código usando principalmente
-          Javascript y Typescript.
+          Soy un Ingeniero de Software especializado en desarrollo Full Stack.
+          Transformo ideas del mundo real en soluciones digitales utilizando
+          principalmente TypeScript, React.js para el Frontend y tecnologías AWS
+          para el Backend.
         </span>
       </section>
       <br />
@@ -15,14 +16,11 @@ const PresentingMe = () => {
       <section className="font-semibold xl:font-bold md:text-xl xl:text-2xl dark:text-white">
         <p>
           Este lugar será mi portafolio, donde almacenaré todos mis
-          conocimientos a lo largo de mi carrera como front-end y aportar a
-          nuevos devs con artículos, mis experiencias y demás.
+          conocimientos a lo largo de mi carrera y aportar a la comunidad de
+          desarrollo de software artículos con mis experiencias, artículos y
+          demás.
         </p>
         <br />
-        <p>
-          Anhelo ser un buen developer para toda la comunidad y este sitio es
-          uno de los pasos para lograrlo.
-        </p>
       </section>
     </div>
   )

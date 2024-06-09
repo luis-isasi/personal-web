@@ -6,8 +6,8 @@ const technologiesCol1 = [
     alt: 'typescript',
   },
   {
-    url: '/Images/webpack.png',
-    alt: 'webpack',
+    url: '/Images/aws-lambda.png',
+    alt: 'aws-lambda',
   },
   {
     url: '/Images/tailwind.svg',
@@ -25,16 +25,16 @@ const technologiesCol2 = [
     alt: 'react',
   },
   {
-    url: '/Images/styled-components.png',
-    alt: 'styled-components',
+    url: '/Images/aws.png',
+    alt: 'amazon web services',
   },
   {
     url: '/Images/nextjs.svg',
     alt: 'next-js',
   },
   {
-    url: '/Images/babel.png',
-    alt: 'babel',
+    url: '/Images/cognito.png',
+    alt: 'AWS Cognito',
   },
 ]
 

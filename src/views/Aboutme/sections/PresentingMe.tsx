@@ -18,10 +18,10 @@ const PresentingMe = () => {
             <h1>Luis Isasi Oyolo</h1>
             un{' '}
             <span className="text-blue-600 dark:text-blue-600">
-              Frontend Developer
+              Ingeniero de Software
             </span>
           </div>
-          enfocado en React JS.
+          enfocado en el Desarrollo Full Stack.
         </div>
         <div className="flex justify-between">
           <SocialNetworks />
