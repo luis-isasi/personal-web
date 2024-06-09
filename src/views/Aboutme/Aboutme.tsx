@@ -1,7 +1,7 @@
 import { NextSeo } from 'next-seo'
 
 import PresentingMe from './sections/PresentingMe'
-import AboutMeText from './sections/AboutMe_Text'
+import AboutMeText from './sections/AboutMeText'
 import Skills from './sections/Skills'
 import { URL_BASE_FRONT } from '@Constants'
 
